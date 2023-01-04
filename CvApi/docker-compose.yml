@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  cvapi:
+    image: ${DOCKER_REGISTRY-}cvapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+  postgresql_database:
+    image: postgres:latest
+    container_name: webapiPostgrestTest_DB
+    environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=postgresTest
+    ports:
+        - "5432:5432"
