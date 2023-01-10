@@ -1,5 +1,7 @@
 ﻿using CvApi.Data;
 using CvApi.Models;
+using CvApi.Models.DTO;
+using CvApi.Services.AuthService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,27 +12,24 @@ namespace CvApi.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly DataContext _context;
+        private readonly IAuthService _authService;
 
-        public AuthController(DataContext context)
+        public AuthController(IAuthService authService)
         {
-            _context = context;
+            _authService = authService;
         }
 
-        [HttpPost("register")]
-        public async Task<ActionResult<string>> Register(User user)
+        [HttpPost("/login")]
+        public IActionResult Login(UserLoginDTO userDTO)
         {
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
-            return Ok("Created");
-
+            string jwt = _authService.LoginUser(userDTO);
+            if(jwt == null)
+            {
+                return BadRequest("Invalid user data");
+            }
+            return Ok(jwt);
         }
 
-        [HttpGet()]
-        public async Task<ActionResult<string>> GetUsers()
-        {
-            var users = await _context.Users.ToListAsync();
-            return Ok(users);
-        }
+
     }
 }
