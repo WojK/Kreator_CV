@@ -15,3 +15,15 @@ services:
         - POSTGRES_DB=postgresTest
     ports:
         - "5432:5432"
+  react:
+      build:
+          context: .././cvclient
+          dockerfile: Dockerfile
+      ports:
+          - "3000:3000"
+      #tty: true
+      expose:
+          - "3000" 
+      #stdin_open: true
+      #environment:
+      #    - MODE=dev
