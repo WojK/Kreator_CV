@@ -1,0 +1,64 @@
+.cv__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-navbar);
+
+    padding: 0.7rem 2rem;
+}
+
+.cv__navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cv__navbar-logo {
+    margin-right: 2rem;
+}
+
+.cv__navbar-logo p{
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 43.57px;
+    color: #fff;
+}
+
+.cv__navbar-links_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.cv__navbar-links_container p {
+    color: #FFFFFF;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24.2px;
+    
+    margin: 0 1.8rem;
+    cursor: pointer;
+}
+
+.cv__navbar-account {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 1.8rem;
+}
+
+.cv__navbar-account button{
+    padding: 0.7rem 2rem;
+    color: #fff;
+    background: var(--color-button);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24.2px;
+    border-radius: 90px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}

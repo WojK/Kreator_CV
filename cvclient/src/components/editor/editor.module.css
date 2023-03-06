@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+.cv {
+  width: 800px;
+  min-height: 1120px;
+  align-self: flex-end;
+
+  box-shadow: 0 0 0 0.4rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  gap: 25px;
+  background-color: white;
+
+  font-size: 16px;
+}
+
+.main {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5%;
+  margin-top: 35px;
+}
+
+.personal-details {
+  min-height: 1120px;
+  width: 40%;
+  background-color: #f3f1ed;
+}
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.image {
+  width: 180px;
+  border-radius: 50%;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  margin-top: 10px;
+  z-index: 2;
+}
+
+.background-image-div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+}
+
+.descontent {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.4rem;
+}
+
+.descontent-ul {
+  list-style: none;
+  margin-top: 24px;
+}
+
+.descontent-ul-li {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.personal-data {
+  display: inline-block;
+  font-size: 14px;
+  padding-left: 0.5rem;
+}
+
+.name {
+  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+  font-family: "Roboto";
+}
+
+.role {
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: "Roboto";
+}
+
+.icon {
+  width: 0.8rem;
+}
+
+.personal-data {
+  font-size: 16px;
+}
+
+.personal-data-container {
+  margin-top: 35px;
+}
+
+.personal-data-title {
+  font-weight: 500;
+  font-family: "Roboto";
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.personal-data-hr {
+  margin-bottom: 5px;
+}
+
+.personal-des {
+  font-size: 15px;
+  font-weight: 400;
+  display: inline-block;
+}
+.personal-data-container ul {
+  list-style: none;
+}
+
+.personal-data-container ul li {
+  margin-bottom: 20px;
+}
+
+.display-none {
+  display: none;
+}
+
+/* Syntax to hide some element e.g. :
+className={
+ classes["some-class"] + " " + classes["display-none"]
+} */
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/* Right side */
+.skills-projects {
+  width: 55%;
+  min-height: 1120px;
+  font-family: "Roboto";
+}
+
+.skills-projects h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #4b4b4b;
+  margin-top: 30px;
+}
+
+.skills-projects hr {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.skills-projects ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.skills-projects ul li:first-child {
+  margin-top: 12px;
+}
+
+.knowledge-title {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/* FORM */
+.form {
+  width: 35%;
+  background-color: white;
+  margin-left: 10%;
+
+  border-radius: 6px;
+  background-color: #2d92c9;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  text-align: center;
+}
+
+.form label {
+  display: block;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.form input {
+  font: inherit;
+  background-color: #dfeff3;
+  color: #202122;
+  border-radius: 4px;
+  border: 1px solid white;
+  width: 100%;
+  text-align: center;
+  padding: 0.25rem;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.form button {
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  background-color: #43a6dc;
+  border: 1px solid #43a6dc;
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+}

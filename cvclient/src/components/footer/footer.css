@@ -1,0 +1,40 @@
+.cv__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-footer);
+
+    margin-top: 2rem;
+    padding: 1.5rem 6rem;
+}
+
+.cv__footer_title {
+    display: flex;
+    align-items: center;
+}
+
+.cv__footer_title p {
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.cv__footer_authors {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cv__footer_authors p {
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+}
