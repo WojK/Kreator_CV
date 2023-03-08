@@ -1,5 +1,5 @@
 import React from "react";
-import { Editor, Footer, Navbar } from "./components";
+import { Editor } from "./components";
 import MainLayoutPage from "./pages/MainLayoutPage";
 import AdvicesPage from "./pages/AdvicesPage";
 import ChooseTemplatePage from "./pages/ChooseTemplatePage";
@@ -17,9 +17,8 @@ const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/" element={<MainLayoutPage />}>
       <Route path="creator" element={<ChooseTemplatePage />} />,
-      <Route path="advices" element={<AdvicesPage />}/>,
-      <Route path="about_us"></Route>,
-      <Route path="my_account"></Route>,
+      <Route path="advices" element={<AdvicesPage />} />,
+      <Route path="about_us"></Route>,<Route path="my_account"></Route>,
     </Route>,
   ])
 );
@@ -28,8 +27,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router}>
-        <div className="App">
-        </div>
+        <div className="App"></div>
       </RouterProvider>
     </>
   );
