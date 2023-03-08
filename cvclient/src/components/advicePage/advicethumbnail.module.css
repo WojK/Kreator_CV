@@ -1,11 +1,11 @@
 .advice-title {
-  font-size: calc(20px + 0.25vw);
+  font-size: 3.0vh;
   text-align: center;
   color: #ffffff;
 }
 
 .advice-description {
-  font-size: calc(10px + 0.25vw);
+  font-size: 1.5vh;
   text-align: center;
   color: #ffffff;
 }
