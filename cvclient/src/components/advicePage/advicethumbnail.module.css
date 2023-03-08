@@ -19,6 +19,10 @@
   border-bottom-right-radius: 15%;
 }
 
+.img-div{
+  margin: 0 auto;
+}
+
 .advice-content {
   padding-right: 10%;
   padding-left: 10%;
