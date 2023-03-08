@@ -1,27 +1,30 @@
-import React from 'react'
+import React from "react";
 import { AiFillStar } from "react-icons/ai";
-import './footer.css'
+import "./footer.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
-    return (
-        <div className='cv__footer'>
-            <div className='cv__footer_title'>
-                <p>CV_CREATOR - PROJEKT ZESPOŁOWY</p>
-            </div>
-            <div className='cv__footer_authors'>
-                <AiFillStar color="#fff" size={14} />
-                <p>Wojciech Kudełko</p>
-                <AiFillStar color="#fff" size={14} />
-                <p>Michał Żdanuk</p>
-                <AiFillStar color="#fff" size={14} />
-                <p>Miłosz Moroz</p>
-                <AiFillStar color="#fff" size={14} />
-                <p>Jakub Szczygielski</p>
-                <AiFillStar color="#fff" size={14} />
-                <p>Kamil Smołecki</p>
-            </div>
+  return (
+    <div className="fixed-bottom">
+      <div className="cv__footer">
+        <div className="cv__footer_title">
+          <p>CV_CREATOR - PROJEKT ZESPOŁOWY</p>
         </div>
-    )
-}
+        <div className="cv__footer_authors">
+          <AiFillStar color="#fff" size={14} />
+          <p>Wojciech Kudełko</p>
+          <AiFillStar color="#fff" size={14} />
+          <p>Michał Żdanuk</p>
+          <AiFillStar color="#fff" size={14} />
+          <p>Miłosz Moroz</p>
+          <AiFillStar color="#fff" size={14} />
+          <p>Jakub Szczygielski</p>
+          <AiFillStar color="#fff" size={14} />
+          <p>Kamil Smołecki</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;

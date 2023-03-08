@@ -1,6 +1,4 @@
 import classes from "./advicethumbnail.module.css";
-import advicePhoto from "../../assets/images/advice.jpg";
-
 
 const AdviceThumbnail = (props) => {
   return (
