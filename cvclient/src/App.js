@@ -2,6 +2,7 @@ import React from "react";
 import { Editor } from "./components";
 import MainLayoutPage from "./pages/MainLayoutPage";
 import AdvicesPage from "./pages/AdvicesPage";
+import AboutUsPage from "./pages/AboutUsPage";
 import ChooseTemplatePage from "./pages/ChooseTemplatePage";
 
 import "./App.css";
@@ -18,7 +19,8 @@ const router = createBrowserRouter(
     <Route path="/" element={<MainLayoutPage />}>
       <Route path="creator" element={<ChooseTemplatePage />} />,
       <Route path="advices" element={<AdvicesPage />} />,
-      <Route path="about_us"></Route>,<Route path="my_account"></Route>,
+      <Route path="about_us" element={<AboutUsPage />}></Route>,
+      <Route path="my_account"></Route>,
     </Route>,
   ])
 );
