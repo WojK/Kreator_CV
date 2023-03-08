@@ -1,20 +1,22 @@
 .advice-title {
-  font-size: 20px;
+  font-size: calc(20px + 0.25vw);
   text-align: center;
+  color: #ffffff;
 }
 
 .advice-description {
-  font-size: 16px;
+  font-size: calc(10px + 0.25vw);
   text-align: center;
+  color: #ffffff;
 }
 
 .advice-div {
-  background-color: #3470a4;
+  background-color: #1f4d70;
   margin-bottom: 10%;
   margin-left: 5%;
   margin-right: 5%;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
 }
 
 .advice-content {
