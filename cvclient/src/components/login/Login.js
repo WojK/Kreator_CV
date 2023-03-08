@@ -9,18 +9,18 @@ const Login = () => {
         </div>
         <div className="input_container">
           <label>Username: </label>
-          <input type="text" name="uname" required />
+          <input className="input_box" type="text" name="uname" required />
         </div>
         <div className="input_container">
           <label>E-mail: </label>
-          <input type="e-mail" name="email" required />
+          <input className="input_box" type="e-mail" name="email" required />
         </div>
         <div className="input_container">
           <label>Password: </label>
-          <input type="password" name="pass" required />
+          <input className="input_box" type="password" name="pass" required />
         </div>
         <div className="button_container">
-          <input type="submit" value="Log in" />
+          <input className="submit_button" type="submit" value="Log in" />
         </div>
       </div>
   );
