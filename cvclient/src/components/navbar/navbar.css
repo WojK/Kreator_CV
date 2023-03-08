@@ -17,6 +17,8 @@
 
 .cv__navbar-logo {
     margin-right: 2rem;
+    cursor: pointer;
+
 }
 
 .cv__navbar-logo p{

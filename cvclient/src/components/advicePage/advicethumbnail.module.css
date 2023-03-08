@@ -1,0 +1,18 @@
+
+.advice-title{
+    font-size: 20px;
+    text-align: center;
+}
+
+.advice-div {
+    width: 20%;
+    height: 20%;
+    background-color: #3470A4;
+    margin-bottom: 5%;
+}
+
+.advice-content{
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
