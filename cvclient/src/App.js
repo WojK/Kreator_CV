@@ -16,7 +16,7 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/" element={<MainLayoutPage />}>
-      <Route path="creator" element={<ChooseTemplatePage />} />,
+      <Route path="creator" element={<Editor />} />,
       <Route path="advices" element={<AdvicesPage />}/>,
       <Route path="about_us"></Route>,
       <Route path="my_account"></Route>,
