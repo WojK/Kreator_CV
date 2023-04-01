@@ -1,11 +1,11 @@
 .advice-title {
-  font-size: calc(20px + 0.25vw);
+  font-size: 3vh;
   text-align: center;
   color: #ffffff;
 }
 
 .advice-description {
-  font-size: calc(10px + 0.25vw);
+  font-size: 2.5vh;
   text-align: center;
   color: #ffffff;
 }
@@ -17,6 +17,12 @@
   margin-right: 5%;
   border-bottom-left-radius: 15%;
   border-bottom-right-radius: 15%;
+}
+
+.advice-date{
+  font-weight: bold;
+  text-align: center;
+  color: #909396;
 }
 
 .advice-content {
