@@ -1,0 +1,70 @@
+.templates-div {
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+  margin-bottom: 20vh;
+}
+
+.item {
+  min-height: 30rem;
+  min-width: 30rem;
+  padding: 40px;
+}
+
+img {
+  width: 100%;
+  height: 80%;
+  border-radius: 2rem;
+  pointer-events: none;
+  cursor: pointer;
+
+}
+
+.item-inside {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: #fff;
+  align-items: center;
+}
+
+.inner-carousel {
+  display: flex;
+}
+
+.carousel {
+  width: 45%;
+  cursor: grab;
+  overflow: hidden;
+}
+
+.middle {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 12px 34px;
+  font-style: 13px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button:hover {
+  border: 1px solid #426fcf;
+  background: #426fcf;
+  transition: 1s;
+}

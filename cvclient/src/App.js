@@ -4,7 +4,7 @@ import MainLayoutPage from "./pages/MainLayoutPage";
 import AdvicesPage from "./pages/AdvicesPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import ChooseTemplatePage from "./pages/ChooseTemplatePage";
-
+import ChooseTemplateStylesPage from "./pages/ChooseTemplateStylesPage";
 import "./App.css";
 
 import {
@@ -18,7 +18,9 @@ const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/" element={<MainLayoutPage />}>
       <Route path="creator" element={<ChooseTemplatePage />} />,
+      <Route path="creator-template-style" element={<ChooseTemplateStylesPage />} />,
       <Route path="advices" element={<AdvicesPage />} />,
+      <Route path="editor" element={<Editor />} />,
       <Route path="about_us" element={<AboutUsPage />}></Route>,
       <Route path="my_account"></Route>,
     </Route>,
