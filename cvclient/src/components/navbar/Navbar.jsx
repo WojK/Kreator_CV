@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../../store/auth-context";
+import { RegisterPage } from "../../pages/RegisterPage";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -40,6 +42,9 @@ const Menu = () => {
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const navigate = useNavigate();
+  const authCtx = useContext(AuthContext);
+
+  const isLoggedIn = authCtx.isLoggedIn;
 
   return (
     <div className="cv__navbar">
@@ -56,16 +61,33 @@ const Navbar = () => {
           <Menu />
         </div>
 
-        <div className="cv__navbar-account">
-          <button
-            type="button"
-            onClick={(e) => {
-              navigate("/my_account");
-            }}
-          >
-            My account
-          </button>
-        </div>
+        {isLoggedIn && (
+          <div>
+            <div className="cv__navbar-account">
+              <button
+                type="button"
+                onClick={(e) => {
+                  navigate("/my_account");
+                }}
+              >
+                My account
+              </button>
+            </div>
+          </div>
+        )}
+
+        {!isLoggedIn && (
+          <div className="cv__navbar-account">
+            <button
+              type="button"
+              onClick={(e) => {
+                navigate("/register_page"); // DODAĆ PÓŹNIEJ
+              }}
+            >
+              Sign Up
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="cv__navbar_menu">

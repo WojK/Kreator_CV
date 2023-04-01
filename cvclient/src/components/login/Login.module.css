@@ -52,6 +52,7 @@
   padding: 20px;
   text-align: center;
   text-decoration-line: underline;
+  cursor: pointer;
 }
 
 .input_box:hover {
