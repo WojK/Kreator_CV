@@ -4,13 +4,19 @@ import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
-import { RegisterPage } from "../../pages/RegisterPage";
+import cvnavbar from "../../assets/images/cv-navbar.png";
+
 
 const Menu = () => {
   const navigate = useNavigate();
 
   return (
     <>
+    {/* <img
+            src={cvnavbar}
+            className="navbar-icon"
+            alt="cv-navbar"
+          /> */}
       <p
         onClick={(e) => {
           navigate("/creator");
@@ -54,7 +60,13 @@ const Navbar = () => {
           navigate("/");
         }}
       >
-        <p>CV CREATOR</p>
+        <p>
+          <img
+            src={cvnavbar}
+            className="navbar-icon"
+            alt="cv-navbar"
+          />&nbsp;
+          CV CREATOR</p>
       </div>
       <div className="cv__navbar-links">
         <div className="cv__navbar-links_container">
@@ -67,7 +79,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={(e) => {
-                  navigate("/my_account");
+                  navigate("/login");
                 }}
               >
                 My account
@@ -81,7 +93,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={(e) => {
-                navigate("/register_page"); // DODAĆ PÓŹNIEJ
+                navigate("/register"); // DODAĆ PÓŹNIEJ
               }}
             >
               Sign Up

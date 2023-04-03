@@ -25,10 +25,10 @@ const router = createBrowserRouter(
       <Route path="advices/:adviceId" element={<AdviceArticle />} />,
       <Route path="about_us" element={<AboutUsPage />}></Route>,
       <Route path="my_account"></Route>,
-      <Route path="register_page" element={<RegisterPage />}></Route>,
-      <Route path="login_page" element={<LoginPage />}></Route>,
       <Route path="editor" element={<Editor />}></Route>,
     </Route>,
+      <Route path="register" element={<RegisterPage />}></Route>,
+      <Route path="login" element={<LoginPage />}></Route>,
   ])
 );
 
