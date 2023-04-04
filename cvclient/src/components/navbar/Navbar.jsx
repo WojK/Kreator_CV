@@ -12,7 +12,7 @@ const Menu = () => {
 
   return (
     <>
-    {/* <img
+      {/* <img
             src={cvnavbar}
             className="navbar-icon"
             alt="cv-navbar"
@@ -84,12 +84,25 @@ const Navbar = () => {
               >
                 My account
               </button>
+              <button
+                type="button"
+              >
+                Log out
+              </button>
             </div>
           </div>
         )}
 
         {!isLoggedIn && (
           <div className="cv__navbar-account">
+            <button
+              type="button"
+              onClick={(e) => {
+                navigate("/login"); // DODAĆ PÓŹNIEJ
+              }}
+            >
+              Sign In
+            </button>
             <button
               type="button"
               onClick={(e) => {
@@ -122,9 +135,49 @@ const Navbar = () => {
               <Menu />
             </div>
 
-            <div className="cv__navbar_menu_container-account">
+            {isLoggedIn && (
+              <div>
+                <div className="cv__navbar_menu_container-account">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      navigate("/login");
+                    }}
+                  >
+                    My account
+                  </button>
+                  <button
+                    type="button"
+                  >
+                    Log out
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {!isLoggedIn && (
+              <div className="cv__navbar_menu_container-account">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    navigate("/login"); // DODAĆ PÓŹNIEJ
+                  }}
+                >
+                  Sign In
+                </button>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    navigate("/register"); // DODAĆ PÓŹNIEJ
+                  }}
+                >
+                  Sign Up
+                </button>
+              </div>
+            )}
+            {/* <div className="cv__navbar_menu_container-account">
               <button type="button">My account</button>
-            </div>
+            </div> */}
           </div>
         )}
       </div>

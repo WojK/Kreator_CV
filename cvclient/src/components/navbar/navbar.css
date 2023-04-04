@@ -36,6 +36,8 @@
 
 .cv__navbar-links_container p,
 .cv__navbar_menu_container-links p {
+    white-space: nowrap;
+    display: flex;
     color: #FFFFFF;
     font-family: var(--font-family);
     font-weight: 400;
@@ -48,14 +50,18 @@
 
 .cv__navbar-account {
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
+    justify-content: space-between;
+    gap: 1rem;
     align-items: center;
     margin-left: 1.8rem;
+    
 }
 
 .cv__navbar-account button,
 .cv__navbar_menu_container-account button{
-    padding: 0.5rem 2rem;
+    white-space: nowrap;
+    padding: 0.3rem 1.2rem;
     color: #fff;
     background: var(--color-button);
     font-family: var(--font-family);
@@ -103,13 +109,22 @@
 
 .cv__navbar_menu_container-account {
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.7rem;
 }
 
-.cv__navbar_menu_container-account button {
-    padding: 1rem;
+/* .cv__navbar_menu_container-account button {
+    padding: 0.4rem 1rem;
+} */
+
+@media  screen and (max-width: 1200px) {
+    .cv__navbar-links_container p{
+        /* font-size: 20px;
+        line-height: 24.2px; */
+        margin: 0 1rem;
+    }
 }
-
-
 
 @media screen and (max-width: 1000px) {
     .cv__navbar-links_container{
