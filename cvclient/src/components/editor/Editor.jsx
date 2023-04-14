@@ -142,14 +142,9 @@ const Editor = () => {
 
   const [role, setRole] = useState("Role");
 
-
-  const [languages, setLanguages] = useState(<p> &#x2022; Language</p>);
-
-
   const onImageChange = (event) => {
     setImage(URL.createObjectURL(event.target.files[0]));
   };
-
 
   const reportTemplateRef = useRef(null);
 
@@ -183,9 +178,6 @@ const Editor = () => {
                 <TabSwitcher tabId={3}>
                   <div className={classes["tab-p"]}>Experience / Skill</div>
                 </TabSwitcher>
-                {/* <TabSwitcher tabId={4}>
-                  <div className={classes["tab-p"]}>Skill</div>
-                </TabSwitcher> */}
                 <TabSwitcher tabId={4}>
                   <div className={classes["tab-p"]}>Project</div>
                 </TabSwitcher>
@@ -197,12 +189,13 @@ const Editor = () => {
                 </TabSwitcher>
               </div>
               <div className={classes["tab-p"]}>
-                <TabContent id={1}><label
-                  htmlFor="file-upload"
-                  className={classes["custom-file-upload"]}
-                >
-                  Upload Image
-                </label>
+                <TabContent id={1}>
+                  <label
+                    htmlFor="file-upload"
+                    className={classes["custom-file-upload"]}
+                  >
+                    Upload Image
+                  </label>
                   <input
                     id="file-upload"
                     type="file"
@@ -348,8 +341,6 @@ const Editor = () => {
                       </ul>
                     ))}
                   </div>
-                  {/* </TabContent> */}
-                  {/* <TabContent id={4}> */}
                   <div>
                     <label htmlFor="skillInput">Skill:</label>
                     <input
@@ -399,6 +390,19 @@ const Editor = () => {
                     />
                   </div>
                   <button onClick={handleAddProject}>Add</button>
+                  <div className={classes.card}>
+                    <h4>Project list</h4>
+                    {projectList.map((todo, index) => (
+                      <ul className={classes["card-list-elem"]} key={index}>
+                        <p>{todo.projectName}</p>
+                        <p>{todo.projectLink}</p>
+                        <p>{todo.projectDescription}</p>
+                        <button className={classes["remove-button"]} onClick={() => handleRemoveProject(index)}>Remove</button>
+                      </ul>
+                    ))}
+                  </div>
+
+
                 </TabContent>
                 <TabContent id={5}>
                   <div>
