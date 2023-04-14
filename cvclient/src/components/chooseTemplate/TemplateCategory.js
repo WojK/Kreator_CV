@@ -7,6 +7,7 @@ const TemplateCategory = ({ title, description }) => {
       <div className={classes["description-div"]}>
         <p>{description}</p>
       </div>
+      <a href="/creator-template-style"> Lets go!</a>
     </div>
   );
 };

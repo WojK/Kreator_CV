@@ -19,6 +19,7 @@
   justify-content: flex-start;
   gap: 5%;
   margin-top: 35px;
+  /* flex-wrap: wrap; */
 }
 
 .personal-details {
@@ -26,6 +27,7 @@
   width: 40%;
   background-color: #f3f1ed;
 }
+
 .image-container {
   position: relative;
   width: 100%;
@@ -122,6 +124,7 @@
   font-weight: 400;
   display: inline-block;
 }
+
 .personal-data-container ul {
   list-style: none;
 }
@@ -155,8 +158,8 @@ className={
 }
 
 .skills-projects hr {
-  width: 50%;
-  margin-bottom: 20px;
+  /* width: 50%; */
+  margin-bottom: 5px;
 }
 
 .skills-projects ul {
@@ -170,7 +173,7 @@ className={
 
 .knowledge-title {
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 /* /////////////////////////////////////////////////////////////////////////// */
@@ -179,6 +182,7 @@ className={
   width: 35%;
   background-color: white;
   margin-left: 10%;
+  min-width: 600px;
 
   border-radius: 6px;
   background-color: #2d92c9;
@@ -225,4 +229,76 @@ input[type="file"] {
   border: 1px solid #43a6dc;
   border-radius: 4px;
   padding: 0.5rem 2.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* //////////////////////// */
+.tab {
+  /* margin: 10px; */
+}
+
+.tab-space {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tab-p {
+  /* padding: 10px; */
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background-color: #156088;
+  margin-top: 20px;
+  padding: 10px 50px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-list-elem {
+  margin-top: 10px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-button {
+  background-color: rgb(187, 98, 98) !important;
+}
+
+.card-list-elem-pdf {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.p-year {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.width30 {
+  width: 30%;
+}
+
+.width70 {
+  width: 70%;
+}
+
+.ul-project{
+  margin-top: 20px;
 }

@@ -37,7 +37,7 @@ img {
 }
 
 .carousel {
-  width: 45%;
+  width: 65%;
   cursor: grab;
   overflow: hidden;
 }
@@ -67,4 +67,15 @@ img {
   border: 1px solid #426fcf;
   background: #426fcf;
   transition: 1s;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel {
+    width: 95%;
+  }
+  .item {
+    min-height: 20rem;
+    min-width: 20rem;
+    padding: 0;
+  }
 }
