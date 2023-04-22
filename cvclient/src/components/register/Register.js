@@ -1,41 +1,91 @@
-import React from "react";
 import classes from "./Register.module.css";
-
+import registericon from "../../assets/images/register-icon.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   return (
-    <div className={classes["register_form"]}>
-        <div className={classes["register_title_form"]}>
-          <p>Register</p>
+    <>
+      <div className={classes["row"]}>
+        <div className={`${classes.column} ${classes.left}`}>
+          <RegisterForm />
         </div>
-        <div className={classes["input_container"]}>
-          <label>Username: </label>
-          <input className={classes["input_box"]} type="text" name="uname" required />
-        </div>
-        <div className={classes["input_container"]}>
-          <label>E-mail: </label>
-          <input className={classes["input_box"]} type="e-mail" name="email" required />
-        </div>
-        <div className={classes["input_container"]}>
-          <label>Confirm e-mail: </label>
-          <input className={classes["input_box"]} type="e-mail" name="email" required />
-        </div>
-        <div className={classes["input_container"]}>
-          <label>Password: </label>
-          <input className={classes["input_box"]} type="password" name="pass" required />
-        </div>
-        <div className={classes["input_container"]}>
-          <label>Confirm password: </label>
-          <input className={classes["input_box"]} type="password" name="pass" required />
-        </div>
-        <div className={classes["button_container"]}>
-          <input className={classes["submit_button"]} type="submit" value="Register" />
-        </div>
-        <div className={classes["bottom_text"]}>
-            <p>Already have an account? Click here</p>
+        <div className={`${classes.column} ${classes.right}`}>
+          <img
+            src={registericon}
+            className={classes["register-icon"]}
+            alt="register-icon"
+          />
         </div>
       </div>
+    </>
   );
 };
 
-export default Register
+const RegisterForm = () => {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <p className={classes["register-title-form"]}>
+        Create perfect CV in 5 minutes
+      </p>
+      <p className={classes["register-small-text"]}>
+        Sign up and learn from our experience
+      </p>
+
+      <div className={classes["form-container"]}>
+        <form>
+          <div className={classes["input-container"]}>
+            <label className={classes["form-label"]}>Username: </label>
+            <input
+              className={classes["input-box"]}
+              type="text"
+              placeholder="username"
+            ></input>
+          </div>
+          <div className={classes["input-container"]}>
+            <label className={classes["form-label"]}>E-mail: </label>
+            <input
+              className={classes["input-box"]}
+              type="text"
+              placeholder="email"
+            ></input>
+          </div>
+          <div className={classes["input-container"]}>
+            <label className={classes["form-label"]}>Password: </label>
+            <input
+              className={classes["input-box"]}
+              type="password"
+              placeholder="password"
+            ></input>
+          </div>
+          <div className={classes["input-container"]}>
+            <label className={classes["form-label"]}>Confirm password: </label>
+            <input
+              className={classes["input-box"]}
+              type="password"
+              placeholder="password"
+            ></input>
+          </div>
+          <div className={classes["submit-container"]}>
+            <input
+              className={classes["submit-button"]}
+              type="submit"
+              value="Register"
+            />
+          </div>
+        </form>
+        <p
+          className={classes["bottom-text"]}
+          onClick={(e) => {
+            navigate("/login");
+          }}
+        >
+          Already have an account? Click here
+        </p>
+      </div>
+    </>
+  );
+};
+
+export default Register;

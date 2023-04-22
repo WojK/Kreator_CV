@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../../store/auth-context";
+import cvnavbar from "../../assets/images/cv-navbar.png";
+
 
 const Menu = () => {
   const navigate = useNavigate();
 
   return (
     <>
+      {/* <img
+            src={cvnavbar}
+            className="navbar-icon"
+            alt="cv-navbar"
+          /> */}
       <p
         onClick={(e) => {
           navigate("/creator");
@@ -40,6 +48,9 @@ const Menu = () => {
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const navigate = useNavigate();
+  const authCtx = useContext(AuthContext);
+
+  const isLoggedIn = authCtx.isLoggedIn;
 
   return (
     <div className="cv__navbar">
@@ -49,23 +60,59 @@ const Navbar = () => {
           navigate("/");
         }}
       >
-        <p>CV CREATOR</p>
+        <p>
+          <img
+            src={cvnavbar}
+            className="navbar-icon"
+            alt="cv-navbar"
+          />&nbsp;
+          CV CREATOR</p>
       </div>
       <div className="cv__navbar-links">
         <div className="cv__navbar-links_container">
           <Menu />
         </div>
 
-        <div className="cv__navbar-account">
-          <button
-            type="button"
-            onClick={(e) => {
-              navigate("/my_account");
-            }}
-          >
-            My account
-          </button>
-        </div>
+        {isLoggedIn && (
+          <div>
+            <div className="cv__navbar-account">
+              <button
+                type="button"
+                onClick={(e) => {
+                  navigate("/login");
+                }}
+              >
+                My account
+              </button>
+              <button
+                type="button"
+              >
+                Log out
+              </button>
+            </div>
+          </div>
+        )}
+
+        {!isLoggedIn && (
+          <div className="cv__navbar-account">
+            <button
+              type="button"
+              onClick={(e) => {
+                navigate("/login"); // DODAĆ PÓŹNIEJ
+              }}
+            >
+              Sign In
+            </button>
+            <button
+              type="button"
+              onClick={(e) => {
+                navigate("/register"); // DODAĆ PÓŹNIEJ
+              }}
+            >
+              Sign Up
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="cv__navbar_menu">
@@ -88,9 +135,49 @@ const Navbar = () => {
               <Menu />
             </div>
 
-            <div className="cv__navbar_menu_container-account">
+            {isLoggedIn && (
+              <div>
+                <div className="cv__navbar_menu_container-account">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      navigate("/login");
+                    }}
+                  >
+                    My account
+                  </button>
+                  <button
+                    type="button"
+                  >
+                    Log out
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {!isLoggedIn && (
+              <div className="cv__navbar_menu_container-account">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    navigate("/login"); // DODAĆ PÓŹNIEJ
+                  }}
+                >
+                  Sign In
+                </button>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    navigate("/register"); // DODAĆ PÓŹNIEJ
+                  }}
+                >
+                  Sign Up
+                </button>
+              </div>
+            )}
+            {/* <div className="cv__navbar_menu_container-account">
               <button type="button">My account</button>
-            </div>
+            </div> */}
           </div>
         )}
       </div>
