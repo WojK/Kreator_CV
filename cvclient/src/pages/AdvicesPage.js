@@ -2,6 +2,7 @@ import AdviceThumbnail from "../components/advicePage/AdviceThumbnail";
 import classes from "./AdvicePage.module.css";
 import { adviceArticles } from "../mocks/mockedData";
 
+
 const adviceArticlesList = adviceArticles;
 const AdvicesPage = () => {
   const result = adviceArticlesList.reduce(
