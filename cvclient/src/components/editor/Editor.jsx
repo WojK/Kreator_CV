@@ -1,22 +1,20 @@
-import React from 'react'
+import React from "react";
 import classes from "./editor.module.css";
 import jsPDF from "jspdf";
 import { useRef, useState } from "react";
 // import { FaBeer } from "react-icons/fa";
 import photo from "../../assets/images/photo.jpg";
-import MailIcon from "../../assets/images/mail.png"
+import MailIcon from "../../assets/images/mail.png";
 import TelephoneIcon from "../../assets/images/telephone.png";
 import LocationIcon from "../../assets/images/location.png";
 import LinkedinIcon from "../../assets/images/linkedin-logo.png";
 import GithubIcon from "../../assets/images/github.png";
-import "../../assets/fonts/Roboto-normal"
-import "../../assets/fonts/times-normal"
-import "../../assets/fonts/times-bold"
+import "../../assets/fonts/Roboto-normal";
+import "../../assets/fonts/times-normal";
+import "../../assets/fonts/times-bold";
 import { CardTab, TabSwitcher, TabContent } from "../card/Card";
 
-
 const Editor = () => {
-
   // personal
   const [name, setName] = useState("Tom");
   const [surname, setSurname] = useState("Cruse");
@@ -24,22 +22,29 @@ const Editor = () => {
   const [phoneNumber, setPhoneNumber] = useState("+48 582 293 211");
 
   //personal desc
+
+  const [isGitHub, setisGitHub] = useState(false);
+
   const [location, setLocation] = useState("Warsaw");
   const [github, setGithub] = useState("http://github.com/tomcruse");
   const [linkedin, setLinkedin] = useState("http://linkedin.com/tomcruse");
-  const [profileDescription, setProfileDescription] = useState("Profile description");
+  const [profileDescription, setProfileDescription] = useState(
+    "Profile description"
+  );
   const [aboutme, setAboutme] = useState(
-    " A place where you can mark your interests");
+    " A place where you can mark your interests"
+  );
   const [image, setImage] = useState(photo);
 
   // languages
   const [languageList, setLanguageList] = useState([]);
   const [language, setLanguage] = useState("English");
 
-
   // education
   const [educationList, setEducationList] = useState([]);
-  const [schoolName, setSchoolName] = useState("Liceum Ogólnokształcące Im. Jana Pawła 2");
+  const [schoolName, setSchoolName] = useState(
+    "Liceum Ogólnokształcące Im. Jana Pawła 2"
+  );
   const [schoolCity, setSchoolCity] = useState("Warszawa");
   const [schoolStartYear, setSchoolStartYear] = useState("2022-03-20");
   const [schoolFinishYear, setSchoolFinishYear] = useState("2022-03-20");
@@ -56,15 +61,23 @@ const Editor = () => {
   const [skill, setSkill] = useState("Komunikatywnosc");
 
   //clause
-  const [clause, setClause] = useState("I consent to the processing of my personal data by (company name) for the purpose of recruiting for the position I have applied for.");
+  const [clause, setClause] = useState(
+    "I consent to the processing of my personal data by (company name) for the purpose of recruiting for the position I have applied for."
+  );
 
   //project
   const [projectList, setProjectList] = useState([]);
   const [projectName, setProjectName] = useState("Kreator CV");
   const [projectLink, setProjectLink] = useState("https://github.com/creator");
-  const [projectDescription, setProjectDescription] = useState("Kreator Cv to 5 osobowy projekt zespołowy majacy na celu...");
+  const [projectDescription, setProjectDescription] = useState(
+    "Kreator Cv to 5 osobowy projekt zespołowy majacy na celu..."
+  );
 
   // ---------hanlers------------
+  const handleClick = (event) => {
+    // 👇️ toggle isActive state on click
+    setisGitHub((current) => !current);
+  };
 
   // education
   const handleAddEducation = () => {
@@ -81,7 +94,9 @@ const Editor = () => {
     setSchoolFinishYear("");
   };
   const handleRemoveEducation = (indexToRemove) => {
-    const newEducationList = educationList.filter((_, index) => index !== indexToRemove);
+    const newEducationList = educationList.filter(
+      (_, index) => index !== indexToRemove
+    );
     setEducationList(newEducationList);
   };
 
@@ -100,7 +115,9 @@ const Editor = () => {
     setExperienceTo("");
   };
   const handleRemoveExperience = (indexToRemove) => {
-    const newExperienceList = experienceList.filter((_, index) => index !== indexToRemove);
+    const newExperienceList = experienceList.filter(
+      (_, index) => index !== indexToRemove
+    );
     setExperienceList(newExperienceList);
   };
   // language
@@ -111,10 +128,11 @@ const Editor = () => {
   };
 
   const handleRemoveLanguage = (indexToRemove) => {
-    const newLanguageList = languageList.filter((_, index) => index !== indexToRemove);
+    const newLanguageList = languageList.filter(
+      (_, index) => index !== indexToRemove
+    );
     setLanguageList(newLanguageList);
   };
-
 
   //skill
   const handleAddSkill = () => {
@@ -123,7 +141,9 @@ const Editor = () => {
     setSkill("");
   };
   const handleRemoveSkill = (indexToRemove) => {
-    const newSkillList = skillList.filter((_, index) => index !== indexToRemove);
+    const newSkillList = skillList.filter(
+      (_, index) => index !== indexToRemove
+    );
     setSkillList(newSkillList);
   };
   //project
@@ -136,7 +156,9 @@ const Editor = () => {
   };
 
   const handleRemoveProject = (indexToRemove) => {
-    const newProjectList = projectList.filter((_, index) => index !== indexToRemove);
+    const newProjectList = projectList.filter(
+      (_, index) => index !== indexToRemove
+    );
     setProjectList(newProjectList);
   };
 
@@ -163,262 +185,428 @@ const Editor = () => {
   };
   return (
     <>
-
       <div className={classes.main}>
         <div className={classes.form}>
-          <div className={classes["tab"]}>
-            <CardTab style="background-color:red;">
-              <div className={classes["tab-space"]}>
-                <TabSwitcher tabId={1}>
-                  <div className={classes["tab-p"]}>Personal Data</div>
-                </TabSwitcher>
-                <TabSwitcher tabId={2}>
-                  <div className={classes["tab-p"]}>Education</div>
-                </TabSwitcher>
-                <TabSwitcher tabId={3}>
-                  <div className={classes["tab-p"]}>Experience / Skill</div>
-                </TabSwitcher>
-                <TabSwitcher tabId={4}>
-                  <div className={classes["tab-p"]}>Project</div>
-                </TabSwitcher>
-                <TabSwitcher tabId={5}>
-                  <div className={classes["tab-p"]}>Summarize</div>
-                </TabSwitcher>
-                <TabSwitcher tabId={6}>
-                  <div className={classes["tab-p"]}>PDF</div>
-                </TabSwitcher>
-              </div>
-              <div className={classes["tab-p"]}>
-                <TabContent id={1}>
-                  <label
-                    htmlFor="file-upload"
-                    className={classes["custom-file-upload"]}
-                  >
-                    Upload Image
-                  </label>
-                  <input
-                    id="file-upload"
-                    type="file"
-                    multiple
-                    accept="image/*"
-                    onChange={onImageChange}
-                  />
-                  <label htmlFor="name">Name</label>
-                  <input type="text" id="name" onChange={e => setName(e.target.value)}></input>
-                  <label htmlFor="surname">Surname</label>
-                  <input type="text" onChange={e => setSurname(e.target.value)}></input>
-                  <label>Phone Number</label>
-                  <input type="text" onChange={e => setPhoneNumber(e.target.value)}></input>
-                  <label>Email</label>
-                  <input type="text" onChange={e => setEmail(e.target.value)}></input>
+          <div>
+            <CardTab>
+              <div className={classes["tab-card"]}>
+                <div className={classes["tab-switcher"]}>
+                  <TabSwitcher tabId={1} icon={"fas fa-user"}>
+                    <div className={classes["tab-p"]}>Personal</div>
+                    {/* <a href="" >sadsad</a> */}
+                  </TabSwitcher>
+                  <TabSwitcher tabId={2} icon={"fas fa-school"}>
+                    <div className={classes["tab-p"]}>Education</div>
+                  </TabSwitcher>
+                  <TabSwitcher tabId={3} icon={"fas fa-briefcase"}>
+                    <div className={classes["tab-p"]}>Experience</div>
+                  </TabSwitcher>
+                  <TabSwitcher tabId={4} icon={"fa fa-fighter-jet"}>
+                    <div className={classes["tab-p"]}>Project</div>
+                  </TabSwitcher>
+                  <TabSwitcher tabId={5} icon={"fas fa-globe"}>
+                    <div className={classes["tab-p"]}>Sum</div>
+                  </TabSwitcher>
+                  <TabSwitcher tabId={6} icon={"fas fa-print"}>
+                    <div className={classes["tab-p"]}>PDF</div>
+                  </TabSwitcher>
+                </div>
+                <div className={classes["tab-content"]}>
+                  <TabContent id={1}>
+                    <h1>Personal Info</h1>
+                    <div className={classes["tab-content-forms"]}>
+                      {/* <div className={classes["tab-content-form"]}>
+                        <label
+                          htmlFor="file-upload"
+                          className={classes["custom-file-upload"]}
+                        >
+                          Upload Image
+                        </label>
+                        <input
+                          id="file-upload"
+                          type="file"
+                          multiple
+                          accept="image/*"
+                          onChange={onImageChange}
+                        />
+                      </div> */}
 
-                  <label>location</label>
-                  <input type="text" onChange={e => setLocation(e.target.value)}></input>
-                  <label>github</label>
-                  <input type="text" onChange={e => setGithub(e.target.value)}></input>
-                  <label>linkedin</label>
-                  <input type="text" onChange={e => setLinkedin(e.target.value)}></input>
-                  <label>EmprofileDescriptionail</label>
-                  <input type="text" onChange={e => setProfileDescription(e.target.value)}></input>
-                  <label>aboutme</label>
-                  <input type="text" onChange={e => setAboutme(e.target.value)}></input>
-                  <div >
-                    <div>
-                      <label htmlFor="languageInput">Language:</label>
-                      <input
-                        id="languageInput"
-                        type="text"
-                        value={language}
-                        onChange={(event) => setLanguage(event.target.value)}
-                      />
+                      <div className={classes["tab-content-form"]}>
+                        <label htmlFor="name">Name</label>
+                        <input
+                          type="text"
+                          id="name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                        ></input>
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <label htmlFor="surname">Surname</label>
+                        <input
+                          type="text"
+                          value={surname}
+                          onChange={(e) => setSurname(e.target.value)}
+                        ></input>
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <label>Phone Number</label>
+                        <input
+                          type="text"
+                          value={phoneNumber}
+                          onChange={(e) => setPhoneNumber(e.target.value)}
+                        ></input>
+                      </div>
+
+                      <div className={classes["tab-content-form"]}>
+                        <label>Email</label>
+                        <input
+                          type="text"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        ></input>
+                      </div>
+                      <div className={classes["tab-content-form-33"]}>
+                        <label>Location</label>
+                        <input
+                          type="text"
+                          value={location}
+                          onChange={(e) => setLocation(e.target.value)}
+                        ></input>
+                      </div>
+
+                      <div className={classes["tab-content-form-33"]}>
+                        <div className={classes["is-active"]}>
+                          <label>Github</label>
+                          <input
+                            className={classes["checkbox"]}
+                            type="checkbox"
+                            onClick={handleClick}
+                          ></input>
+                        </div>
+                        <input
+                          type="text"
+                          value={github}
+                          onChange={(e) => setGithub(e.target.value)}
+                        ></input>
+                        {/* <a onClick={handleClick}>Visible?</a> */}
+                      </div>
+
+                      <div className={classes["tab-content-form-33"]}>
+                        <label>Linkedin</label>
+                        <input
+                          type="text"
+                          value={linkedin}
+                          onChange={(e) => setLinkedin(e.target.value)}
+                        ></input>
+                      </div>
                     </div>
-                    <button onClick={handleAddLanguage}>Add next language</button>
+
+                    <label>Profile description</label>
+                    <textarea
+                      rows="5"
+                      type="text"
+                      value={profileDescription}
+                      onChange={(e) => setProfileDescription(e.target.value)}
+                    ></textarea>
+                    <label>About me </label>
+                    <textarea
+                      rows="5"
+                      type="text"
+                      value={aboutme}
+                      onChange={(e) => setAboutme(e.target.value)}
+                    ></textarea>
+                    <div className={classes["tab-content-form-language"]}>
+                      <label htmlFor="languageInput">Languages:</label>
+                      <div className={classes["tab-content-form-language-add"]}>
+                        <input
+                          className={
+                            classes["tab-content-form-language-add-input"]
+                          }
+                          id="languageInput"
+                          type="text"
+                          value={language}
+                          onChange={(event) => setLanguage(event.target.value)}
+                        />
+                        <button onClick={handleAddLanguage}>+</button>
+                      </div>
+
+                      <div className={classes.card}>
+                        {/* <h4>Language List</h4> */}
+                        {languageList.map((language, index) => (
+                          <ul className={classes["card-list-elem"]} key={index}>
+                            <p>{language.language}</p>
+                            <button
+                              className={classes["remove-button"]}
+                              onClick={() => handleRemoveLanguage(index)}
+                            >
+                              -
+                            </button>
+                          </ul>
+                        ))}
+                      </div>
+                    </div>
+                  </TabContent>
+                  <TabContent id={2}>
+                    {/* <div className={classes["tab-content-forms"]}> */}
+                    <h1>Educations</h1>
+                    <div
+                      className={`${classes["tab-content-forms"]} ${classes["border-bottom"]}`}
+                    >
+                      <div className={classes["tab-content-form"]}>
+                        <div>
+                          <label htmlFor="schoolNameInput">School Name:</label>
+                          <input
+                            id="schoolNameInput"
+                            type="text"
+                            value={schoolName}
+                            onChange={(event) =>
+                              setSchoolName(event.target.value)
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <div>
+                          <label htmlFor="schoolCityInput">School City:</label>
+                          <input
+                            id="schoolCityInput"
+                            type="text"
+                            value={schoolCity}
+                            onChange={(event) =>
+                              setSchoolCity(event.target.value)
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <div>
+                          <label htmlFor="schoolStartYearInput">
+                            Start Year:
+                          </label>
+                          <input
+                            id="schoolStartYearInput"
+                            type="date"
+                            value={schoolStartYear}
+                            onChange={(event) =>
+                              setSchoolStartYear(event.target.value)
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <div>
+                          <label htmlFor="schoolFinishYearInput">
+                            Finish Year:
+                          </label>
+                          <input
+                            id="schoolFinishYearInput"
+                            type="date"
+                            value={schoolFinishYear}
+                            onChange={(event) =>
+                              setSchoolFinishYear(event.target.value)
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div className={classes["to-right"]}>
+                        <button onClick={handleAddEducation}>+</button>
+                      </div>
+                    </div>
+
                     <div className={classes.card}>
-                      <h4>Language List</h4>
-                      {languageList.map((language, index) => (
+                      {educationList.map((todo, index) => (
                         <ul className={classes["card-list-elem"]} key={index}>
-                          <p>{language.language}</p>
-                          <button className={classes["remove-button"]} onClick={() => handleRemoveLanguage(index)}>Remove</button>
+                          <p>{todo.schoolName}</p>
+                          <p>{todo.schoolCity}</p>
+                          <p>{todo.schoolStartYear}</p>
+                          <p>{todo.schoolFinishYear}</p>
+                          <button
+                            className={classes["remove-button"]}
+                            onClick={() => handleRemoveEducation(index)}
+                          >
+                            -
+                          </button>
                         </ul>
                       ))}
                     </div>
-                  </div>
-                </TabContent>
-                <TabContent id={2}>
-                  <div>
-                    <label htmlFor="schoolNameInput">School Name:</label>
-                    <input
-                      id="schoolNameInput"
-                      type="text"
-                      value={schoolName}
-                      onChange={(event) => setSchoolName(event.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="schoolCityInput">School City:</label>
-                    <input
-                      id="schoolCityInput"
-                      type="text"
-                      value={schoolCity}
-                      onChange={(event) => setSchoolCity(event.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="schoolStartYearInput">Start Year:</label>
-                    <input
-                      id="schoolStartYearInput"
-                      type="date"
-                      value={schoolStartYear}
-                      onChange={(event) => setSchoolStartYear(event.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="schoolFinishYearInput">Finish Year:</label>
-                    <input
-                      id="schoolFinishYearInput"
-                      type="date"
-                      value={schoolFinishYear}
-                      onChange={(event) => setSchoolFinishYear(event.target.value)}
-                    />
-                  </div>
-                  <button onClick={handleAddEducation}>Add next education profile</button>
-                  <div className={classes.card}>
-                    <h4>Education List</h4>
-                    {educationList.map((todo, index) => (
-                      <ul className={classes["card-list-elem"]} key={index}>
-                        <p>{todo.schoolName}</p>
-                        <p>{todo.schoolCity}</p>
-                        <p>{todo.schoolStartYear}</p>
-                        <p>{todo.schoolFinishYear}</p>
-                        <button className={classes["remove-button"]} onClick={() => handleRemoveEducation(index)}>Remove</button>
-                      </ul>
-                    ))}
-                  </div>
-                </TabContent>
-                <TabContent id={3}>
-                  <div>
-                    <label >companyName</label>
-                    <input
-                      type="text"
-                      value={companyName}
-                      onChange={(event) => setCompanyName(event.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label >companyCity</label>
-                    <input
-                      type="text"
-                      value={companyCity}
-                      onChange={(event) => setCompanyCity(event.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label >experienceFrom</label>
-                    <input
-                      type="date"
-                      value={experienceFrom}
-                      onChange={(event) => setExperienceFrom(event.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label >experienceTo</label>
-                    <input
-                      type="date"
-                      value={experienceTo}
-                      onChange={(event) => setExperienceTo(event.target.value)}
-                    />
-                  </div>
-                  <button onClick={handleAddExperience}>Add next experience</button>
-                  <div className={classes.card}>
-                    <h4>Education List</h4>
-                    {experienceList.map((todo, index) => (
-                      <ul className={classes["card-list-elem"]} key={index}>
-                        <p>{todo.companyName}</p>
-                        <p>{todo.companyCity}</p>
-                        <p>{todo.experienceFrom}</p>
-                        <p>{todo.experienceTo}</p>
-                        <button className={classes["remove-button"]} onClick={() => handleRemoveExperience(index)}>Remove</button>
-                      </ul>
-                    ))}
-                  </div>
-                  <div>
-                    <label htmlFor="skillInput">Skill:</label>
-                    <input
-                      id="skillInput"
-                      type="text"
-                      value={skill}
-                      onChange={(event) => setSkill(event.target.value)}
-                    />
-                  </div>
-                  <button onClick={handleAddSkill}>Add next skill</button>
-                  <div className={classes.card}>
-                    <h4>Skill list</h4>
-                    {skillList.map((todo, index) => (
-                      <ul className={classes["card-list-elem"]} key={index}>
-                        <p>{todo.skill}</p>
-                        <button className={classes["remove-button"]} onClick={() => handleRemoveSkill(index)}>Remove</button>
-                      </ul>
-                    ))}
-                  </div>
-                </TabContent>
-                <TabContent id={4}>
-                  <div>
-                    <label htmlFor="projectNameInput">Project Name:</label>
-                    <input
-                      id="projectNameInput"
-                      type="text"
-                      value={projectName}
-                      onChange={(event) => setProjectName(event.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="projectLinkInput">Project Link:</label>
-                    <input
-                      id="projectLinkInput"
-                      type="text"
-                      value={projectLink}
-                      onChange={(event) => setProjectLink(event.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="projectDescriptionInput">Project Description:</label>
-                    <input
-                      id="projectDescriptionInput"
-                      type="text"
-                      value={projectDescription}
-                      onChange={(event) => setProjectDescription(event.target.value)}
-                    />
-                  </div>
-                  <button onClick={handleAddProject}>Add</button>
-                  <div className={classes.card}>
-                    <h4>Project list</h4>
-                    {projectList.map((todo, index) => (
-                      <ul className={classes["card-list-elem"]} key={index}>
-                        <p>{todo.projectName}</p>
-                        <p>{todo.projectLink}</p>
-                        <p>{todo.projectDescription}</p>
-                        <button className={classes["remove-button"]} onClick={() => handleRemoveProject(index)}>Remove</button>
-                      </ul>
-                    ))}
-                  </div>
+                  </TabContent>
+                  <TabContent id={3}>
+                    <h1>Experience</h1>
+                    <div
+                      className={`${classes["tab-content-forms"]} ${classes["border-bottom"]}`}
+                    >
+                      <div className={classes["tab-content-form"]}>
+                        <label>Conpany name</label>
+                        <input
+                          type="text"
+                          value={companyName}
+                          onChange={(event) =>
+                            setCompanyName(event.target.value)
+                          }
+                        />
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <label>Company city</label>
+                        <input
+                          type="text"
+                          value={companyCity}
+                          onChange={(event) =>
+                            setCompanyCity(event.target.value)
+                          }
+                        />
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <label>Experience from</label>
+                        <input
+                          type="date"
+                          value={experienceFrom}
+                          onChange={(event) =>
+                            setExperienceFrom(event.target.value)
+                          }
+                        />
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <label>Experince to</label>
+                        <input
+                          type="date"
+                          value={experienceTo}
+                          onChange={(event) =>
+                            setExperienceTo(event.target.value)
+                          }
+                        />
+                      </div>
+                      <button
+                        className={classes["to-right"]}
+                        onClick={handleAddExperience}
+                      >
+                        Add
+                      </button>
+                    </div>
+                    <div className={classes.card}>
+                      {experienceList.map((todo, index) => (
+                        <ul className={classes["card-list-elem"]} key={index}>
+                          <p>{todo.companyName}</p>
+                          <p>{todo.companyCity}</p>
+                          <p>{todo.experienceFrom}</p>
+                          <p>{todo.experienceTo}</p>
+                          <button
+                            className={classes["remove-button"]}
+                            onClick={() => handleRemoveExperience(index)}
+                          >
+                            -
+                          </button>
+                        </ul>
+                      ))}
+                    </div>
+                    <div className={classes["tab-content-form-language"]}>
+                      <h1>Skills</h1>
+                      <div className={classes["tab-content-form-language-add"]}>
+                        <input
+                          className={
+                            classes["tab-content-form-language-add-input"]
+                          }
+                          id="languageInput"
+                          type="text"
+                          value={skill}
+                          onChange={(event) => setSkill(event.target.value)}
+                        />
+                        <button onClick={handleAddSkill}>+</button>
+                      </div>
 
+                      <div className={classes.card}>
+                        {/* <h4>Language List</h4> */}
+                        {skillList.map((todo, index) => (
+                          <ul className={classes["card-list-elem"]} key={index}>
+                            <p>{todo.skill}</p>
+                            <button
+                              className={classes["remove-button"]}
+                              onClick={() => handleRemoveSkill(index)}
+                            >
+                              -
+                            </button>
+                          </ul>
+                        ))}
+                      </div>
+                    </div>
+                  </TabContent>
+                  <TabContent id={4}>
+                    <h1>Projects</h1>
+                    <div
+                      className={`${classes["tab-content-forms"]} ${classes["border-bottom"]}`}
+                    >
+                      <div className={classes["tab-content-form"]}>
+                        <label htmlFor="projectNameInput">Project Name:</label>
+                        <input
+                          id="projectNameInput"
+                          type="text"
+                          value={projectName}
+                          onChange={(event) =>
+                            setProjectName(event.target.value)
+                          }
+                        />
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <label htmlFor="projectLinkInput">Project Link:</label>
+                        <input
+                          id="projectLinkInput"
+                          type="text"
+                          value={projectLink}
+                          onChange={(event) =>
+                            setProjectLink(event.target.value)
+                          }
+                        />
+                      </div>
+                      <div className={classes["tab-content-form-100"]}>
+                        <label htmlFor="projectDescriptionInput">
+                          Project Description:
+                        </label>
+                        <textarea
+                          id="projectDescriptionInput"
+                          type="text"
+                          value={projectDescription}
+                          onChange={(event) =>
+                            setProjectDescription(event.target.value)
+                          }
+                        />
+                      </div>
+                      <div className={classes["to-right"]}>
+                        <button onClick={handleAddProject}>+</button>
+                      </div>
+                    </div>
+                    <div className={classes.card}>
+                      {projectList.map((todo, index) => (
+                        <ul className={classes["card-list-elem"]} key={index}>
+                          <p>{todo.projectName}</p>
+                          <p>{todo.projectLink}</p>
+                          <p>{todo.projectDescription}</p>
+                          <button
+                            className={classes["remove-button"]}
+                            onClick={() => handleRemoveProject(index)}
+                          >
+                            -
+                          </button>
+                        </ul>
+                      ))}
+                    </div>
+                  </TabContent>
+                  <TabContent id={5}>
+                    <h1>Summarize</h1>
 
-                </TabContent>
-                <TabContent id={5}>
-                  <div>
-                    <label >Clause:</label>
-                    <textarea
-                      cols="100" rows="5"
-                      type="text"
-                      value={clause}
-                      onChange={(event) => setClause(event.target.value)}
-                    />
-                  </div>
-                </TabContent>
-                <TabContent id={6}>
-
-                  <button onClick={handleGeneratePdf}>PDF</button>
-                </TabContent>
+                    <div>
+                      <label>Clause:</label>
+                      <textarea
+                        cols="100"
+                        rows="5"
+                        type="text"
+                        value={clause}
+                        onChange={(event) => setClause(event.target.value)}
+                      />
+                    </div>
+                  </TabContent>
+                  <TabContent id={6}>
+                    <button onClick={handleGeneratePdf}>PDF</button>
+                  </TabContent>
+                </div>
               </div>
             </CardTab>
           </div>
@@ -465,7 +653,13 @@ const Editor = () => {
                   />
                   <p className={classes["personal-data"]}>{linkedin}</p>
                 </li>
-                <li className={classes["descontent-ul-li"]}>
+                <li
+                  className={
+                    isGitHub
+                      ? classes["descontent-ul-li"]
+                      : classes["display-none"]
+                  }
+                >
                   <img
                     src={GithubIcon}
                     alt="GithubIcon"
@@ -515,8 +709,9 @@ const Editor = () => {
                     <p className={classes["p-year"]}>{todo.schoolStartYear}</p>
                     <p className={classes["p-year"]}>{todo.schoolFinishYear}</p>
                   </div>
-                  <p className={classes["width70"]}>{todo.schoolName}, {todo.schoolCity}</p>
-
+                  <p className={classes["width70"]}>
+                    {todo.schoolName}, {todo.schoolCity}
+                  </p>
                 </ul>
               ))}
             </div>
@@ -529,8 +724,9 @@ const Editor = () => {
                     <p className={classes["p-year"]}>{todo.experienceFrom}</p>
                     <p className={classes["p-year"]}>{todo.experienceTo}</p>
                   </div>
-                  <p className={classes["width70"]}>{todo.companyName}, {todo.companyCity}</p>
-
+                  <p className={classes["width70"]}>
+                    {todo.companyName}, {todo.companyCity}
+                  </p>
                 </ul>
               ))}
             </div>
@@ -560,6 +756,6 @@ const Editor = () => {
       </div>
     </>
   );
-}
+};
 
-export default Editor
+export default Editor;
