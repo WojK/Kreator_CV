@@ -36,6 +36,10 @@
   width: 50%;
 }
 
+.button-create-cv:hover {
+  background: #72aae1;
+  color: white;
+}
 .content-text {
   font-size: 3vh;
   font-family: "Alkatra";

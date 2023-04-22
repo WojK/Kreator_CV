@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import cvnavbar from "../../assets/images/cv-navbar.png";
 
-
 const Menu = () => {
   const navigate = useNavigate();
 
@@ -61,12 +60,9 @@ const Navbar = () => {
         }}
       >
         <p>
-          <img
-            src={cvnavbar}
-            className="navbar-icon"
-            alt="cv-navbar"
-          />&nbsp;
-          CV CREATOR</p>
+          <img src={cvnavbar} className="navbar-icon" alt="cv-navbar" />
+          &nbsp; CV CREATOR
+        </p>
       </div>
       <div className="cv__navbar-links">
         <div className="cv__navbar-links_container">
@@ -79,16 +75,12 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={(e) => {
-                  navigate("/login");
+                  navigate("/my_account");
                 }}
               >
                 My account
               </button>
-              <button
-                type="button"
-              >
-                Log out
-              </button>
+              <button type="button">Log out</button>
             </div>
           </div>
         )}
@@ -146,11 +138,7 @@ const Navbar = () => {
                   >
                     My account
                   </button>
-                  <button
-                    type="button"
-                  >
-                    Log out
-                  </button>
+                  <button type="button">Log out</button>
                 </div>
               </div>
             )}

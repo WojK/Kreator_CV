@@ -7,7 +7,8 @@ import ChooseTemplatePage from "./pages/ChooseTemplatePage";
 import ChooseTemplateStylesPage from "./pages/ChooseTemplateStylesPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
-import AdviceArticle from "./components/advicePage/AdviceArticle"
+import AdviceArticle from "./components/advicePage/AdviceArticle";
+import MyAccount from "./pages/MyAccount";
 import "./App.css";
 import {
   Route,
@@ -20,16 +21,20 @@ const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/" element={<MainLayoutPage />}>
       <Route path="creator" element={<ChooseTemplatePage />} />,
-      <Route path="creator-template-style" element={<ChooseTemplateStylesPage />} />,
+      <Route
+        path="creator-template-style"
+        element={<ChooseTemplateStylesPage />}
+      />
+      ,
       <Route path="advices" element={<AdvicesPage />} />,
       <Route path="editor" element={<Editor />} />,
       <Route path="advices/:adviceId" element={<AdviceArticle />} />,
       <Route path="about_us" element={<AboutUsPage />}></Route>,
-      <Route path="my_account"></Route>,
+      <Route path="my_account" element={<MyAccount />}></Route>,
       <Route path="editor" element={<Editor />}></Route>,
     </Route>,
-      <Route path="register" element={<RegisterPage />}></Route>,
-      <Route path="login" element={<LoginPage />}></Route>,
+    <Route path="register" element={<RegisterPage />}></Route>,
+    <Route path="login" element={<LoginPage />}></Route>,
   ])
 );
 
