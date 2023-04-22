@@ -1,5 +1,5 @@
 import AdviceThumbnail from "../components/advicePage/AdviceThumbnail";
-import classes from "./advicepage.module.css";
+import classes from "./AdvicePage.module.css";
 
 const AdvicesPage = () => {
   return (
