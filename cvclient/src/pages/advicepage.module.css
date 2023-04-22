@@ -1,0 +1,25 @@
+.column {
+  float: left;
+  width: 33.33%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.graybackground {
+  background-color: #aaa;
+}
+
+.greenbackground {
+  background-color: green;
+}
+
+.orangebackground {
+  background-color: orange;
+}

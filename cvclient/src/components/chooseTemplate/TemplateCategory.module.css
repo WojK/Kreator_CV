@@ -1,0 +1,32 @@
+.template-div {
+  width: 25%;
+  height: 20vw;
+  background-color: #3470a4;
+  color: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
+}
+
+.template-div h2 {
+  padding-top: 12%;
+  margin-bottom: 8%;
+}
+
+.title {
+  font-family: "Roboto";
+  font-size: 2vw;
+  font-weight: 400;
+}
+
+.description-div {
+  font-family: "Roboto";
+  width: 80%;
+  height: 40vh;
+  font-size: 0.8vw;
+  font-weight: 500;
+  text-align: center;
+}

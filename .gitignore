@@ -6,3 +6,6 @@
 /CvApi/obj
 /cvclient/node_modules
 /CvApi/CvApi.csproj.user
+/CvApi/bin/Debug
+/CvApi/CvApi.csproj.user
+/cvclient/.vscode
