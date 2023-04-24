@@ -1,0 +1,23 @@
+/* .forms-left-button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  display: flex;
+}
+.forms-left-button i {
+  margin-right: 10px;
+}
+ */
+ .icon-hover{
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.icon-hover:hover {
+  background-color: #fff;
+  border-color: transparent;
+  color: #444;
+}

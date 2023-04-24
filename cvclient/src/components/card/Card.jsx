@@ -1,11 +1,12 @@
 import React from "react";
+import classes from "./Card.module.css";
 
 const TabContext = React.createContext();
 
 function CardTab({ children }) {
   const [activeTab, setActiveTab] = React.useState(1);
 
-  const setTab = tab => {
+  const setTab = (tab) => {
     setActiveTab(tab);
   };
 
@@ -19,7 +20,8 @@ function CardTab({ children }) {
 function TabSwitcher({
   children,
   tabId,
-  activeClass = "border-b-2 border-gray-600"
+  icon,
+  activeClass = "border-b-2 border-gray-600",
 }) {
   const { activeTab, setTab } = React.useContext(TabContext);
 
@@ -28,9 +30,10 @@ function TabSwitcher({
   const className = ["mr-2"];
   if (activeTab === tabId) className.push(activeClass);
   return (
-    <button className={className.join(" ")} onClick={onClick}>
-      {children}
-    </button>
+    <a onClick={onClick} 
+    className={`${classes["icon-hover"]} ${classes["border-bottom"]}`}>
+      <i class={icon} onClick={onClick}></i> {children}
+    </a>
   );
 }
 
