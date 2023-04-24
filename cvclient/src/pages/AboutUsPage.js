@@ -16,7 +16,7 @@ const AboutUsPage = () => {
             <ul className={classes.members}>
               <li>Wojciech Kudełko</li>
               <li>Michał Żdanuk</li>
-              <li>Miłosz Moroz (opierdala sie)</li>
+              <li>Miłosz Moroz</li>
               <li>Kamil Smołecki</li>
               <li>Jakub Szczygielski</li>
             </ul>

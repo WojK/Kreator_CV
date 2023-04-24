@@ -9,14 +9,14 @@ const ChooseTemplateStylesPage = () => {
   const navigate = useNavigate();
 
   const studentsTemplates = [
-    { img: s1, id: "s1", des: "Zajebisty opis" },
-    { img: s2, id: "s2", des: "Miłosz ty huju" },
+    { img: s1, id: "s1", des: "Opis" },
+    { img: s2, id: "s2", des: "Opis" },
   ];
 
   const generalsTemplates = [
-    { img: s1, id: "s1", des: "Zajebisty opis" },
-    { img: s2, id: "s2", des: "Miłosz ty huju" },
-    { img: s2, id: "s2", des: "Miłosz ty huju" },
+    { img: s1, id: "s1", des: "Opis" },
+    { img: s2, id: "s2", des: "Opis" },
+    { img: s2, id: "s2", des: "Opis" },
   ];
 
   let content, title;
