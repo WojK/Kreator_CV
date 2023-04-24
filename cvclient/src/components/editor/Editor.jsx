@@ -22,9 +22,6 @@ const Editor = () => {
   const [phoneNumber, setPhoneNumber] = useState("+48 582 293 211");
 
   //personal desc
-
-  const [isGitHub, setisGitHub] = useState(false);
-
   const [location, setLocation] = useState("Warsaw");
   const [github, setGithub] = useState("http://github.com/tomcruse");
   const [linkedin, setLinkedin] = useState("http://linkedin.com/tomcruse");
@@ -72,12 +69,6 @@ const Editor = () => {
   const [projectDescription, setProjectDescription] = useState(
     "Kreator Cv to 5 osobowy projekt zespołowy majacy na celu..."
   );
-
-  // ---------hanlers------------
-  const handleClick = (event) => {
-    // 👇️ toggle isActive state on click
-    setisGitHub((current) => !current);
-  };
 
   // education
   const handleAddEducation = () => {
@@ -168,6 +159,29 @@ const Editor = () => {
     setImage(URL.createObjectURL(event.target.files[0]));
   };
 
+
+  const [isGitHub, setIsGitHub] = useState(false);
+  const handleGitHub = (event) => {
+    setIsGitHub((current) => !current);
+  };
+  const [isLinkedin, setIslinkedin] = useState(false);
+  const handleLinkedin = (event) => {
+    setIslinkedin((current) => !current);
+  };
+  const [isLocation, setIsLocation] = useState(false);
+  const handleLocation = (event) => {
+    setIsLocation((current) => !current);
+  };
+  const [isEmail, setIsEmail] = useState(false);
+  const handleEmail = (event) => {
+    setIsEmail((current) => !current);
+  };
+  const [isPhoneNumber, setIsPhoneNumber] = useState(false);
+  const handlePhoneNumber = (event) => {
+    setIsPhoneNumber((current) => !current);
+  };
+
+
   const reportTemplateRef = useRef(null);
 
   const handleGeneratePdf = () => {
@@ -249,7 +263,16 @@ const Editor = () => {
                         ></input>
                       </div>
                       <div className={classes["tab-content-form"]}>
-                        <label>Phone Number</label>
+                        <div className={classes["is-active"]}>
+                          <label>Phone number</label>
+                          <input
+                            className={classes["checkbox"]}
+                            type="checkbox"
+                            autocomplete="off"
+                            value={isPhoneNumber}
+                            onClick={handlePhoneNumber}
+                          ></input>
+                        </div>
                         <input
                           type="text"
                           value={phoneNumber}
@@ -258,7 +281,16 @@ const Editor = () => {
                       </div>
 
                       <div className={classes["tab-content-form"]}>
-                        <label>Email</label>
+                        <div className={classes["is-active"]}>
+                          <label>Email</label>
+                          <input
+                            className={classes["checkbox"]}
+                            type="checkbox"
+                            autocomplete="off"
+                            value={isEmail}
+                            onClick={handleEmail}
+                          ></input>
+                        </div>
                         <input
                           type="text"
                           value={email}
@@ -266,7 +298,16 @@ const Editor = () => {
                         ></input>
                       </div>
                       <div className={classes["tab-content-form-33"]}>
-                        <label>Location</label>
+                        <div className={classes["is-active"]}>
+                          <label>Location</label>
+                          <input
+                            className={classes["checkbox"]}
+                            type="checkbox"
+                            autocomplete="off"
+                            value={isLocation}
+                            onClick={handleLocation}
+                          ></input>
+                        </div>
                         <input
                           type="text"
                           value={location}
@@ -280,7 +321,11 @@ const Editor = () => {
                           <input
                             className={classes["checkbox"]}
                             type="checkbox"
-                            onClick={handleClick}
+                            autocomplete="off"
+                            value={isGitHub}
+
+                            onClick={handleGitHub}
+                            valur={isGitHub}
                           ></input>
                         </div>
                         <input
@@ -288,11 +333,18 @@ const Editor = () => {
                           value={github}
                           onChange={(e) => setGithub(e.target.value)}
                         ></input>
-                        {/* <a onClick={handleClick}>Visible?</a> */}
                       </div>
-
                       <div className={classes["tab-content-form-33"]}>
-                        <label>Linkedin</label>
+                        <div className={classes["is-active"]}>
+                          <label>Linkedin</label>
+                          <input
+                            className={classes["checkbox"]}
+                            type="checkbox"
+                            autocomplete="off"
+                            value={isLinkedin}
+                            onClick={handleLinkedin}
+                          ></input>
+                        </div>
                         <input
                           type="text"
                           value={linkedin}
@@ -625,7 +677,11 @@ const Editor = () => {
               </h2>
               <h2 className={classes.role}>{role}</h2>
               <ul className={classes["descontent-ul"]}>
-                <li className={classes["descontent-ul-li"]}>
+                <li className={
+                  isPhoneNumber
+                    ? classes["descontent-ul-li"]
+                    : classes["display-none"]
+                }>
                   <img
                     src={TelephoneIcon}
                     alt="TelephoneIcon"
@@ -633,11 +689,19 @@ const Editor = () => {
                   />
                   <p className={classes["personal-data"]}>{phoneNumber}</p>
                 </li>
-                <li className={classes["descontent-ul-li"]}>
+                <li className={
+                  isEmail
+                    ? classes["descontent-ul-li"]
+                    : classes["display-none"]
+                }>
                   <img src={MailIcon} alt="MailIcon" className={classes.icon} />
                   <p className={classes["personal-data"]}>{email}</p>
                 </li>
-                <li className={classes["descontent-ul-li"]}>
+                <li className={
+                  isLocation
+                    ? classes["descontent-ul-li"]
+                    : classes["display-none"]
+                }>
                   <img
                     src={LocationIcon}
                     alt="LocationIcon"
@@ -645,7 +709,7 @@ const Editor = () => {
                   />
                   <p className={classes["personal-data"]}>{location}</p>
                 </li>
-                <li className={classes["descontent-ul-li"]}>
+                <li className={isLinkedin ? classes["descontent-ul-li"] : classes["display-none"]}>
                   <img
                     src={LinkedinIcon}
                     alt="LinkedinIcon"
