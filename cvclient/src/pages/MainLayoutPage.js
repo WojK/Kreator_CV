@@ -13,8 +13,6 @@ const MainLayoutPage = () => {
         <Navbar />
         <Outlet />
         {location.pathname === "/" ? <MainPageContent /> : ""}
-        {/* {location.pathname === "/my_account" ? <Login /> : ""}
-        {location.pathname === "/my_account" ? <Register /> : ""} */}
       </div>
       <Footer />
     </>

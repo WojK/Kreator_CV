@@ -9,13 +9,18 @@ const AdviceThumbnail = (props) => {
   const url = location.pathname + "/" + number;
 
   return (
-    <div onClick={(e) => {
-      navigate(url);
-    }} className={classes["advice-div"]}>
+    <div
+      onClick={(e) => {
+        navigate(url);
+      }}
+      className={classes["advice-div"]}
+    >
       <div className={classes["advice-content"]}>
         <img className={classes.adviceimg} src={advicePhoto} alt="CV" />
-        <h1 className={classes["advice-title"]}>{props.title}</h1>
-        <p className={classes["advice-date"]}>{props.date} {props.author}</p>
+        <p className={classes["advice-title"]}>{props.title}</p>
+        <p className={classes["advice-date"]}>
+          {props.date} {props.author}
+        </p>
         <p className={classes["advice-description"]}>
           {props.shortDescription}
         </p>
