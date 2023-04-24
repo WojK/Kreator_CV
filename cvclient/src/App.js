@@ -22,12 +22,17 @@ const router = createBrowserRouter(
     <Route path="/" element={<MainLayoutPage />}>
       <Route path="creator" element={<ChooseTemplatePage />} />,
       <Route
-        path="creator-template-style"
+        path="creator/:cvtemplate"
         element={<ChooseTemplateStylesPage />}
       />
       ,
+      {/* <Route
+        path="creator-template-style"
+        element={<ChooseTemplateStylesPage />}
+      />
+      , */}
       <Route path="advices" element={<AdvicesPage />} />,
-      <Route path="editor" element={<Editor />} />,
+      <Route path="editor/:templateid" element={<Editor />} />,
       <Route path="advices/:adviceId" element={<AdviceArticle />} />,
       <Route path="about_us" element={<AboutUsPage />}></Route>,
       <Route path="my_account" element={<MyAccount />}></Route>,

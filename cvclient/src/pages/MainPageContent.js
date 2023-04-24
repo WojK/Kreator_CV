@@ -1,5 +1,7 @@
 import classes from "./MainPageContent.module.css";
 import mainLayoutIcon from "../assets/images/mainLayoutIcon.png";
+import partners from "../assets/images/partners.png";
+
 import cv from "../assets/images/cv.png";
 import experience from "../assets/images/experience.png";
 import task from "../assets/images/task.png";
@@ -18,11 +20,7 @@ const MainPageContent = () => {
           <Button />
         </div>
 
-        <img
-          src={mainLayoutIcon}
-          className={classes["main-icon"]}
-          alt="main-icon"
-        />
+        <img src={partners} className={classes["main-icon"]} alt="main-icon" />
       </div>
 
       <div className={classes["middle-section-div"]}>

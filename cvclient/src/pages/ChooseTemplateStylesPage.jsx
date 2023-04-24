@@ -1,36 +1,64 @@
 import classes from "./ChooseTemplateStylesPage.module.css";
+import { useParams, useNavigate } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
-import image1 from "../assets/images/img1.jpg"
-import image2 from "../assets/images/img2.jpg"
-import image3 from "../assets/images/img3.jpg"
-import image4 from "../assets/images/img4.jpg"
-import ImageSlider from "../components/imageSlider/ImageSlider"
+import s1 from "../assets/images/examplecv.jpg";
+import s2 from "../assets/images/examplecv — kopia.jpg";
+
 const ChooseTemplateStylesPage = () => {
-  const slides = [
-    {
-      image: image1,
-      link: "/"
-    },
-    {
-      image: image2,
-      link: "/"
-    },
-    {
-      image: image3,
-      link: "/"
-    },
-    {
-      image: image4,
-      link: "/"
-    },
+  const { cvtemplate } = useParams();
+  const navigate = useNavigate();
+
+  const studentsTemplates = [
+    { img: s1, id: "s1", des: "Zajebisty opis" },
+    { img: s2, id: "s2", des: "Miłosz ty huju" },
   ];
 
+  const generalsTemplates = [
+    { img: s1, id: "s1", des: "Zajebisty opis" },
+    { img: s2, id: "s2", des: "Miłosz ty huju" },
+    { img: s2, id: "s2", des: "Miłosz ty huju" },
+  ];
+
+  let content, title;
+  if (cvtemplate === "student") {
+    title = "Student";
+    content = studentsTemplates.map(function (template) {
+      return (
+        <div
+          className={classes.template}
+          onClick={(e) => {
+            navigate(`/editor/${template.id}`);
+          }}
+        >
+          <img src={template.img} className={classes.img}></img>
+          <p className={classes.des}>{template.des}</p>
+        </div>
+      );
+    });
+  } else if (cvtemplate === "general") {
+    title = "General";
+    content = generalsTemplates.map(function (template) {
+      return (
+        <div
+          className={classes.template}
+          onClick={(e) => {
+            navigate(`/editor/${template.id}`);
+          }}
+        >
+          <img src={template.img} className={classes.img}></img>
+          <p className={classes.des}>{template.des}</p>
+        </div>
+      );
+    });
+  } else if (cvtemplate === "technical") {
+    title = "Technical";
+  }
+
   return (
-    <div>
-      <div className={classes["containerStyles"]}>
-        <ImageSlider slides={slides} />
-      </div>
-    </div>
+    <>
+      <h1 className={classes.header}>Choose Your {title} Template!</h1>
+      <div className={classes.container}>{content}</div>;
+    </>
   );
 };
 
