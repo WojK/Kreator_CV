@@ -6,6 +6,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+        - "5710:443"
+        - "5709:80"
   postgresql_database:
     image: postgres:latest
     container_name: webapiPostgrestTest_DB
