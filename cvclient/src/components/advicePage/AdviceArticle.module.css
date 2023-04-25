@@ -8,9 +8,11 @@
   padding-bottom: 2%;
   border: 4px solid #153c56;
   border-radius: 20px;
-  margin-top: 2%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-top: 3%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #3470A4;
+  box-shadow: 0px 14px 31px 3px rgba(66, 68, 90, 1);
 }
 
 .article-author {
@@ -19,29 +21,30 @@
 }
 
 .article-title {
-  font-size: 8vh;
+  font-size: 4vh;
   font-weight: bolder;
   font-family: "Roboto";
-  color: #153c56;
+  color: #9CC3EB;
   margin-bottom: 1%;
 }
 
 .article-text {
-  font-size: 3vh;
+  font-size: 2vh;
   font-family: "Alkatra";
+  color: #EEF3FF
 }
 
 .article-date {
-  font-size: 3vh;
+  font-size: 1.8vh;
   font-weight: bold;
   font-family: "Roboto";
-  color: #909396;
+  color: #0A2B3D;
 }
 
 .article-category {
-  font-size: 4vh;
+  font-size: 2vh;
   font-family: "Roboto";
   text-align: right;
   font-weight: bolder;
-  color: #909396;
+  color: #0A2B3D;
 }
