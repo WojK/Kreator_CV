@@ -103,3 +103,61 @@
 .submit-container{
     text-align: center;
 }
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Add semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.modal-content {
+  width: 400px;
+  height: 400px;
+  max-height: 100%;
+  border-radius: 15%;
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content p{
+  font-family: "Alkatra";
+  color: #0a2b3d;
+  font-size: 3vh;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.modal-content button{
+  margin-top: 2rem;
+  width: 50%;
+  text-align: center;
+  padding: 5px;
+  border-radius: 25px;
+  font-size: 3vh;
+  font-family: "Alkatra";
+  background-color: #0a2b3d;
+  color: #f7f7f7;
+  cursor: pointer;
+}
+
+.error-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: red;
+}

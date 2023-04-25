@@ -80,7 +80,7 @@ const Navbar = () => {
               >
                 My account
               </button>
-              <button type="button">Log out</button>
+              <button type="button" onClick={authCtx.logout}>Log out</button>
             </div>
           </div>
         )}
@@ -138,7 +138,7 @@ const Navbar = () => {
                   >
                     My account
                   </button>
-                  <button type="button">Log out</button>
+                  <button type="button" onClick={authCtx.logout}>Log out</button>
                 </div>
               </div>
             )}

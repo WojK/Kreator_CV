@@ -29,18 +29,18 @@ export const AuthContextProvider = (props) => {
 
   const logoutHandler = () => {
     setToken(null);
-    localStorage.removeItem("token");
+    localStorage.removeItem("tokenCreatorCV");
   };
 
   const loginHandler = (token) => {
     setToken(token);
-    localStorage.setItem("token", token);
+    localStorage.setItem("tokenCreatorCV", token);
   };
 
   const contextValue = {
     token: token,
-    //isLoggedIn: userIsLoggedIn,
-    isLoggedIn: true,
+    isLoggedIn: userIsLoggedIn,
+    // isLoggedIn: true,
     login: loginHandler,
     logout: logoutHandler,
   };
