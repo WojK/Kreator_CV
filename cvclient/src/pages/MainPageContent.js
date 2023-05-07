@@ -1,7 +1,5 @@
 import classes from "./MainPageContent.module.css";
-import mainLayoutIcon from "../assets/images/mainLayoutIcon.png";
 import partners from "../assets/images/partners.png";
-
 import cv from "../assets/images/cv.png";
 import experience from "../assets/images/experience.png";
 import task from "../assets/images/task.png";
@@ -9,6 +7,8 @@ import examplecv from "../assets/images/examplecv.jpg";
 import { useNavigate } from "react-router-dom";
 
 const MainPageContent = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className={classes["main-layout-div"]}>
@@ -33,6 +33,7 @@ const MainPageContent = () => {
         <div className={classes["row"]}>
           <div className={classes["column"]}>
             <Benefit
+              className={classes["margin-left"]}
               img={cv}
               content="Create a professional resume quickly and easily. All in a few quick steps in your browser."
             />
@@ -59,6 +60,9 @@ const MainPageContent = () => {
             className={classes["cv-example"]}
             src={examplecv}
             alt="cv-example"
+            onClick={(e) => {
+              navigate("/creator");
+            }}
           />
         </div>
 

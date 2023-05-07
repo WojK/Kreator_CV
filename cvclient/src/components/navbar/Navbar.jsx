@@ -59,7 +59,7 @@ const Navbar = () => {
           navigate("/");
         }}
       >
-        <p>
+        <p className="cv-creator-name">
           <img src={cvnavbar} className="navbar-icon" alt="cv-navbar" />
           &nbsp; CV CREATOR
         </p>
@@ -80,7 +80,9 @@ const Navbar = () => {
               >
                 My account
               </button>
-              <button type="button" onClick={authCtx.logout}>Log out</button>
+              <button type="button" onClick={authCtx.logout}>
+                Log out
+              </button>
             </div>
           </div>
         )}
@@ -138,7 +140,9 @@ const Navbar = () => {
                   >
                     My account
                   </button>
-                  <button type="button" onClick={authCtx.logout}>Log out</button>
+                  <button type="button" onClick={authCtx.logout}>
+                    Log out
+                  </button>
                 </div>
               </div>
             )}

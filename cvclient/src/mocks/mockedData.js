@@ -2,7 +2,7 @@ export const adviceArticles = [
   {
     id: 1,
     title: "What sections CV should cover?",
-    author: "WojtekKOX",
+    author: "Yesenia Wagner",
     text: "Have some extra space left in your resume? Add some of the optional resume sections! These sections are extra-helpful if you’re a recent graduate applying for your first job. Some possible sections include: Languages, Hobbies & Interests, Volunteer Experience, Certificates & Awards, Practical projects, Extracurriculars ",
     shortDescription:
       "No doubt that your CV should be well structured and clean. However, 80% people still miss some of the 'must-have' sections.",
@@ -22,7 +22,7 @@ export const adviceArticles = [
   {
     id: 3,
     title: "CV Tips for Job Hoppers",
-    author: "Wojtek KOX",
+    author: "Timothy Gonzalez",
     text: "Chopped and changed jobs throughout your working life? That's fine - we can present this in a positive way. Back in the day, it was unthinkable to move jobs or companies. If you were with a reputable organisation, you stayed there whether you liked it or not - working your way up the ladder until you reached the grand old age of 65 and retired with a handshake and a gold-plated carriage clock. How times have changed! The job market is so much more fluid nowadays, with job seekers no longer feeling the need to fester away in one company for the whole of their working lives. But what if you've gone to the other extreme, with roles all over the place and for short periods of time? You might be concerned that this could set you back when looking for a new role. If you've had a career that has included lots of different positions within a fairly short space of time, you'll probably be viewed as a job hopper. This is defined as someone who doesn't stay at the same company or in the same role for very long – normally less than two years. There are both positive and negative aspects to this.Hiring managers may be reluctant to recruit you, as they see job hoppers as not settling, getting bored quickly, and wanting to move on without giving each job a good go. It can also show a lack of loyalty and sticking power. If recruiters put you forward for a job, they want to know you'll have the staying power to last through the training and beyond. Companies want to invest in staff, so if you're shown to be a job hopper this can count against you.On the other hand, as a job hopper you can be seen as a proactive individual constantly on the lookout for new and exciting challenges. Once you've achieved all you believe you can in one role, you move onto the next. It also builds valuable skills such as adaptability. If you're used to performing well in new situations, you're likely to deal with stress more productively. This shows resilience, confidence, and an openness to change.There could be many valid reasons as to why you've changed roles frequently. Life can get in the way, for a start! Contract roles are often short and easily explained. You might have just started a position and found out you hate your new job - you're not going to waste time hanging around to find out if it gets any better. Personality clashes with yourline manager could mean that you find yourself in an awkward situation and feel it's time to move on quickly.",
     shortDescription:
       "Do you change your job frequently? Maybe you should change your attitude and stabilise your life.",
@@ -42,7 +42,7 @@ export const adviceArticles = [
   {
     id: 5,
     title: "What about employment gaps?",
-    author: "Arthur Shelby",
+    author: "Randy Watkins",
     text: "There’s nothing wrong with having employment gaps in your CV. There are a variety of reasons, both voluntary and involuntary, to take time off of work. If you don’t give an explanation for such a gap, though, then that’s going to be a red flag for the recruiter reading your CV. They might assume that you’re a job-hopper or that you were fired. So in between work experience, whenever you have a long employment gap, clear the air by briefly mentioning the reason behind it. Here are 2 practical examples of this:",
     shortDescription:
       "Does it matter if u have gaps in your employment history? Do you have to worry about being rejected?",
@@ -61,11 +61,11 @@ export const adviceArticles = [
   },
   {
     id: 7,
-    title: "Jak zostac koxem? zapytaj Wojtka :D",
-    author: "WojtekKOX",
-    text: "To bardzo proste wystarczy inspirować się Wojtkiem aka giga koxem. ",
-    shortDescription: "Krótki poradnik jak zostać giga-chadem",
-    category: "personal presence",
+    title: "Keep Your CV Under One Page!",
+    author: "Carlos Simmons",
+    text: "This one’s a classic - your CV should not be your life story. Aim for 1-page max, 2 if you have a decade’s worth of work experience. Having trouble fitting your CV on a single page? Here are some of our tips on how you can do this: Skip over jobs you’ve worked 10+ years ago. Don’t mention work experience that isn’t directly related to the position you’re applying for. E.g. Don’t mention your summer job as a cashier if you’re applying for a role as a software engineer. Use a one-page CV template to make it easier to stick to the limit. Stick to only the most relevant skills and experiences. Ask yourself: will this specific experience/skill help me do the job better? If the answer is “no,” you can safely skip it.",
+    shortDescription: "Short guide on preffered CV length",
+    category: "CV creation",
     date: "20.04.2023",
   },
   {

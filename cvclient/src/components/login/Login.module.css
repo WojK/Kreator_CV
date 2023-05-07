@@ -31,13 +31,13 @@
 }
 
 .input-box {
-  width: 40%;
+  width: 30%;
   min-height: 30%;
   padding-left: 10px;
   height: 50px;
-  border: 2px solid 2a5f8a;
+  border: 2px solid #2a5f8a;
   border-radius: 10px;
-  background-color: f7f7f7;
+  background-color: #f7f7f7;
   color: #070707;
   transition-duration: 0.5s;
   font-size: 1.5vh;
@@ -100,11 +100,11 @@
   cursor: pointer;
 }
 
-.submit-container{
-    text-align: center;
+.submit-container {
+  text-align: center;
 }
 
-.error-text{
+.error-text {
   display: flex;
   align-items: center;
   justify-content: center;

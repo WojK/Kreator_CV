@@ -1,20 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@500&display=swap");
 
+.row {
+  margin-left: 12%;
+}
+
 .column {
   float: left;
-  width: 33%;
-  padding-left: 2%;
-  padding-right: 2%;
+  width: 20%;
+  margin-left: 5%;
+  margin-right: 5%;
   padding-top: 2%;
   text-align: center;
 }
-.column2 {
-  float: left;
-  width: 50%;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-top: 2%;
-  /* margin-left: 4%; */
+
+.margin-left {
+  margin-left: 20%;
 }
 
 .row:after {
@@ -26,14 +26,14 @@
   padding: 1.5%;
   border-radius: 25px;
   color: #eef3ff;
-  font-size: 3vh;
+  font-size: 2vh;
   border: 0.2px solid #eef3ff;
   font-weight: bold;
   background-color: #153c56;
   cursor: pointer;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
   text-shadow: 2px 2px 4px #141414;
-  width: 50%;
+  width: 40%;
 }
 
 .button-create-cv:hover {
@@ -41,7 +41,7 @@
   color: white;
 }
 .content-text {
-  font-size: 2.3vh;
+  font-size: 2.6vh;
   font-family: "Alkatra";
   color: #363535;
   text-shadow: 1px 1px 2px #141414;
@@ -54,7 +54,7 @@
 }
 
 .advice-motto-header {
-  font-size: 5vh;
+  font-size: 4vh;
   font-family: "Alkatra";
   color: #0a2b3d;
   text-align: center;
@@ -74,7 +74,7 @@
 }
 
 .benefit-icon {
-  width: 40%;
+  width: 30%;
 }
 
 .main-layout-div {
@@ -85,7 +85,7 @@
   gap: 3%;
 }
 .main-header {
-  font-size: 2vw;
+  font-size: 1.8vw;
   color: #001a23;
   font-family: "Alkatra";
   margin-top: 12%;
@@ -126,6 +126,12 @@
 .cv-example {
   width: 70%;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.cv-example:hover {
+  transform: scale(1.05);
 }
 
 .middle-section-div {

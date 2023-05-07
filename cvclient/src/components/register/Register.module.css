@@ -20,7 +20,7 @@
   background-color: #f7f7f7;
 }
 .right {
-  background-color: #9CC3EB;
+  background-color: #9cc3eb;
   text-align: center;
   padding-top: 20%;
   padding-bottom: 20%;
@@ -35,9 +35,9 @@
   min-height: 30%;
   padding-left: 10px;
   height: 50px;
-  border: 2px solid 2a5f8a;
+  border: 2px solid #2a5f8a;
   border-radius: 10px;
-  background-color: f7f7f7;
+  background-color: #f7f7f7;
   color: #070707;
   transition-duration: 0.5s;
   font-size: 1.5vh;
@@ -100,10 +100,9 @@
   cursor: pointer;
 }
 
-.submit-container{
-    text-align: center;
+.submit-container {
+  text-align: center;
 }
-
 
 .modal {
   position: fixed;
@@ -132,7 +131,7 @@
   flex-direction: column;
 }
 
-.modal-content p{
+.modal-content p {
   font-family: "Alkatra";
   color: #0a2b3d;
   font-size: 3vh;
@@ -141,7 +140,7 @@
   padding-top: 2%;
 }
 
-.modal-content button{
+.modal-content button {
   margin-top: 2rem;
   width: 50%;
   text-align: center;
@@ -154,7 +153,7 @@
   cursor: pointer;
 }
 
-.error-text{
+.error-text {
   display: flex;
   align-items: center;
   justify-content: center;
