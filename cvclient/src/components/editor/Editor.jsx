@@ -23,7 +23,7 @@ const Editor = () => {
 
   //personal desc
   const [location, setLocation] = useState("Warsaw");
-  const [github, setGithub] = useState("http://github.com/tomcruse");
+  const [github, setGithub] = useState();
   const [linkedin, setLinkedin] = useState("http://linkedin.com/tomcruse");
   const [profileDescription, setProfileDescription] = useState(
     "Profile description"
@@ -207,27 +207,33 @@ const Editor = () => {
                 <div className={classes["tab-switcher"]}>
                   <TabSwitcher tabId={1} icon={"fas fa-user"}>
                     <div className={classes["tab-p"]}>Personal</div>
-                    {/* <a href="" >sadsad</a> */}
                   </TabSwitcher>
-                  <TabSwitcher tabId={2} icon={"fas fa-school"}>
+                  <TabSwitcher tabId={2} icon={"fas fa-book"}>
+                    <div className={classes["tab-p"]}>Profile</div>
+                  </TabSwitcher>
+                  <TabSwitcher tabId={3} icon={"fas fa-school"}>
                     <div className={classes["tab-p"]}>Education</div>
                   </TabSwitcher>
-                  <TabSwitcher tabId={3} icon={"fas fa-briefcase"}>
+                  <TabSwitcher tabId={4} icon={"fas fa-briefcase"}>
                     <div className={classes["tab-p"]}>Experience</div>
                   </TabSwitcher>
-                  <TabSwitcher tabId={4} icon={"fa fa-fighter-jet"}>
+                  <TabSwitcher tabId={5} icon={"fa fa-fighter-jet"}>
                     <div className={classes["tab-p"]}>Project</div>
                   </TabSwitcher>
-                  <TabSwitcher tabId={5} icon={"fas fa-globe"}>
-                    <div className={classes["tab-p"]}>Sum</div>
+                  <TabSwitcher tabId={6} icon={"fa fa-ambulance"}>
+                    <div className={classes["tab-p"]}>Skills</div>
                   </TabSwitcher>
-                  <TabSwitcher tabId={6} icon={"fas fa-print"}>
-                    <div className={classes["tab-p"]}>PDF</div>
+                  <TabSwitcher tabId={7} icon={"fa fa-language"}>
+                    <div className={classes["tab-p"]}>Languages</div>
+                  </TabSwitcher>
+                  <TabSwitcher tabId={8} icon={"fas fa-globe"}>
+                    <div className={classes["tab-p"]}>Sum</div>
                   </TabSwitcher>
                 </div>
                 <div className={classes["tab-content"]}>
                   <TabContent id={1}>
-                    <h1>Personal Info</h1>
+                    <h1>Start with your resume header</h1>.
+                    <p>Enter your full name and contact information so a recruiter can write or call you.</p>.
                     <div className={classes["tab-content-forms"]}>
                       {/* <div className={classes["tab-content-form"]}>
                         <label
@@ -297,62 +303,66 @@ const Editor = () => {
                           onChange={(e) => setEmail(e.target.value)}
                         ></input>
                       </div>
-                      <div className={classes["tab-content-form-33"]}>
-                        <div className={classes["is-active"]}>
-                          <label>Location</label>
-                          <input
-                            className={classes["checkbox"]}
-                            type="checkbox"
-                            autocomplete="off"
-                            value={isLocation}
-                            onClick={handleLocation}
-                          ></input>
-                        </div>
-                        <input
-                          type="text"
-                          value={location}
-                          onChange={(e) => setLocation(e.target.value)}
-                        ></input>
-                      </div>
-
-                      <div className={classes["tab-content-form-33"]}>
-                        <div className={classes["is-active"]}>
-                          <label>Github</label>
-                          <input
-                            className={classes["checkbox"]}
-                            type="checkbox"
-                            autocomplete="off"
-                            value={isGitHub}
-
-                            onClick={handleGitHub}
-                            valur={isGitHub}
-                          ></input>
-                        </div>
-                        <input
-                          type="text"
-                          value={github}
-                          onChange={(e) => setGithub(e.target.value)}
-                        ></input>
-                      </div>
-                      <div className={classes["tab-content-form-33"]}>
-                        <div className={classes["is-active"]}>
-                          <label>Linkedin</label>
-                          <input
-                            className={classes["checkbox"]}
-                            type="checkbox"
-                            autocomplete="off"
-                            value={isLinkedin}
-                            onClick={handleLinkedin}
-                          ></input>
-                        </div>
-                        <input
-                          type="text"
-                          value={linkedin}
-                          onChange={(e) => setLinkedin(e.target.value)}
-                        ></input>
-                      </div>
                     </div>
 
+                    <div className={classes["tab-content-form-33"]}>
+                      <div className={classes["is-active"]}>
+                        <label>Location</label>
+                        <input
+                          className={classes["checkbox"]}
+                          type="checkbox"
+                          autocomplete="off"
+                          value={isLocation}
+                          onClick={handleLocation}
+                        ></input>
+                      </div>
+                      <input
+                        type="text"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                      ></input>
+                    </div>
+
+                    <div className={classes["tab-content-form-33"]}>
+                      <div className={classes["is-active"]}>
+                        <label>Github</label>
+                        <input
+                          className={classes["checkbox"]}
+                          type="checkbox"
+                          autocomplete="off"
+                          value={isGitHub}
+
+                          onClick={handleGitHub}
+                          valur={isGitHub}
+                        ></input>
+                      </div>
+                      <input
+                        type="text"
+                        value={github}
+                        onChange={(e) => setGithub(e.target.value)}
+                      ></input>
+                    </div>
+                    <div className={classes["tab-content-form-33"]}>
+                      <div className={classes["is-active"]}>
+                        <label>Linkedin</label>
+                        <input
+                          className={classes["checkbox"]}
+                          type="checkbox"
+                          autocomplete="off"
+                          value={isLinkedin}
+                          onClick={handleLinkedin}
+                        ></input>
+                      </div>
+                      <input
+                        type="text"
+                        value={linkedin}
+                        onChange={(e) => setLinkedin(e.target.value)}
+                      ></input>
+                    </div>
+                  </TabContent>
+                  <TabContent id={2}>
+                    <h1>Fill in your personal information</h1>.
+                    <p>Describe your profile and post information about yourself!</p>.
                     <label>Profile description</label>
                     <textarea
                       rows="5"
@@ -367,42 +377,12 @@ const Editor = () => {
                       value={aboutme}
                       onChange={(e) => setAboutme(e.target.value)}
                     ></textarea>
-                    <div className={classes["tab-content-form-language"]}>
-                      <label htmlFor="languageInput">Languages:</label>
-                      <div className={classes["tab-content-form-language-add"]}>
-                        <input
-                          className={
-                            classes["tab-content-form-language-add-input"]
-                          }
-                          id="languageInput"
-                          type="text"
-                          value={language}
-                          onChange={(event) => setLanguage(event.target.value)}
-                        />
-                        <button onClick={handleAddLanguage}>+</button>
-                      </div>
-
-                      <div className={classes.card}>
-                        {/* <h4>Language List</h4> */}
-                        {languageList.map((language, index) => (
-                          <ul className={classes["card-list-elem"]} key={index}>
-                            <p>{language.language}</p>
-                            <button
-                              className={classes["remove-button"]}
-                              onClick={() => handleRemoveLanguage(index)}
-                            >
-                              -
-                            </button>
-                          </ul>
-                        ))}
-                      </div>
-                    </div>
                   </TabContent>
-                  <TabContent id={2}>
-                    {/* <div className={classes["tab-content-forms"]}> */}
-                    <h1>Educations</h1>
+                  <TabContent id={3}>
+                    <h1>Add your education</h1>.
+                    <p>Add your most recent level of education - if you have higher education - do not list secondary education, and if you have secondary education, do not write about primary education.</p>
                     <div
-                      className={`${classes["tab-content-forms"]} ${classes["border-bottom"]}`}
+                      className={`${classes["tab-content-forms"]}`}
                     >
                       <div className={classes["tab-content-form"]}>
                         <div>
@@ -461,7 +441,10 @@ const Editor = () => {
                         </div>
                       </div>
                       <div className={classes["to-right"]}>
-                        <button onClick={handleAddEducation}>+</button>
+                        <a className={`${classes["icon-add"]}`} onClick={handleAddEducation}
+                        >
+                          <i class="fa fa-plus"></i>
+                        </a>
                       </div>
                     </div>
 
@@ -472,20 +455,20 @@ const Editor = () => {
                           <p>{todo.schoolCity}</p>
                           <p>{todo.schoolStartYear}</p>
                           <p>{todo.schoolFinishYear}</p>
-                          <button
-                            className={classes["remove-button"]}
-                            onClick={() => handleRemoveEducation(index)}
+                          <a className={`${classes["icon-trash"]}`} onClick={() => handleRemoveEducation(index)}
                           >
-                            -
-                          </button>
+                            <i class="fa fa-trash"></i>
+                          </a>
                         </ul>
                       ))}
                     </div>
                   </TabContent>
-                  <TabContent id={3}>
-                    <h1>Experience</h1>
+                  <TabContent id={4}>
+                    <h1>Now let's work on your experience</h1>.
+                    <p>Start with your most recent job. You can also add volunteer work,
+                      internships and extra-curricular activities.</p>
                     <div
-                      className={`${classes["tab-content-forms"]} ${classes["border-bottom"]}`}
+                      className={`${classes["tab-content-forms"]}`}
                     >
                       <div className={classes["tab-content-form"]}>
                         <label>Conpany name</label>
@@ -527,12 +510,12 @@ const Editor = () => {
                           }
                         />
                       </div>
-                      <button
-                        className={classes["to-right"]}
-                        onClick={handleAddExperience}
-                      >
-                        Add
-                      </button>
+                      <div className={classes["to-right"]}>
+                        <a className={`${classes["icon-add"]}`} onClick={handleAddExperience}
+                        >
+                          <i class="fa fa-plus"></i>
+                        </a>
+                      </div>
                     </div>
                     <div className={classes.card}>
                       {experienceList.map((todo, index) => (
@@ -541,50 +524,19 @@ const Editor = () => {
                           <p>{todo.companyCity}</p>
                           <p>{todo.experienceFrom}</p>
                           <p>{todo.experienceTo}</p>
-                          <button
-                            className={classes["remove-button"]}
-                            onClick={() => handleRemoveExperience(index)}
+                          <a className={`${classes["icon-trash"]}`} onClick={() => handleRemoveExperience(index)}
                           >
-                            -
-                          </button>
+                            <i class="fa fa-trash"></i>
+                          </a>
                         </ul>
                       ))}
                     </div>
-                    <div className={classes["tab-content-form-language"]}>
-                      <h1>Skills</h1>
-                      <div className={classes["tab-content-form-language-add"]}>
-                        <input
-                          className={
-                            classes["tab-content-form-language-add-input"]
-                          }
-                          id="languageInput"
-                          type="text"
-                          value={skill}
-                          onChange={(event) => setSkill(event.target.value)}
-                        />
-                        <button onClick={handleAddSkill}>+</button>
-                      </div>
 
-                      <div className={classes.card}>
-                        {/* <h4>Language List</h4> */}
-                        {skillList.map((todo, index) => (
-                          <ul className={classes["card-list-elem"]} key={index}>
-                            <p>{todo.skill}</p>
-                            <button
-                              className={classes["remove-button"]}
-                              onClick={() => handleRemoveSkill(index)}
-                            >
-                              -
-                            </button>
-                          </ul>
-                        ))}
-                      </div>
-                    </div>
                   </TabContent>
-                  <TabContent id={4}>
-                    <h1>Projects</h1>
+                  <TabContent id={5}>
+                    <h1>Ok, let's go with projects</h1>.
                     <div
-                      className={`${classes["tab-content-forms"]} ${classes["border-bottom"]}`}
+                      className={`${classes["tab-content-forms"]}`}
                     >
                       <div className={classes["tab-content-form"]}>
                         <label htmlFor="projectNameInput">Project Name:</label>
@@ -622,7 +574,10 @@ const Editor = () => {
                         />
                       </div>
                       <div className={classes["to-right"]}>
-                        <button onClick={handleAddProject}>+</button>
+                        <a className={`${classes["icon-add"]}`} onClick={handleAddProject}
+                        >
+                          <i class="fa fa-plus"></i>
+                        </a>
                       </div>
                     </div>
                     <div className={classes.card}>
@@ -631,19 +586,86 @@ const Editor = () => {
                           <p>{todo.projectName}</p>
                           <p>{todo.projectLink}</p>
                           <p>{todo.projectDescription}</p>
-                          <button
-                            className={classes["remove-button"]}
-                            onClick={() => handleRemoveProject(index)}
+                          <a className={`${classes["icon-trash"]}`} onClick={() => handleRemoveProject(index)}
                           >
-                            -
-                          </button>
+                            <i class="fa fa-trash"></i>
+                          </a>
                         </ul>
                       ))}
                     </div>
                   </TabContent>
-                  <TabContent id={5}>
-                    <h1>Summarize</h1>
+                  <TabContent id={6}>
+                    <h1>Let's pick your most important skills</h1>
+                    <div className={classes["tab-content-form-language"]}>
+                      <div className={classes["tab-content-form-language-add"]}>
+                        <input
+                          className={
+                            classes["tab-content-form-language-add-input"]
+                          }
+                          id="languageInput"
+                          type="text"
+                          value={skill}
+                          onChange={(event) => setSkill(event.target.value)}
+                        />
 
+                      </div>
+                      <div className={classes["to-right"]}>
+                        <a className={`${classes["icon-add"]}`} onClick={handleAddSkill}
+                        >
+                          <i class="fa fa-plus"></i>
+                        </a>
+                      </div>
+                      <div className={classes.card}>
+                        {/* <h4>Language List</h4> */}
+                        {skillList.map((todo, index) => (
+                          <ul className={classes["card-list-elem"]} key={index}>
+                            <p>{todo.skill}</p>
+                            <a className={`${classes["icon-trash"]}`} onClick={() => handleRemoveSkill(index)}
+                            >
+                              <i class="fa fa-trash"></i>
+                            </a>
+                          </ul>
+                        ))}
+                      </div>
+                    </div>
+                  </TabContent>
+                  <TabContent id={7}>
+                    <h1>Foreign languages</h1>
+                    <p>Add the foreign languages you speak and specify your level of knowledge</p>
+                    <div className={classes["tab-content-form-language"]}>
+                      <div className={classes["tab-content-form-language-add"]}>
+                        <input
+                          className={
+                            classes["tab-content-form-language-add-input"]
+                          }
+                          id="languageInput"
+                          type="text"
+                          value={language}
+                          onChange={(event) => setLanguage(event.target.value)}
+                        />
+                      </div>
+                      <div className={classes["to-right"]}>
+                        <a className={`${classes["icon-add"]}`} onClick={handleAddLanguage}
+                        >
+                          <i class="fa fa-plus"></i>
+                        </a>
+                      </div>
+                      <div className={classes.card}>
+                        {/* <h4>Language List</h4> */}
+                        {languageList.map((language, index) => (
+                          <ul className={classes["card-list-elem"]} key={index}>
+                            <p>{language.language}</p>
+                            <a className={`${classes["icon-trash"]}`} onClick={() => handleRemoveLanguage(index)}
+                            >
+                              <i class="fa fa-trash"></i>
+                            </a>
+                          </ul>
+                        ))}
+                      </div>
+                    </div>
+                  </TabContent>
+                  <TabContent id={8}>
+                    <h1>It's almost ready! Let's finish your resume with a strong summary</h1>.
                     <div>
                       <label>Clause:</label>
                       <textarea
@@ -654,8 +676,6 @@ const Editor = () => {
                         onChange={(event) => setClause(event.target.value)}
                       />
                     </div>
-                  </TabContent>
-                  <TabContent id={6}>
                     <button onClick={handleGeneratePdf}>PDF</button>
                   </TabContent>
                 </div>

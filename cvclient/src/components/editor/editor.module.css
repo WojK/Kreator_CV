@@ -72,7 +72,9 @@
   margin-left: 1rem;
   display: flex;
   align-items: center;
+  text-align: start;
   margin-top: 8px;
+  justify-content: start;
 }
 
 .personal-data {
@@ -182,9 +184,9 @@ className={
   background-color: white;
   margin-left: 4%;
   min-width: 600px;
-
+  height: 640px;
   border-radius: 6px;
-  background-color: #e2eaee;
+  /* background-color: #e2eaee; */
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   text-align: center;
@@ -199,7 +201,8 @@ className={
 }
 
 .form textarea,
-input[type="text"],input[type="date"] {
+input[type="text"],
+input[type="date"] {
   font: inherit;
   width: 100%;
   position: relative;
@@ -216,11 +219,13 @@ input[type="text"],input[type="date"] {
   overflow: hidden;
   transition: all 100ms ease-in-out;
 }
+
 .form textarea:focus,
 input:focus {
   border-color: #3c4fe0;
   box-shadow: 0 1px 0 0 rgb(35 38 59 / 5%);
 }
+
 .form textarea {
   resize: none;
 }
@@ -259,45 +264,50 @@ input[type="file"] {
   flex-direction: column;
   max-width: 150px;
   justify-content: space-around;
-  height: 400px;
+  height: 600px;
   margin-right: 20px;
   border-right: 1px solid black;
   padding: 5px;
+  /* background-color: red; */
 }
+
 .tab-content {
   width: 100%;
 }
+
 .tab-p {
   /* background-color: yellow; */
   /* padding: 10px; */
 }
+
 .tab-content-forms {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.tab-content-form {
+/* .tab-content-form {
   display: flex;
   width: 100%;
-  justify-content: space-around;
   flex-wrap: wrap;
-  
-}
+
+} */
 
 .tab-content-form {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 45%;
 }
 
 .tab-content-form-33 {
   display: flex;
   flex-direction: column;
-  width: 33%;
+  width: 100%;
 }
-.tab-content-form-100{
+
+.tab-content-form-100 {
   width: 99%;
 
 }
@@ -305,11 +315,13 @@ input[type="file"] {
 .tab-content-form-language {
   margin-top: 30px;
 }
+
 .tab-content-form-language-add {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
+
 .tab-content-form-language-add-input {
   width: 80%;
 }
@@ -323,22 +335,25 @@ input[type="file"] {
   margin-left: auto;
   margin-right: 0;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 
 .card {
   margin-top: 20px;
 }
+
 .card-list-elem {
   margin-top: 15px;
   padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #c2d5df;
+  background-color: #ecf1f3;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
+
 .card-list-elem:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -373,12 +388,41 @@ input[type="file"] {
 
 
 
-.display-none{
+.display-none {
   display: none;
 }
-.is-active{
+
+.is-active {
   display: flex;
-  justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+label {
+  text-align: start;
+}
+
+.icon-trash {
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: red;
+}
+
+.icon-add {
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: green;
+  font-size: 28px;
+}
+
+.checkbox {
+  font-size: 28px;
+  color: green;
+  width: 15px;
+  height: 15px;
+  accent-color: #3c9b1f;
+  margin-top: 10px;
+  margin-left: 10px;
 }
