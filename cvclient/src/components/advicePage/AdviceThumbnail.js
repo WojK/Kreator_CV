@@ -16,7 +16,7 @@ const AdviceThumbnail = (props) => {
       className={classes["advice-div"]}
     >
       <div className={classes["advice-content"]}>
-        <img className={classes.adviceimg} src={advicePhoto} alt="CV" />
+        <img className={classes.adviceimg} src={props.photo} alt="CV" />
         <p className={classes["advice-title"]}>{props.title}</p>
         <p className={classes["advice-date"]}>
           {props.date} {props.author}

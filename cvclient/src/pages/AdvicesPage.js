@@ -1,12 +1,14 @@
 import AdviceThumbnail from "../components/advicePage/AdviceThumbnail";
 import classes from "./AdvicePage.module.css";
 import { adviceArticles } from "../mocks/mockedData";
+import { images } from "../mocks/images";
 
 const adviceArticlesList = adviceArticles;
 const AdvicesPage = () => {
   const adviceArticlesList = adviceArticles.map((article) => (
     <AdviceThumbnail
       key={article.id}
+      photo={images[article.id-1]}
       articleId={article.id}
       title={article.title}
       author={article.author}
