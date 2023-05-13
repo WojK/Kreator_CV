@@ -8,7 +8,8 @@ import "../../assets/fonts/Roboto-normal";
 import "../../assets/fonts/times-normal";
 import "../../assets/fonts/times-bold";
 import EditorForm from "./EditorForm";
-import EditorResume from "./EditorResume";
+import EditorFormTech from "./tech/EditorFormTech";
+import EditorResumeTech from "./tech/EditorResumeTech";
 
 const Editor = () => {
   // personal
@@ -41,13 +42,14 @@ const Editor = () => {
   const [schoolCity, setSchoolCity] = useState("Warszawa");
   const [schoolStartYear, setSchoolStartYear] = useState("2022-03-20");
   const [schoolFinishYear, setSchoolFinishYear] = useState("2022-03-20");
-
+  const [schoolDesc, setSchoolDesc] = useState("Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, expedita!");
   // experience
   const [experienceList, setExperienceList] = useState([]);
   const [companyName, setCompanyName] = useState("Politechnika Warszawska");
   const [companyCity, setCompanyCity] = useState("Warszawa");
   const [experienceFrom, setExperienceFrom] = useState("2013-03-20");
   const [experienceTo, setExperienceTo] = useState("2021-03-20");
+  const [experienceDesc, setExperienceDesc] = useState("");
 
   // skill
   const [skillList, setSkillList] = useState([]);
@@ -73,12 +75,14 @@ const Editor = () => {
       schoolCity,
       schoolStartYear,
       schoolFinishYear,
+      schoolDesc
     };
     setEducationList([...educationList, newEducation]);
     setSchoolName("");
     setSchoolCity("");
     setSchoolStartYear("");
     setSchoolFinishYear("");
+    setSchoolDesc("");
   };
   const handleRemoveEducation = (indexToRemove) => {
     const newEducationList = educationList.filter(
@@ -94,12 +98,14 @@ const Editor = () => {
       companyCity,
       experienceFrom,
       experienceTo,
+      experienceDesc
     };
     setExperienceList([...experienceList, newExperience]);
     setCompanyName("");
     setCompanyCity("");
     setExperienceFrom("");
     setExperienceTo("");
+    setExperienceDesc("");
   };
   const handleRemoveExperience = (indexToRemove) => {
     const newExperienceList = experienceList.filter(
@@ -224,6 +230,8 @@ const Editor = () => {
     setExperienceFrom,
     experienceTo,
     setExperienceTo,
+    experienceDesc,
+    setExperienceDesc,
     handleAddExperience,
     experienceList,
     handleRemoveExperience,
@@ -240,6 +248,8 @@ const Editor = () => {
     setSchoolName,
     schoolCity,
     setSchoolCity,
+    schoolDesc,
+    setSchoolDesc,
     schoolStartYear,
     setSchoolStartYear,
     schoolFinishYear,
@@ -262,7 +272,7 @@ const Editor = () => {
     handleGeneratePdf,
     onImageChange
   };
-  const propsResume={
+  const propsResume = {
     name,
     surname,
     isPhoneNumber,
@@ -288,8 +298,10 @@ const Editor = () => {
   return (
     <>
       <div className={classes.main}>
-        <EditorForm {...propsForm} />
-    <EditorResume {...propsResume}/>
+        {/* <EditorForm {...propsForm} /> */}
+        {/* <EditorResume {...propsResume}/> */}
+        <EditorFormTech {...propsForm} />
+        <EditorResumeTech {...propsResume} />
       </div>
     </>
   );
