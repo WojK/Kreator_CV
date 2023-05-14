@@ -1,0 +1,150 @@
+.cv {
+	width: 800px;
+	min-height: 1120px;
+
+	box-shadow: 0 0 0 0.4rem rgba(0, 0, 0, 0.2);
+	display: flex;
+	background-color: white;
+}
+
+.main {
+	display: flex;
+	justify-content: flex-start;
+	gap: 5%;
+	margin-top: 35px;
+}
+
+.centerside {
+	display: flex;
+	width: 800px;
+}
+
+.centerside .column_left {
+	width: 35%;
+	background: #26252d;
+	padding-left: 20px;
+	padding-right: 20px;
+	min-height: 1120px;
+	height: 100%;
+}
+
+.image {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.image img {
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+.side_title {
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 14px;
+	margin-bottom: 10px;
+	letter-spacing: 4px;
+}
+
+.column_left .side_info {
+	color: lightgray;
+}
+
+.side_info li{
+	margin-top: 5px;
+}
+
+.side_item {
+	padding: 15px 0;
+	border-bottom: 1px solid #0175b2;
+}
+
+.side_item:last-child {
+	border-bottom: 0;
+}
+
+.name {
+	color: #26252d;
+	font-size: 32px;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 5px;
+	letter-spacing: 4px;
+}
+
+.column_right {
+	width: 65%;
+	padding: 20px 40px;
+}
+
+.role {
+	font-size: 18px;
+	padding-top: 5px;
+	text-transform: uppercase;
+}
+
+.column_right .side_item .side_title {
+	text-align: left;
+	color: #26252d;
+}
+
+.side_data {
+	display: flex;
+}
+
+.content {
+	padding-left: 35px;
+	margin-bottom: 20px;
+	width: calc(100% - 115px);
+}
+
+.content h1{
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.content h2{
+	font-size: 16px;
+	font-weight: 700;
+	color: #444444;
+}
+
+.project {
+	padding-left: 15px;
+	margin-bottom: 20px;
+	width: calc(100% - 20px);
+}
+
+.project h1{
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.project h2{
+	margin-top: 5px;
+	font-size: 15px;
+	font-weight: 700;
+	color: #444444;
+}
+
+.content2 p{
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.p0{
+	padding-left: 0;	
+}
+
+.sub_title{
+	font-weight: 600;
+	margin: 0.1rem;
+}
+
+.sub_content {
+	margin-bottom: 0.3rem;
+}

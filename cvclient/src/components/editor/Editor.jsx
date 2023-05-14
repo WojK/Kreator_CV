@@ -14,6 +14,7 @@ import EditorFormTech from "./tech/EditorFormTech";
 import EditorFormGeneral from "./general/EditorFormGeneral";
 
 import EditorResumeTech from "./tech/EditorResumeTech";
+import EditorResumeTechV2 from "./tech/EditorResumeTechV2";
 import EditorResumeStudent from "./student/EditorResumeStudent";
 import EditorResume from "./EditorResume";
 import EditorResumeGeneralV2 from "./general/EditorResumeGeneralV2";
@@ -351,6 +352,7 @@ const Editor = () => {
         {editorId == "student1" && <EditorResume {...propsResume} />}
         {editorId == "student2" && <EditorResumeStudent {...propsResume} />}
         {editorId == "technical1" && <EditorResumeTech {...propsResume} />}
+        {editorId == "technical2" && <EditorResumeTechV2 {...propsResume} />}
         {editorId == "general1" && <EditorResumeGeneralV1 {...propsResume} />}
         {editorId == "general2" && <EditorResumeGeneralV2 {...propsResume} />}
       </div>
