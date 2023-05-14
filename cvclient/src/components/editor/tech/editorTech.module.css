@@ -4,55 +4,35 @@
   width: 800px;
   min-height: 1120px;
   align-self: flex-end;
-
   box-shadow: 0 0 0 0.4rem rgba(0, 0, 0, 0.2);
   display: flex;
+  flex-direction: column;
   gap: 25px;
   background-color: white;
-
   font-size: 16px;
+  padding: 20px;
 }
 
-.main {
-  display: flex;
-  justify-content: flex-start;
-  gap: 5%;
-  margin-top: 35px;
-  flex-wrap: wrap;
-}
-
-@media screen and (max-width: 900px) {
-.main{
-  justify-content: center;
-}
-}
-
-@media screen and (max-width: 580px) {
-
-}
-
-@media screen and (max-width: 400px) {
-
-}
 
 .personal-details {
-  min-height: 1120px;
+  /* min-height: 1120px;
   width: 40%;
-  background-color: #f3f1ed;
+  background-color: #f3f1ed; */
+  display: flex;
+justify-content: space-between;
 }
 
 .image-container {
   position: relative;
-  width: 100%;
+  width: 30%;
   height: 210px;
   display: flex;
   justify-content: center;
-  margin-top: 35px;
 }
 
 .image {
   width: 180px;
-  border-radius: 50%;
+  border-radius: 3%;
 
   display: block;
   margin-left: auto;
@@ -71,26 +51,28 @@
 }
 
 .descontent {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 60%;
   margin-top: 0.4rem;
 }
 
 .descontent-ul {
   list-style: none;
   margin-top: 24px;
+  width: 70%;
 }
 
 .descontent-ul-li {
   margin-left: 1rem;
   display: flex;
-  align-items: center;
-  text-align: start;
+  /* align-items: center; */
+  /* text-align: start; */
   margin-top: 8px;
-  justify-content: start;
+  /* justify-content: space-between; */
 }
-
+.descontent-ul-li-left{
+  width: 130px;
+  display: flex;
+}
 .personal-data {
   display: inline-block;
   font-size: 14px;
@@ -98,9 +80,8 @@
 }
 
 .name {
-  text-align: center;
-  font-weight: 500;
-  font-size: 25px;
+  font-weight: 700;
+  font-size: 30px;
   font-family: "Roboto";
 }
 
@@ -113,6 +94,7 @@
 
 .icon {
   width: 0.8rem;
+  margin-right: 10px;
 }
 
 .personal-data {
@@ -160,16 +142,15 @@ className={
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Right side */
 .skills-projects {
-  width: 55%;
   min-height: 1120px;
   font-family: "Roboto";
 }
 
 .skills-projects h2 {
-  font-size: 24px;
-  font-weight: 500;
-  color: #4b4b4b;
-  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  /* color: #4b4b4b; */
+  margin-bottom: 20px;
 }
 
 .skills-projects hr {
@@ -186,9 +167,10 @@ className={
   margin-top: 12px;
 }
 
-.knowledge-title {
-  font-size: 16px;
-  margin-top: 40px;
+.skill-elem{
+  display: flex;
+  align-items: flex-start;
+  text-align: start;
 }
 
 /* /////////////////////////////////////////////////////////////////////////// */
@@ -394,12 +376,15 @@ input:focus {
 }
 
 .p-year {
-  font-size: 12px;
-  font-weight: 200;
+  /* font-size: 12px;
+  font-weight: 200; */
+  margin-right: 5px;
 }
 
 .width30 {
   width: 30%;
+  display: flex;
+
 }
 
 .width70 {
