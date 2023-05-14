@@ -6,6 +6,9 @@ import s2 from "../assets/images/examplecv.jpg";
 
 import student_template_example from "../assets/images/student-template-example.png";
 import generalThumbnailV1 from "../assets/images/generalThumbnailV1.png";
+import generalThumbnailV2 from "../assets/images/generalThumbnailV2.png";
+
+import technicalThumbnailV1 from "../assets/images/technicalThumbnailV1.png";
 
 const ChooseTemplateStylesPage = () => {
   const { cvtemplate } = useParams();
@@ -18,10 +21,12 @@ const ChooseTemplateStylesPage = () => {
 
   const generalsTemplates = [
     { img: generalThumbnailV1, id: "general1", des: "Opis" },
-    { img: s2, id: "general2", des: "Opis" },
+    { img: generalThumbnailV2, id: "general2", des: "Opis" },
   ];
 
-  const technicalTemplates = [{ img: s1, id: "technical1", des: "Opis" }];
+  const technicalTemplates = [
+    { img: technicalThumbnailV1, id: "technical1", des: "Opis" },
+  ];
 
   let content, title;
   if (cvtemplate === "student") {
