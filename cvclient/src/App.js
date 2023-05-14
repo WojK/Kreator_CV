@@ -32,11 +32,10 @@ const router = createBrowserRouter(
       />
       , */}
       <Route path="advices" element={<AdvicesPage />} />,
-      <Route path="editor/:templateid" element={<Editor />} />,
       <Route path="advices/:adviceId" element={<AdviceArticle />} />,
       <Route path="about_us" element={<AboutUsPage />}></Route>,
       <Route path="my_account" element={<MyAccount />}></Route>,
-      <Route path="editor" element={<Editor />}></Route>,
+      <Route path="editor/:editorId" element={<Editor />}></Route>,
     </Route>,
     <Route path="register" element={<RegisterPage />}></Route>,
     <Route path="login" element={<LoginPage />}></Route>,

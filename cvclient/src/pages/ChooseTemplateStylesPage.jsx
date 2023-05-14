@@ -2,22 +2,26 @@ import classes from "./ChooseTemplateStylesPage.module.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import s1 from "../assets/images/examplecv.jpg";
-import s2 from "../assets/images/examplecv — kopia.jpg";
+import s2 from "../assets/images/examplecv.jpg";
+
+import student_template_example from "../assets/images/student-template-example.png";
+import generalThumbnailV1 from "../assets/images/generalThumbnailV1.png";
 
 const ChooseTemplateStylesPage = () => {
   const { cvtemplate } = useParams();
   const navigate = useNavigate();
 
   const studentsTemplates = [
-    { img: s1, id: "s1", des: "Opis" },
-    { img: s2, id: "s2", des: "Opis" },
+    { img: s1, id: "student1", des: "Opis" },
+    { img: student_template_example, id: "student2", des: "Opis" },
   ];
 
   const generalsTemplates = [
-    { img: s1, id: "s1", des: "Opis" },
-    { img: s2, id: "s2", des: "Opis" },
-    { img: s2, id: "s2", des: "Opis" },
+    { img: generalThumbnailV1, id: "general1", des: "Opis" },
+    { img: s2, id: "general2", des: "Opis" },
   ];
+
+  const technicalTemplates = [{ img: s1, id: "technical1", des: "Opis" }];
 
   let content, title;
   if (cvtemplate === "student") {
@@ -52,6 +56,19 @@ const ChooseTemplateStylesPage = () => {
     });
   } else if (cvtemplate === "technical") {
     title = "Technical";
+    content = technicalTemplates.map(function (template) {
+      return (
+        <div
+          className={classes.template}
+          onClick={(e) => {
+            navigate(`/editor/${template.id}`);
+          }}
+        >
+          <img src={template.img} className={classes.img}></img>
+          <p className={classes.des}>{template.des}</p>
+        </div>
+      );
+    });
   }
 
   return (

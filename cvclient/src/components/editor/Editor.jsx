@@ -2,14 +2,22 @@ import React from "react";
 import classes from "./editor.module.css";
 import jsPDF from "jspdf";
 import { useRef, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 // import { FaBeer } from "react-icons/fa";
 import photo from "../../assets/images/photo.jpg";
 import "../../assets/fonts/Roboto-normal";
 import "../../assets/fonts/times-normal";
 import "../../assets/fonts/times-bold";
+
 import EditorForm from "./EditorForm";
 import EditorFormTech from "./tech/EditorFormTech";
+import EditorFormGeneral from "./general/EditorFormGeneral";
+
 import EditorResumeTech from "./tech/EditorResumeTech";
+import EditorResumeStudent from "./student/EditorResumeStudent";
+import EditorResume from "./EditorResume";
+import EditorResumeGeneralV2 from "./general/EditorResumeGeneralV2";
+import EditorResumeGeneralV1 from "./general/EditorResumeGeneralV1";
 
 const Editor = () => {
   // personal
@@ -42,7 +50,9 @@ const Editor = () => {
   const [schoolCity, setSchoolCity] = useState("Warszawa");
   const [schoolStartYear, setSchoolStartYear] = useState("2022-03-20");
   const [schoolFinishYear, setSchoolFinishYear] = useState("2022-03-20");
-  const [schoolDesc, setSchoolDesc] = useState("Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, expedita!");
+  const [schoolDesc, setSchoolDesc] = useState(
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, expedita!"
+  );
   // experience
   const [experienceList, setExperienceList] = useState([]);
   const [companyName, setCompanyName] = useState("Politechnika Warszawska");
@@ -50,10 +60,16 @@ const Editor = () => {
   const [experienceFrom, setExperienceFrom] = useState("2013-03-20");
   const [experienceTo, setExperienceTo] = useState("2021-03-20");
   const [experienceDesc, setExperienceDesc] = useState("");
-
+  const [jobDescription, setJobDescription] = useState(
+    "Miejsce na opis czym zajmowałeś się w firmie"
+  );
   // skill
   const [skillList, setSkillList] = useState([]);
   const [skill, setSkill] = useState("Komunikatywnosc");
+
+  // hobby
+  const [hobbyList, setHobbyList] = useState([]);
+  const [hobby, setHobby] = useState("Italian Culture");
 
   //clause
   const [clause, setClause] = useState(
@@ -75,7 +91,7 @@ const Editor = () => {
       schoolCity,
       schoolStartYear,
       schoolFinishYear,
-      schoolDesc
+      schoolDesc,
     };
     setEducationList([...educationList, newEducation]);
     setSchoolName("");
@@ -98,7 +114,8 @@ const Editor = () => {
       companyCity,
       experienceFrom,
       experienceTo,
-      experienceDesc
+      experienceDesc,
+      jobDescription,
     };
     setExperienceList([...experienceList, newExperience]);
     setCompanyName("");
@@ -106,6 +123,7 @@ const Editor = () => {
     setExperienceFrom("");
     setExperienceTo("");
     setExperienceDesc("");
+    setJobDescription("");
   };
   const handleRemoveExperience = (indexToRemove) => {
     const newExperienceList = experienceList.filter(
@@ -133,11 +151,25 @@ const Editor = () => {
     setSkillList([...skillList, newSkill]);
     setSkill("");
   };
+
   const handleRemoveSkill = (indexToRemove) => {
     const newSkillList = skillList.filter(
       (_, index) => index !== indexToRemove
     );
     setSkillList(newSkillList);
+  };
+  // hobby
+  const handleAddHobby = () => {
+    const newHobby = { hobby };
+    setHobbyList([...hobbyList, newHobby]);
+    setHobby("");
+  };
+
+  const handleRemoveHobby = (indexToRemove) => {
+    const newHobbyList = hobbyList.filter(
+      (_, index) => index !== indexToRemove
+    );
+    setHobbyList(newHobbyList);
   };
   //project
   const handleAddProject = () => {
@@ -222,6 +254,8 @@ const Editor = () => {
     setProfileDescription,
     aboutme,
     setAboutme,
+    jobDescription,
+    setJobDescription,
     companyName,
     setCompanyName,
     companyCity,
@@ -267,10 +301,15 @@ const Editor = () => {
     handleAddLanguage,
     languageList,
     handleRemoveLanguage,
+    hobby,
+    setHobby,
+    handleAddHobby,
+    hobbyList,
+    handleRemoveHobby,
     clause,
     setClause,
     handleGeneratePdf,
-    onImageChange
+    onImageChange,
   };
   const propsResume = {
     name,
@@ -291,17 +330,29 @@ const Editor = () => {
     projectList,
     skillList,
     languageList,
+    hobbyList,
     image,
     reportTemplateRef,
-    educationList
-  }
+    educationList,
+  };
+
+  const { editorId } = useParams();
+  let formType = editorId;
+  formType = formType.slice(0, -1);
   return (
     <>
       <div className={classes.main}>
-        {/* <EditorForm {...propsForm} /> */}
-        {/* <EditorResume {...propsResume}/> */}
-        <EditorFormTech {...propsForm} />
-        <EditorResumeTech {...propsResume} />
+        {/* conditional rendering form*/}
+        {formType == "student" && <EditorForm {...propsForm} />}
+        {formType == "technical" && <EditorFormTech {...propsForm} />}
+        {formType == "general" && <EditorFormGeneral {...propsForm} />}
+
+        {/* conditional rendering resume*/}
+        {editorId == "student1" && <EditorResume {...propsResume} />}
+        {editorId == "student2" && <EditorResumeStudent {...propsResume} />}
+        {editorId == "technical1" && <EditorResumeTech {...propsResume} />}
+        {editorId == "general1" && <EditorResumeGeneralV1 {...propsResume} />}
+        {editorId == "general2" && <EditorResumeGeneralV2 {...propsResume} />}
       </div>
     </>
   );
