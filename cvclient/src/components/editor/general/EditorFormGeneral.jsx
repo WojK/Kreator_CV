@@ -34,9 +34,9 @@ const EditorFormGeneral = ({
   setExperienceFrom,
   experienceTo,
   setExperienceTo,
-  handleAddExperienceGeneral,
+  handleAddExperience,
   experienceList,
-  handleRemoveExperienceGeneral,
+  handleRemoveExperience,
   schoolName,
   setSchoolName,
   schoolCity,
@@ -259,7 +259,7 @@ const EditorFormGeneral = ({
                   <div className={classes["to-right"]}>
                     <a
                       className={`${classes["icon-add"]}`}
-                      onClick={handleAddExperienceGeneral}
+                      onClick={handleAddExperience}
                     >
                       <i class="fa fa-plus"></i>
                     </a>
@@ -274,7 +274,7 @@ const EditorFormGeneral = ({
                       <p>{todo.experienceTo}</p>
                       <a
                         className={`${classes["icon-trash"]}`}
-                        onClick={() => handleRemoveExperienceGeneral(index)}
+                        onClick={() => handleRemoveExperience(index)}
                       >
                         <i class="fa fa-trash"></i>
                       </a>

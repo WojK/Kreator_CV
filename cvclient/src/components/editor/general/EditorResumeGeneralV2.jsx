@@ -12,17 +12,13 @@ const EditorResume2 = ({
   email,
   isLocation,
   location,
-  isGitHub,
-  github,
-  isLinkedin,
-  linkedin,
   profileDescription,
   aboutme,
   experienceList,
-  projectList,
   skillList,
   languageList,
   image,
+  hobbyList,
   reportTemplateRef,
   educationList,
 }) => {
@@ -34,7 +30,6 @@ const EditorResume2 = ({
           <h1>
             {name} {surname}
           </h1>
-          <p>{profileDescription}</p>
         </div>
         <div className={classes["cv-contact"]}>
           {isEmail && (
@@ -70,10 +65,7 @@ const EditorResume2 = ({
                   </h3>
                   <h4>{todo.companyCity}</h4>
                   <div className={classes.cv_section_desc}>
-                    <p>
-                      Odpowiedzielny za pozyskiwanie nowych klientow nawiazywan
-                      zywanie umow
-                    </p>
+                    <p>{todo.jobDescription}</p>
                   </div>
                   <hr />
                 </ul>
@@ -91,25 +83,6 @@ const EditorResume2 = ({
                   </h3>
                   <h4>{todo.schoolCity}</h4>
                   <div className={classes.cv_section_desc}>
-                    <p>
-                      Odpowiedzielny za pozyskiwanie nowych klientow nawiazywan
-                      zywanie umow
-                    </p>
-                  </div>
-                  <hr />
-                </ul>
-              ))}
-            </div>
-          )}
-          {projectList.length > 0 && (
-            <div className={classes["cv_section"]}>
-              <h1>Projects</h1>
-              {projectList.map((todo, index) => (
-                <ul key={index}>
-                  <h2>{todo.projectName}</h2>
-                  <h4>{todo.projectLink}</h4>
-                  <div className={classes.cv_section_desc}>
-                    <p>{todo.projectDescription}</p>
                   </div>
                   <hr />
                 </ul>
@@ -150,6 +123,19 @@ const EditorResume2 = ({
               </div>
             </div>
           )}
+          {hobbyList.length > 0 && (
+            <div className={classes.cv_section}>
+              <h1>Hobbies</h1>
+              <div className={classes.cv_section_list_r}>
+                {hobbyList.map((hobby, index) => (
+                  <ul key={index}>
+                    <li>{hobby.hobby}</li>
+                    <hr />
+                  </ul>
+                ))}
+              </div>
+            </div>)
+            }
         </div>
       </div>
     </div>
