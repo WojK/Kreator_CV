@@ -97,6 +97,12 @@
   font-weight: 700;
 }
 
+.profile-description{
+  font-family: Roboto;
+  font-size: 15px;
+  color: #807676;
+}
+
 .display-none {
   display: none;
 }

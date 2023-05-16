@@ -2,23 +2,22 @@ import React from "react";
 import classes from "./editor.module.css";
 import jsPDF from "jspdf";
 import { useRef, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-// import { FaBeer } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 import photo from "../../assets/images/photo.jpg";
 import "../../assets/fonts/Roboto-normal";
 import "../../assets/fonts/times-normal";
 import "../../assets/fonts/times-bold";
 
 import EditorForm from "./EditorForm";
-import EditorFormTech from "./tech/EditorFormTech";
-import EditorFormGeneral from "./general/EditorFormGeneral";
 
 import EditorResumeTech from "./tech/EditorResumeTech";
 import EditorResumeTechV2 from "./tech/EditorResumeTechV2";
+
+import EditorResumeStudentV1 from "./student/EditorResumeStudentV1";
 import EditorResumeStudent from "./student/EditorResumeStudent";
-import EditorResume from "./EditorResume";
-import EditorResumeGeneralV2 from "./general/EditorResumeGeneralV2";
+
 import EditorResumeGeneralV1 from "./general/EditorResumeGeneralV1";
+import EditorResumeGeneralV2 from "./general/EditorResumeGeneralV2";
 
 const Editor = () => {
   // personal
@@ -228,6 +227,11 @@ const Editor = () => {
       },
     });
   };
+
+  const { editorId } = useParams();
+  let formType = editorId;
+  formType = formType.slice(0, -1);
+
   const propsForm = {
     setName,
     name,
@@ -236,9 +240,11 @@ const Editor = () => {
     isPhoneNumber,
     handlePhoneNumber,
     phoneNumber,
+    setPhoneNumber,
     isEmail,
     handleEmail,
     email,
+    setEmail,
     isLocation,
     handleLocation,
     location,
@@ -311,6 +317,7 @@ const Editor = () => {
     setClause,
     handleGeneratePdf,
     onImageChange,
+    formType
   };
   const propsResume = {
     name,
@@ -337,24 +344,19 @@ const Editor = () => {
     educationList,
   };
 
-  const { editorId } = useParams();
-  let formType = editorId;
-  formType = formType.slice(0, -1);
+  
   return (
     <>
       <div className={classes.main}>
-        {/* conditional rendering form*/}
-        {formType == "student" && <EditorForm {...propsForm} />}
-        {formType == "technical" && <EditorFormTech {...propsForm} />}
-        {formType == "general" && <EditorFormGeneral {...propsForm} />}
+        <EditorForm {...propsForm} />
 
         {/* conditional rendering resume*/}
-        {editorId == "student1" && <EditorResume {...propsResume} />}
-        {editorId == "student2" && <EditorResumeStudent {...propsResume} />}
-        {editorId == "technical1" && <EditorResumeTech {...propsResume} />}
-        {editorId == "technical2" && <EditorResumeTechV2 {...propsResume} />}
-        {editorId == "general1" && <EditorResumeGeneralV1 {...propsResume} />}
-        {editorId == "general2" && <EditorResumeGeneralV2 {...propsResume} />}
+        {editorId === "student1" && <EditorResumeStudentV1 {...propsResume} />}
+        {editorId === "student2" && <EditorResumeStudent {...propsResume} />}
+        {editorId === "technical1" && <EditorResumeTech {...propsResume} />}
+        {editorId === "technical2" && <EditorResumeTechV2 {...propsResume} />}
+        {editorId === "general1" && <EditorResumeGeneralV1 {...propsResume} />}
+        {editorId === "general2" && <EditorResumeGeneralV2 {...propsResume} />}
       </div>
     </>
   );

@@ -12,6 +12,7 @@ const EditorResumeGeneralV1 = ({
   email,
   isLocation,
   location,
+  profileDescription,
   aboutme,
   experienceList,
   skillList,
@@ -32,6 +33,7 @@ const EditorResumeGeneralV1 = ({
         <p className={classes["name"]}>
           {name} {surname}
         </p>
+        <p className={classes["profile-description"]}>{profileDescription}</p>
 
         <ul className={classes["descontent-ul"]}>
           <li

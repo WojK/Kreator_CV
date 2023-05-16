@@ -1,15 +1,14 @@
 import React from "react";
-import classes from "./editor.module.css";
-import photo from "../../assets/images/photo.jpg";
-import MailIcon from "../../assets/images/mail.png";
-import TelephoneIcon from "../../assets/images/telephone.png";
-import LocationIcon from "../../assets/images/location.png";
-import LinkedinIcon from "../../assets/images/linkedin-logo.png";
-import GithubIcon from "../../assets/images/github.png";
-import "../../assets/fonts/Roboto-normal";
-import "../../assets/fonts/times-normal";
-import "../../assets/fonts/times-bold";
-const EditorResume = ({
+import classes from "../editor.module.css";
+import MailIcon from "../../../assets/images/mail.png";
+import TelephoneIcon from "../../../assets/images/telephone.png";
+import LocationIcon from "../../../assets/images/location.png";
+import LinkedinIcon from "../../../assets/images/linkedin-logo.png";
+import GithubIcon from "../../../assets/images/github.png";
+import "../../../assets/fonts/Roboto-normal";
+import "../../../assets/fonts/times-normal";
+import "../../../assets/fonts/times-bold";
+const EditorResumeStudentV1 = ({
   name,
   surname,
   isPhoneNumber,
@@ -107,13 +106,10 @@ const EditorResume = ({
 
           <div className={classes["personal-data-container"]}>
             <ul>
-              <li>
-                <p className={classes["personal-data-title"]}>PROFILE</p>
+            <li>
+                <p className={classes["personal-data-title"]}>ABOUT ME</p>
                 <hr className={classes["personal-data-hr"]} />
-
-                <span className={classes["personal-des"]}>
-                  {profileDescription}
-                </span>
+                <span className={classes["personal-des"]}>{aboutme}</span>
               </li>
               <li>
                 <p className={classes["personal-data-title"]}>LANGUAGES</p>
@@ -125,11 +121,6 @@ const EditorResume = ({
                     </ul>
                   ))}
                 </div>
-              </li>
-              <li>
-                <p className={classes["personal-data-title"]}>ABOUT ME</p>
-                <hr className={classes["personal-data-hr"]} />
-                <span className={classes["personal-des"]}>{aboutme}</span>
               </li>
             </ul>
           </div>
@@ -177,7 +168,7 @@ const EditorResume = ({
             </ul>
           ))}
         </div>
-        <h2 className={classes["knowledge-title"]}>SKILLS</h2>
+        <h2 className={classes["knowledge-title"]}>Skills:</h2>
         <hr />
         <div>
           {skillList.map((skill, index) => (
@@ -192,4 +183,4 @@ const EditorResume = ({
   );
 };
 
-export default EditorResume;
+export default EditorResumeStudentV1;

@@ -34,6 +34,8 @@ const EditorForm = ({
   setProfileDescription,
   aboutme,
   setAboutme,
+  jobDescription,
+  setJobDescription,
   companyName,
   setCompanyName,
   companyCity,
@@ -75,10 +77,16 @@ const EditorForm = ({
   handleAddLanguage,
   languageList,
   handleRemoveLanguage,
+  hobby,
+  setHobby,
+  handleAddHobby,
+  hobbyList,
+  handleRemoveHobby,
   clause,
   setClause,
   handleGeneratePdf,
   onImageChange,
+  formType
 }) => {
   return (
     <div className={classes.form}>
@@ -89,25 +97,28 @@ const EditorForm = ({
               <TabSwitcher tabId={1} icon={"fas fa-user"}>
                 <div className={classes["tab-p"]}>Personal</div>
               </TabSwitcher>
-              <TabSwitcher tabId={2} icon={"fas fa-book"}>
+              {(formType === "general" || formType === "student") &&<TabSwitcher tabId={2} icon={"fas fa-book"}>
                 <div className={classes["tab-p"]}>Profile</div>
-              </TabSwitcher>
+              </TabSwitcher>}
               <TabSwitcher tabId={3} icon={"fas fa-school"}>
                 <div className={classes["tab-p"]}>Education</div>
               </TabSwitcher>
               <TabSwitcher tabId={4} icon={"fas fa-briefcase"}>
                 <div className={classes["tab-p"]}>Experience</div>
               </TabSwitcher>
-              <TabSwitcher tabId={5} icon={"fa fa-fighter-jet"}>
+              {(formType === "student" || formType === "technical") && <TabSwitcher tabId={5} icon={"fa fa-fighter-jet"}>
                 <div className={classes["tab-p"]}>Project</div>
-              </TabSwitcher>
+              </TabSwitcher>}
               <TabSwitcher tabId={6} icon={"fa fa-ambulance"}>
                 <div className={classes["tab-p"]}>Skills</div>
               </TabSwitcher>
               <TabSwitcher tabId={7} icon={"fa fa-language"}>
                 <div className={classes["tab-p"]}>Languages</div>
               </TabSwitcher>
-              <TabSwitcher tabId={8} icon={"fas fa-globe"}>
+              {formType === "general" && <TabSwitcher tabId={8} icon={"fas fa-laugh"}>
+                <div className={classes["tab-p"]}>Hobby</div>
+              </TabSwitcher>}
+              <TabSwitcher tabId={9} icon={"fas fa-globe"}>
                 <div className={classes["tab-p"]}>Sum</div>
               </TabSwitcher>
             </div>
@@ -201,7 +212,7 @@ const EditorForm = ({
                     onChange={(e) => setLocation(e.target.value)}
                   ></input>
                 </div>
-                <div className={classes["tab-content-form-100"]}>
+                {(formType === "student") && <div className={classes["tab-content-form-100"]}>
                   <div className={classes["is-active"]}>
                     <label>Github</label>
                     <input
@@ -218,8 +229,8 @@ const EditorForm = ({
                     value={github}
                     onChange={(e) => setGithub(e.target.value)}
                   ></input>
-                </div>
-                <div className={classes["tab-content-form-100"]}>
+                </div>}
+                {(formType === "student" || formType === "technical") &&<div className={classes["tab-content-form-100"]}>
                   <div className={classes["is-active"]}>
                     <label>Linkedin</label>
                     <input
@@ -235,20 +246,20 @@ const EditorForm = ({
                     value={linkedin}
                     onChange={(e) => setLinkedin(e.target.value)}
                   ></input>
-                </div>
+                </div>}
               </TabContent>
               <TabContent id={2}>
                 <h1>Fill in your personal information</h1>.
                 <p>
                   Describe your profile and post information about yourself!
                 </p>
-                .<label>Profile description</label>
+                {(formType === "general") && <><label>Profile description</label>
                 <textarea
                   rows="5"
                   type="text"
                   value={profileDescription}
                   onChange={(e) => setProfileDescription(e.target.value)}
-                ></textarea>
+                ></textarea></>}
                 <label>About me </label>
                 <textarea
                   rows="5"
@@ -351,7 +362,7 @@ const EditorForm = ({
                 </p>
                 <div className={`${classes["tab-content-forms"]}`}>
                   <div className={classes["tab-content-form"]}>
-                    <label>Conpany name</label>
+                    <label>Company name</label>
                     <input
                       type="text"
                       value={companyName}
@@ -384,6 +395,13 @@ const EditorForm = ({
                       onChange={(event) => setExperienceTo(event.target.value)}
                     />
                   </div>
+                  {(formType === "general") && <><label>Describe your job in one or two sentences</label>
+                  <textarea
+                    rows="3"
+                    type="text"
+                    value={jobDescription}
+                    onChange={(e) => setJobDescription(e.target.value)}
+                  ></textarea></>}
                   <div className={classes["to-right"]}>
                     <a
                       className={`${classes["icon-add"]}`}
@@ -546,6 +564,42 @@ const EditorForm = ({
                 </div>
               </TabContent>
               <TabContent id={8}>
+                <h1>Hobby</h1>
+                <p>Share your interests, show what drives your life</p>
+                <div className={classes["tab-content-form-language"]}>
+                  <div className={classes["tab-content-form-language-add"]}>
+                    <input
+                      className={classes["tab-content-form-language-add-input"]}
+                      id="hobbyInput"
+                      type="text"
+                      value={hobby}
+                      onChange={(event) => setHobby(event.target.value)}
+                    />
+                  </div>
+                  <div className={classes["to-right"]}>
+                    <a
+                      className={`${classes["icon-add"]}`}
+                      onClick={handleAddHobby}
+                    >
+                      <i class="fa fa-plus"></i>
+                    </a>
+                  </div>
+                  <div className={classes.card}>
+                    {hobbyList.map((hobby, index) => (
+                      <ul className={classes["card-list-elem"]} key={index}>
+                        <p>{hobby.hobby}</p>
+                        <a
+                          className={`${classes["icon-trash"]}`}
+                          onClick={() => handleRemoveHobby(index)}
+                        >
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </ul>
+                    ))}
+                  </div>
+                </div>
+              </TabContent>
+              <TabContent id={9}>
                 <h1>
                   It's almost ready! Let's finish your resume with a strong
                   summary

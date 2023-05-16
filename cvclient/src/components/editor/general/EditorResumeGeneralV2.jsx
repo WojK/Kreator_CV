@@ -30,6 +30,7 @@ const EditorResume2 = ({
           <h1>
             {name} {surname}
           </h1>
+          <p>{profileDescription}</p>
         </div>
         <div className={classes["cv-contact"]}>
           {isEmail && (
