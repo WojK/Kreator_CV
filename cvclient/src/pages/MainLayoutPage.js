@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Footer, Navbar, Login, Register } from "../components";
+import { Footer, Navbar} from "../components";
 import classes from "./MainLayoutPage.module.css";
 import { useLocation } from "react-router-dom";
 import MainPageContent from "./MainPageContent";

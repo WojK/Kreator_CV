@@ -1,8 +1,6 @@
 import classes from "./ChooseTemplateStylesPage.module.css";
 import { useParams, useNavigate } from "react-router-dom";
-import { useRef, useEffect, useState } from "react";
 import s1 from "../assets/images/examplecv.jpg";
-import s2 from "../assets/images/examplecv.jpg";
 
 import student_template_example from "../assets/images/student-template-example.png";
 import generalThumbnailV1 from "../assets/images/generalThumbnailV1.png";

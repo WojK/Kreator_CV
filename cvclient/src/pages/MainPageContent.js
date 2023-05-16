@@ -3,7 +3,7 @@ import partners from "../assets/images/partners.png";
 import cv from "../assets/images/cv.png";
 import experience from "../assets/images/experience.png";
 import task from "../assets/images/task.png";
-import examplecv from "../assets/images/examplecv.jpg";
+import examplecv from "../assets/images/student-template-example.png";
 import { useNavigate } from "react-router-dom";
 
 const MainPageContent = () => {

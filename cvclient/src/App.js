@@ -24,13 +24,7 @@ const router = createBrowserRouter(
       <Route
         path="creator/:cvtemplate"
         element={<ChooseTemplateStylesPage />}
-      />
-      ,
-      {/* <Route
-        path="creator-template-style"
-        element={<ChooseTemplateStylesPage />}
-      />
-      , */}
+      />,
       <Route path="advices" element={<AdvicesPage />} />,
       <Route path="advices/:adviceId" element={<AdviceArticle />} />,
       <Route path="about_us" element={<AboutUsPage />}></Route>,

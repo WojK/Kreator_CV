@@ -61,23 +61,11 @@ const LoginForm = () => {
 
       <div className={classes["form-container"]}>
         <form onSubmit={handleLogin}>
-          {/* <div className={classes["input-container"]}>
-            <label className={classes["form-label"]}>E-mail: </label>
-            <input
-              className={classes["input-box"]}
-              type="text"
-              placeholder="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            ></input>
-          </div> */}
           <div className={classes["input-container"]}>
             <label className={classes["form-label"]}>E-mail: </label>
             <input
               className={classes["input-box"]}
               name="email"
-              // type="text"
               placeholder="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

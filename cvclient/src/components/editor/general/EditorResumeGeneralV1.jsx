@@ -150,7 +150,6 @@ const EditorResumeGeneralV1 = ({
           </div>
         </div>
       </div>
-      {/* <div className={classes["bottom-semi-circle"]}></div> */}
     </div>
   );
 };

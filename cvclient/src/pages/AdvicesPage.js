@@ -3,7 +3,6 @@ import classes from "./AdvicePage.module.css";
 import { adviceArticles } from "../mocks/mockedData";
 import { images } from "../mocks/images";
 
-const adviceArticlesList = adviceArticles;
 const AdvicesPage = () => {
   const adviceArticlesList = adviceArticles.map((article) => (
     <AdviceThumbnail

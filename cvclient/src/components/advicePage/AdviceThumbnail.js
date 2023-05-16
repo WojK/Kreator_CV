@@ -1,5 +1,4 @@
 import classes from "./AdviceThumbnail.module.css";
-import advicePhoto from "../../assets/images/advice-image.png";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const AdviceThumbnail = (props) => {
