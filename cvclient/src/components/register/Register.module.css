@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+.column {
+  float: left;
+  width: 50%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 2%;
+  height: 100vh;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.left {
+  background-color: #f7f7f7;
+}
+.right {
+  background-color: #9cc3eb;
+  text-align: center;
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+.register-icon {
+  width: 40%;
+}
+
+.input-box {
+  width: 40%;
+  min-height: 30%;
+  padding-left: 10px;
+  height: 50px;
+  border: 2px solid #2a5f8a;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  color: #070707;
+  transition-duration: 0.5s;
+  font-size: 1.5vh;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.register-title-form {
+  font-family: "Alkatra";
+  color: #0a2b3d;
+  font-size: 5vh;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.register-small-text {
+  color: #6b7276;
+  font-size: 2.5vh;
+  text-align: center;
+  padding-top: 1%;
+}
+
+.form-container {
+  padding-top: 12%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.form-label {
+  font-family: "Alkatra";
+  font-size: 3vh;
+}
+
+.bottom-text {
+  margin-top: 5%;
+  font-size: 1.5vh;
+  font-family: "Alkatra";
+  text-align: center;
+  color: #0a2b3d;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.submit-button {
+  margin-top: 10%;
+  width: 50%;
+  text-align: center;
+  padding: 1%;
+  border-radius: 25px;
+  font-size: 3.5vh;
+  font-family: "Alkatra";
+  background-color: #0a2b3d;
+  color: #f7f7f7;
+  cursor: pointer;
+}
+
+.submit-container {
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Add semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.modal-content {
+  width: 400px;
+  height: 400px;
+  max-height: 100%;
+  border-radius: 15%;
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content p {
+  font-family: "Alkatra";
+  color: #0a2b3d;
+  font-size: 3vh;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.modal-content button {
+  margin-top: 2rem;
+  width: 50%;
+  text-align: center;
+  padding: 5px;
+  border-radius: 25px;
+  font-size: 3vh;
+  font-family: "Alkatra";
+  background-color: #0a2b3d;
+  color: #f7f7f7;
+  cursor: pointer;
+}
+
+.error-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: red;
+}

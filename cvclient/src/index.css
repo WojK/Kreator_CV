@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.12.1/css/all.css');
+
+:root {
+  --font-family: 'Inter';
+
+  --color-bg: #C5DBF5;
+  --color-navbar: #3F81BD;
+  --color-footer: #0A2B3D;
+  --color-input: #9CC3EB;
+  --color-block-dark: #153C56;
+  --color-button: #1F4D70;
+}

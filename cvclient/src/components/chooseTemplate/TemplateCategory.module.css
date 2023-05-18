@@ -1,0 +1,43 @@
+.template-div {
+  width: 25%;
+  height: 22vw;
+  background-color: #3470a4;
+  color: white;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.template-div:hover {
+  transform: scale(1.1);
+}
+
+.template-div h2 {
+  padding-top: 5%;
+  margin-bottom: 4%;
+}
+
+.title {
+  font-family: "Roboto";
+  font-size: 2vw;
+  font-weight: 400;
+}
+
+.description-div {
+  font-family: "Roboto";
+  width: 80%;
+  height: 40vh;
+  font-size: 0.8vw;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.img {
+  margin-top: 4%;
+  width: 30%;
+}

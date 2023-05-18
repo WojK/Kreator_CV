@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  cvapi:
+    image: ${DOCKER_REGISTRY-}cvapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+        - "5710:443"
+        - "5709:80"
+  postgresql_database:
+    image: postgres:latest
+    container_name: webapiPostgrestTest_DB
+    environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=postgresTest
+    ports:
+        - "5432:5432"
+  react:
+      build:
+          context: .././cvclient
+          dockerfile: Dockerfile
+      ports:
+          - "3000:3000"
+      #tty: true
+      expose:
+          - "3000" 
+      #stdin_open: true
+      #environment:
+      #    - MODE=dev

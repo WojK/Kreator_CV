@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CvApi/.vs
+/CvApi/obj
+/cvclient/node_modules
+/CvApi/CvApi.csproj.user
+/CvApi/bin/Debug
+/CvApi/CvApi.csproj.user
+/cvclient/.vscode

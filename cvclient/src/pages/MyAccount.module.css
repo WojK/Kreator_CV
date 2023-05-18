@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@500&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+}
+
+.right {
+  margin-top: 5%;
+  border-radius: 8%;
+
+  width: 40%;
+  background-color: #b1d8f5;
+  box-shadow: -1px 11px 28px -8px rgba(66, 68, 90, 1);
+}
+
+.left {
+  margin-left: 10%;
+  margin-top: 5%;
+  width: 40%;
+  box-shadow: -1px 11px 28px -8px rgba(66, 68, 90, 1);
+  border-radius: 8%;
+  border: 5px solid #2a5f8a;
+}
+
+.personal-info-div {
+  padding: 2%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.center-content {
+  text-align: center;
+}
+
+.input-content {
+  margin-left: 32%;
+}
+
+.personal-info-div h1 {
+  margin-bottom: 5%;
+  margin-top: 2%;
+
+  color: rgb(71, 67, 67);
+}
+
+.label-value-div p {
+  display: inline;
+  font-size: 1.5vw;
+  margin-left: 2%;
+}
+
+.label-value-div {
+  margin-bottom: 20px;
+}
+
+.update-profile-button {
+  font-size: 1.6vw;
+  border-radius: 12px;
+  padding: 1%;
+  font-weight: bold;
+  cursor: pointer;
+  border-color: #2a5f8a;
+  color: dodgerblue;
+  margin-bottom: 3%;
+}
+
+.update-profile-button:hover {
+  background: #2196f3;
+  color: white;
+}
+
+.save-changes-button {
+  font-size: 1.6vw;
+  border-radius: 12px;
+  padding: 1%;
+  font-weight: bold;
+  cursor: pointer;
+  border-color: green;
+  color: green;
+  margin-bottom: 3%;
+}
+
+.save-changes-button:hover {
+  background-color: #04aa6d;
+  color: white;
+}
+
+.cancel-changes-button {
+  font-size: 1.6vw;
+  border-radius: 12px;
+  padding: 1%;
+  font-weight: bold;
+  cursor: pointer;
+  border-color: #f44336;
+  color: red;
+  margin-bottom: 3%;
+}
+
+.cancel-changes-button:hover {
+  background: #f44336;
+  color: white;
+}
+
+.profile-pic {
+  margin-top: 3%;
+  width: 30%;
+}
+
+.download-pic {
+  width: 5%;
+}
+
+.personal-info-header {
+  font-size: 2.6vw;
+  color: #0a2b3d;
+}
+
+.input-class {
+  margin-left: 10px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.list-of-cv-div {
+  padding: 2%;
+}
+
+.cv-list-item {
+  font-size: 1.6vw;
+  padding-bottom: 2%;
+  font-family: "Alkatra";
+  text-align: center;
+}
+
+.cv-list-header {
+  font-size: 2.6vw;
+  text-align: center;
+  padding-bottom: 5%;
+  font-family: "Alkatra";
+}

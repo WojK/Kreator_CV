@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@500&display=swap");
+
+.article-div {
+  min-width: 50%;
+  padding-top: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2%;
+  border: 4px solid #153c56;
+  border-radius: 20px;
+  margin-top: 3%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #3470A4;
+  box-shadow: 0px 14px 31px 3px rgba(66, 68, 90, 1);
+}
+
+.article-author {
+  font-size: 2vh;
+  margin-bottom: 2%;
+}
+
+.article-title {
+  font-size: 4vh;
+  font-weight: bolder;
+  font-family: "Roboto";
+  color: #9CC3EB;
+  margin-bottom: 1%;
+}
+
+.article-text {
+  font-size: 2vh;
+  font-family: "Alkatra";
+  color: #EEF3FF
+}
+
+.article-date {
+  font-size: 1.8vh;
+  font-weight: bold;
+  font-family: "Roboto";
+  color: #0A2B3D;
+}
+
+.article-category {
+  font-size: 2vh;
+  font-family: "Roboto";
+  text-align: right;
+  font-weight: bolder;
+  color: #0A2B3D;
+}

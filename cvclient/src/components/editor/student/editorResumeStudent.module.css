@@ -1,0 +1,165 @@
+.cv {
+  width: 800px;
+  min-height: 1115px;
+  align-self: flex-end;
+  box-shadow: 0 0 0 0.4rem rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.header-div {
+  color: white;
+  display: inline-block;
+  padding: 12px 35px 12px 35px;
+  background: #329232d9;
+  position: relative;
+  overflow: hidden;
+}
+.header-div:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -90px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(8deg);
+  background-color: black;
+  background-color: white;
+}
+
+.header-div:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -90px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(8deg);
+  background-color: black;
+  background-color: white;
+}
+
+.contact-div {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 94%;
+  height: 200px;
+  background-color: #329232d9;
+  border-radius: 15px;
+  justify-content: flex-start;
+}
+.name-info-div {
+  margin-top: 20px;
+  color: white;
+  width: 40%;
+  margin-left: 5%;
+  font-family: "Roboto";
+}
+.contact-info-div {
+  margin-top: 45px;
+  color: white;
+  width: 40%;
+  margin-left: 10%;
+  font-size: 18px;
+  font-weight: 100;
+}
+.contact-info-p {
+  margin-bottom: 4px;
+}
+
+.name-surname-p {
+  font-size: 30px;
+  font-weight: 100;
+  padding-top: 108px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image {
+  margin-top: 4px;
+  margin-left: 4px;
+  width: 90px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  z-index: 2;
+}
+
+.background-image-div {
+  border-radius: 50%;
+  width: 98px;
+  height: 98px;
+  background-color: white;
+  position: absolute;
+}
+
+.display-none {
+  display: none;
+}
+
+.details {
+  display: flex;
+  margin-top: 30px;
+}
+.left-details-div {
+  /* background-color: aquamarine; */
+  width: 45%;
+  margin-left: 55px;
+}
+.right-details-div {
+  width: 45%;
+}
+
+.des {
+  margin-top: 12px;
+  margin-left: 30px;
+  width: 80%;
+  font-size: 16px;
+  font-family: "Roboto";
+}
+
+.personal-data-hr {
+  margin-top: 14px;
+  margin-bottom: 18px;
+  width: 90%;
+  border: 1px solid;
+}
+
+.ul-project {
+  margin-bottom: 16px;
+}
+
+.ul-project p {
+  margin-top: 5px;
+}
+.ul-project a {
+  font-size: 14px;
+}
+.p-year {
+  font-size: 12px;
+  font-weight: 200;
+}
+.card-list-elem-pdf {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.width70 {
+  width: 70%;
+}
+
+.dates {
+  background-color: rgba(230, 235, 240, 0.993);
+  border-radius: 10%;
+  width: 80px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.width30 {
+  width: 30%;
+}
