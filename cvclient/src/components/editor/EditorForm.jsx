@@ -4,6 +4,13 @@ import "../../assets/fonts/Roboto-normal";
 import "../../assets/fonts/times-normal";
 import "../../assets/fonts/times-bold";
 import { CardTab, TabSwitcher, TabContent } from "../card/Card";
+import { useNavigate } from "react-router-dom";
+
+import {
+  studentsTemplates,
+  generalsTemplates,
+  technicalTemplates,
+} from "../../pages/cv-data-templates";
 
 const EditorForm = ({
   setName,
@@ -86,10 +93,59 @@ const EditorForm = ({
   setClause,
   handleGeneratePdf,
   onImageChange,
-  formType
+  formType,
 }) => {
+  const navigate = useNavigate();
+
+  let templates;
+  if (formType === "general") {
+    templates = generalsTemplates.map(function (template) {
+      return (
+        <div
+          className={classes["template-choose"]}
+          onClick={(e) => {
+            navigate(`/editor/${template.id}`);
+          }}
+        >
+          {template.shortcut}
+        </div>
+      );
+    });
+  } else if (formType === "student") {
+    templates = studentsTemplates.map(function (template) {
+      return (
+        <div
+          className={classes["template-choose"]}
+          onClick={(e) => {
+            navigate(`/editor/${template.id}`);
+          }}
+        >
+          {template.shortcut}
+        </div>
+      );
+    });
+  } else if (formType === "technical") {
+    templates = technicalTemplates.map(function (template) {
+      return (
+        <div
+          className={classes["template-choose"]}
+          onClick={(e) => {
+            navigate(`/editor/${template.id}`);
+          }}
+        >
+          {template.shortcut}
+        </div>
+      );
+    });
+  }
+
   return (
     <div className={classes.form}>
+      <h1 className={classes["choose-template-text"]}>
+        Feel free to switch your template any time
+      </h1>
+      <div className={classes["template-choose-container"]}>{templates}</div>
+
       <div>
         <CardTab>
           <div className={classes["tab-card"]}>
@@ -97,27 +153,33 @@ const EditorForm = ({
               <TabSwitcher tabId={1} icon={"fas fa-user"}>
                 <div className={classes["tab-p"]}>Personal</div>
               </TabSwitcher>
-              {(formType === "general" || formType === "student") &&<TabSwitcher tabId={2} icon={"fas fa-book"}>
-                <div className={classes["tab-p"]}>Profile</div>
-              </TabSwitcher>}
+              {(formType === "general" || formType === "student") && (
+                <TabSwitcher tabId={2} icon={"fas fa-book"}>
+                  <div className={classes["tab-p"]}>Profile</div>
+                </TabSwitcher>
+              )}
               <TabSwitcher tabId={3} icon={"fas fa-school"}>
                 <div className={classes["tab-p"]}>Education</div>
               </TabSwitcher>
               <TabSwitcher tabId={4} icon={"fas fa-briefcase"}>
                 <div className={classes["tab-p"]}>Experience</div>
               </TabSwitcher>
-              {(formType === "student" || formType === "technical") && <TabSwitcher tabId={5} icon={"fa fa-fighter-jet"}>
-                <div className={classes["tab-p"]}>Project</div>
-              </TabSwitcher>}
+              {(formType === "student" || formType === "technical") && (
+                <TabSwitcher tabId={5} icon={"fa fa-fighter-jet"}>
+                  <div className={classes["tab-p"]}>Project</div>
+                </TabSwitcher>
+              )}
               <TabSwitcher tabId={6} icon={"fa fa-ambulance"}>
                 <div className={classes["tab-p"]}>Skills</div>
               </TabSwitcher>
               <TabSwitcher tabId={7} icon={"fa fa-language"}>
                 <div className={classes["tab-p"]}>Languages</div>
               </TabSwitcher>
-              {formType === "general" && <TabSwitcher tabId={8} icon={"fas fa-laugh"}>
-                <div className={classes["tab-p"]}>Hobby</div>
-              </TabSwitcher>}
+              {formType === "general" && (
+                <TabSwitcher tabId={8} icon={"fas fa-laugh"}>
+                  <div className={classes["tab-p"]}>Hobby</div>
+                </TabSwitcher>
+              )}
               <TabSwitcher tabId={9} icon={"fas fa-globe"}>
                 <div className={classes["tab-p"]}>Sum</div>
               </TabSwitcher>
@@ -132,7 +194,12 @@ const EditorForm = ({
                 .
                 <div className={classes["tab-content-forms"]}>
                   <div className={classes["tab-content-form-image"]}>
-                    <input type="file" id="file-upload"  onChange={onImageChange} hidden />
+                    <input
+                      type="file"
+                      id="file-upload"
+                      onChange={onImageChange}
+                      hidden
+                    />
 
                     <label
                       className={classes["custom-file-upload"]}
@@ -212,54 +279,62 @@ const EditorForm = ({
                     onChange={(e) => setLocation(e.target.value)}
                   ></input>
                 </div>
-                {(formType === "student") && <div className={classes["tab-content-form-100"]}>
-                  <div className={classes["is-active"]}>
-                    <label>Github</label>
+                {formType === "student" && (
+                  <div className={classes["tab-content-form-100"]}>
+                    <div className={classes["is-active"]}>
+                      <label>Github</label>
+                      <input
+                        className={classes["checkbox"]}
+                        type="checkbox"
+                        autocomplete="off"
+                        value={isGitHub}
+                        onClick={handleGitHub}
+                        valur={isGitHub}
+                      ></input>
+                    </div>
                     <input
-                      className={classes["checkbox"]}
-                      type="checkbox"
-                      autocomplete="off"
-                      value={isGitHub}
-                      onClick={handleGitHub}
-                      valur={isGitHub}
+                      type="text"
+                      value={github}
+                      onChange={(e) => setGithub(e.target.value)}
                     ></input>
                   </div>
-                  <input
-                    type="text"
-                    value={github}
-                    onChange={(e) => setGithub(e.target.value)}
-                  ></input>
-                </div>}
-                {(formType === "student" || formType === "technical") &&<div className={classes["tab-content-form-100"]}>
-                  <div className={classes["is-active"]}>
-                    <label>Linkedin</label>
+                )}
+                {(formType === "student" || formType === "technical") && (
+                  <div className={classes["tab-content-form-100"]}>
+                    <div className={classes["is-active"]}>
+                      <label>Linkedin</label>
+                      <input
+                        className={classes["checkbox"]}
+                        type="checkbox"
+                        autocomplete="off"
+                        value={isLinkedin}
+                        onClick={handleLinkedin}
+                      ></input>
+                    </div>
                     <input
-                      className={classes["checkbox"]}
-                      type="checkbox"
-                      autocomplete="off"
-                      value={isLinkedin}
-                      onClick={handleLinkedin}
+                      type="text"
+                      value={linkedin}
+                      onChange={(e) => setLinkedin(e.target.value)}
                     ></input>
                   </div>
-                  <input
-                    type="text"
-                    value={linkedin}
-                    onChange={(e) => setLinkedin(e.target.value)}
-                  ></input>
-                </div>}
+                )}
               </TabContent>
               <TabContent id={2}>
                 <h1>Fill in your personal information</h1>.
                 <p>
                   Describe your profile and post information about yourself!
                 </p>
-                {(formType === "general") && <><label>Profile description</label>
-                <textarea
-                  rows="5"
-                  type="text"
-                  value={profileDescription}
-                  onChange={(e) => setProfileDescription(e.target.value)}
-                ></textarea></>}
+                {formType === "general" && (
+                  <>
+                    <label>Profile description</label>
+                    <textarea
+                      rows="5"
+                      type="text"
+                      value={profileDescription}
+                      onChange={(e) => setProfileDescription(e.target.value)}
+                    ></textarea>
+                  </>
+                )}
                 <label>About me </label>
                 <textarea
                   rows="5"
@@ -276,7 +351,6 @@ const EditorForm = ({
                   secondary education, do not write about primary education.
                 </p>
                 <div className={`${classes["tab-content-forms"]}`}>
-                    
                   <div className={classes["tab-content-form"]}>
                     <div>
                       <label htmlFor="schoolNameInput">School Name:</label>
@@ -336,7 +410,6 @@ const EditorForm = ({
                     </a>
                   </div>
                 </div>
-                
                 <div className={classes.card}>
                   {educationList.map((todo, index) => (
                     <ul className={classes["card-list-elem"]} key={index}>
@@ -395,13 +468,17 @@ const EditorForm = ({
                       onChange={(event) => setExperienceTo(event.target.value)}
                     />
                   </div>
-                  {(formType === "general") && <><label>Describe your job in one or two sentences</label>
-                  <textarea
-                    rows="3"
-                    type="text"
-                    value={jobDescription}
-                    onChange={(e) => setJobDescription(e.target.value)}
-                  ></textarea></>}
+                  {formType === "general" && (
+                    <>
+                      <label>Describe your job in one or two sentences</label>
+                      <textarea
+                        rows="3"
+                        type="text"
+                        value={jobDescription}
+                        onChange={(e) => setJobDescription(e.target.value)}
+                      ></textarea>
+                    </>
+                  )}
                   <div className={classes["to-right"]}>
                     <a
                       className={`${classes["icon-add"]}`}

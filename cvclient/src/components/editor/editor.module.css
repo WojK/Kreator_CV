@@ -22,17 +22,15 @@
 }
 
 @media screen and (max-width: 900px) {
-.main{
-  justify-content: center;
-}
+  .main {
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 580px) {
-
 }
 
 @media screen and (max-width: 400px) {
-
 }
 
 .personal-details {
@@ -199,7 +197,7 @@ className={
   margin-left: 4%;
   min-width: 600px;
   height: 640px;
-  height: 640px;
+  height: 880px; /*before adding changing templates was 640px*/
   border-radius: 6px;
   /* background-color: #e2eaee; */
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -217,7 +215,7 @@ className={
 
 .form textarea,
 input[type="text"],
-input[type="date"]{
+input[type="date"] {
   font: inherit;
   width: 100%;
   position: relative;
@@ -245,7 +243,7 @@ input:focus {
   resize: none;
 }
 
-.tab-content-form-image{
+.tab-content-form-image {
   display: flex;
   align-items: center;
 }
@@ -333,7 +331,6 @@ input:focus {
 
 .tab-content-form-100 {
   width: 99%;
-
 }
 
 .tab-content-form-language {
@@ -361,7 +358,6 @@ input:focus {
   margin-bottom: 20px;
   width: 100%;
 }
-
 
 .card {
   margin-top: 20px;
@@ -410,8 +406,6 @@ input:focus {
   margin-top: 20px;
 }
 
-
-
 .display-none {
   display: none;
 }
@@ -449,4 +443,31 @@ label {
   accent-color: #3c9b1f;
   margin-top: 10px;
   margin-left: 10px;
+}
+
+.template-choose-container {
+  display: flex;
+  gap: 8%;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.template-choose {
+  width: 50px;
+  height: 50px;
+  color: #001a23;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #72aae1;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 14px;
+  box-shadow: 0px 2px 14px -5px rgba(66, 68, 90, 1);
+}
+.choose-template-text {
+  font-size: 24px;
+  color: #4b4b4b;
+  font-family: "Roboto";
+  margin-bottom: 16px;
 }

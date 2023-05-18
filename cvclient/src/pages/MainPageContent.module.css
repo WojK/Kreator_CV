@@ -34,11 +34,11 @@
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
   text-shadow: 2px 2px 4px #141414;
   width: 40%;
+  transition: transform 0.3s;
 }
 
 .button-create-cv:hover {
-  background: #72aae1;
-  color: white;
+  transform: scale(1.1);
 }
 .content-text {
   font-size: 2.6vh;
