@@ -20,6 +20,8 @@ import EditorResumeGeneralV1 from "./general/EditorResumeGeneralV1";
 import EditorResumeGeneralV2 from "./general/EditorResumeGeneralV2";
 
 const Editor = () => {
+  const [color, setColor] = useState("color1"); // each resume will have classes like: color1, color2 etc.
+
   // personal
   const [name, setName] = useState("Tom");
   const [surname, setSurname] = useState("Cruse");
@@ -28,7 +30,7 @@ const Editor = () => {
 
   //personal desc
   const [location, setLocation] = useState("Warsaw");
-  const [github, setGithub] = useState();
+  const [github, setGithub] = useState("https://github.com/WojK/Kreator_CV");
   const [linkedin, setLinkedin] = useState("http://linkedin.com/tomcruse");
   const [profileDescription, setProfileDescription] = useState(
     "Profile description"
@@ -53,6 +55,10 @@ const Editor = () => {
   const [schoolDesc, setSchoolDesc] = useState(
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, expedita!"
   );
+  const [schoolFaculty, setSchoolFaculty] = useState(""); //Electrical Engineering
+  const [schoolSubject, setSchoolSubject] = useState(""); // Applied Information Technology
+  const [schoolSpecialization, setSchoolSpecialization] = useState("");
+
   // experience
   const [experienceList, setExperienceList] = useState([]);
   const [companyName, setCompanyName] = useState("Politechnika Warszawska");
@@ -65,7 +71,11 @@ const Editor = () => {
   );
   // skill
   const [skillList, setSkillList] = useState([]);
-  const [skill, setSkill] = useState("Komunikatywnosc");
+  const [skill, setSkill] = useState("Communication");
+
+  // soft skill
+  const [softSkillList, setSoftSkillList] = useState([]);
+  const [softSkill, setSoftSkill] = useState("Communication");
 
   // hobby
   const [hobbyList, setHobbyList] = useState([]);
@@ -84,6 +94,8 @@ const Editor = () => {
     "Kreator Cv to 5 osobowy projekt zespołowy majacy na celu..."
   );
 
+  const [tech, setTech] = useState("Tchnology");
+
   // education
   const handleAddEducation = () => {
     const newEducation = {
@@ -91,6 +103,9 @@ const Editor = () => {
       schoolCity,
       schoolStartYear,
       schoolFinishYear,
+      schoolFaculty,
+      schoolSubject,
+      schoolSpecialization,
       schoolDesc,
     };
     setEducationList([...educationList, newEducation]);
@@ -99,7 +114,11 @@ const Editor = () => {
     setSchoolStartYear("");
     setSchoolFinishYear("");
     setSchoolDesc("");
+    setSchoolFaculty("");
+    setSchoolSubject("");
+    setSchoolSpecialization("");
   };
+
   const handleRemoveEducation = (indexToRemove) => {
     const newEducationList = educationList.filter(
       (_, index) => index !== indexToRemove
@@ -152,12 +171,26 @@ const Editor = () => {
     setSkill("");
   };
 
+  const handleAddSoftSkill = () => {
+    const newSkill = { softSkill };
+    setSoftSkillList([...softSkillList, newSkill]);
+    setSoftSkill("");
+  };
+
+  const handleRemoveSoftSkill = (indexToRemove) => {
+    const newSkillList = softSkillList.filter(
+      (_, index) => index !== indexToRemove
+    );
+    setSoftSkillList(newSkillList);
+  };
+
   const handleRemoveSkill = (indexToRemove) => {
     const newSkillList = skillList.filter(
       (_, index) => index !== indexToRemove
     );
     setSkillList(newSkillList);
   };
+
   // hobby
   const handleAddHobby = () => {
     const newHobby = { hobby };
@@ -173,11 +206,12 @@ const Editor = () => {
   };
   //project
   const handleAddProject = () => {
-    const newProject = { projectName, projectLink, projectDescription };
+    const newProject = { projectName, projectLink, projectDescription, tech };
     setProjectList([...projectList, newProject]);
     setProjectName("");
     setProjectLink("");
     setProjectDescription("");
+    setTech("");
   };
 
   const handleRemoveProject = (indexToRemove) => {
@@ -233,6 +267,8 @@ const Editor = () => {
   formType = formType.slice(0, -1);
 
   const propsForm = {
+    color,
+    setColor,
     setName,
     name,
     setSurname,
@@ -285,6 +321,8 @@ const Editor = () => {
     handleAddProject,
     projectList,
     handleRemoveProject,
+    tech,
+    setTech,
     schoolName,
     setSchoolName,
     schoolCity,
@@ -295,13 +333,24 @@ const Editor = () => {
     setSchoolStartYear,
     schoolFinishYear,
     setSchoolFinishYear,
+    schoolFaculty,
+    setSchoolFaculty,
+    schoolSubject,
+    setSchoolSubject,
+    schoolSpecialization,
+    setSchoolSpecialization,
     handleAddEducation,
     educationList,
     handleRemoveEducation,
     skill,
     setSkill,
+    softSkill,
+    setSoftSkill,
     handleAddSkill,
+    handleAddSoftSkill,
+    handleRemoveSoftSkill,
     skillList,
+    softSkillList,
     handleRemoveSkill,
     language,
     setLanguage,
@@ -317,9 +366,10 @@ const Editor = () => {
     setClause,
     handleGeneratePdf,
     onImageChange,
-    formType
+    formType,
   };
   const propsResume = {
+    color,
     name,
     surname,
     isPhoneNumber,
@@ -337,6 +387,8 @@ const Editor = () => {
     experienceList,
     projectList,
     skillList,
+    softSkillList,
+    tech,
     languageList,
     hobbyList,
     image,
@@ -344,7 +396,6 @@ const Editor = () => {
     educationList,
   };
 
-  
   return (
     <>
       <div className={classes.main}>

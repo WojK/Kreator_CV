@@ -5,6 +5,7 @@ import "../../assets/fonts/times-normal";
 import "../../assets/fonts/times-bold";
 import { CardTab, TabSwitcher, TabContent } from "../card/Card";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import {
   studentsTemplates,
@@ -13,6 +14,8 @@ import {
 } from "../../pages/cv-data-templates";
 
 const EditorForm = ({
+  setColor,
+  color,
   setName,
   name,
   setSurname,
@@ -71,14 +74,27 @@ const EditorForm = ({
   setSchoolStartYear,
   schoolFinishYear,
   setSchoolFinishYear,
+  schoolFaculty,
+  setSchoolFaculty,
+  schoolSubject,
+  setSchoolSubject,
+  setSchoolSpecialization,
+  schoolSpecialization,
   handleAddEducation,
   educationList,
   handleRemoveEducation,
   skill,
   setSkill,
+  softSkill,
+  setSoftSkill,
+  handleAddSoftSkill,
+  handleRemoveSoftSkill,
   handleAddSkill,
   skillList,
+  softSkillList,
   handleRemoveSkill,
+  tech,
+  setTech,
   language,
   setLanguage,
   handleAddLanguage,
@@ -96,6 +112,8 @@ const EditorForm = ({
   formType,
 }) => {
   const navigate = useNavigate();
+
+  const { editorId } = useParams();
 
   let templates;
   if (formType === "general") {
@@ -162,7 +180,12 @@ const EditorForm = ({
                 <div className={classes["tab-p"]}>Education</div>
               </TabSwitcher>
               <TabSwitcher tabId={4} icon={"fas fa-briefcase"}>
-                <div className={classes["tab-p"]}>Experience</div>
+                {formType === "student" && (
+                  <div className={classes["tab-p"]}>Soft Skills</div>
+                )}
+                {formType !== "student" && (
+                  <div className={classes["tab-p"]}>Experience</div>
+                )}
               </TabSwitcher>
               {(formType === "student" || formType === "technical") && (
                 <TabSwitcher tabId={5} icon={"fa fa-fighter-jet"}>
@@ -192,6 +215,18 @@ const EditorForm = ({
                   can write or call you.
                 </p>
                 .
+                {editorId === "student2" && (
+                  <div className={classes.colors}>
+                    <div
+                      className={classes.color1}
+                      onClick={() => setColor("color1")}
+                    ></div>
+                    <div
+                      className={classes.color2}
+                      onClick={() => setColor("color2")}
+                    ></div>
+                  </div>
+                )}
                 <div className={classes["tab-content-forms"]}>
                   <div className={classes["tab-content-form-image"]}>
                     <input
@@ -289,7 +324,6 @@ const EditorForm = ({
                         autocomplete="off"
                         value={isGitHub}
                         onClick={handleGitHub}
-                        valur={isGitHub}
                       ></input>
                     </div>
                     <input
@@ -373,6 +407,56 @@ const EditorForm = ({
                       />
                     </div>
                   </div>
+                  {formType === "student" && (
+                    <>
+                      <div className={classes["tab-content-form"]}>
+                        <div>
+                          <label htmlFor="schoolFaclutyInput">
+                            School Faculty:
+                          </label>
+                          <input
+                            id="schoolFacultyInput"
+                            type="text"
+                            value={schoolFaculty}
+                            onChange={(event) =>
+                              setSchoolFaculty(event.target.value)
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <div>
+                          <label htmlFor="schoolSubjectInput">
+                            School Subject:
+                          </label>
+                          <input
+                            id="schoolSubjectInput"
+                            type="text"
+                            value={schoolSubject}
+                            onChange={(event) =>
+                              setSchoolSubject(event.target.value)
+                            }
+                          />
+                        </div>
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <div>
+                          <label htmlFor="schoolSpecializationInput">
+                            School Specialization:
+                          </label>
+                          <input
+                            id="schoolSpecializationInput"
+                            type="text"
+                            value={schoolSpecialization}
+                            onChange={(event) =>
+                              setSchoolSpecialization(event.target.value)
+                            }
+                          />
+                        </div>
+                      </div>
+                    </>
+                  )}
+
                   <div className={classes["tab-content-form"]}>
                     <div>
                       <label htmlFor="schoolStartYearInput">Start Year:</label>
@@ -428,82 +512,135 @@ const EditorForm = ({
                 </div>
               </TabContent>
               <TabContent id={4}>
-                <h1>Now let's work on your experience</h1>.
-                <p>
-                  Start with your most recent job. You can also add volunteer
-                  work, internships and extra-curricular activities.
-                </p>
-                <div className={`${classes["tab-content-forms"]}`}>
-                  <div className={classes["tab-content-form"]}>
-                    <label>Company name</label>
-                    <input
-                      type="text"
-                      value={companyName}
-                      onChange={(event) => setCompanyName(event.target.value)}
-                    />
+                {editorId === "student2" && (
+                  <div>
+                    <h1>Let's pick your most important soft skills</h1>
+                    <div className={classes["tab-content-form-language"]}>
+                      <div className={classes["tab-content-form-language-add"]}>
+                        <input
+                          className={
+                            classes["tab-content-form-language-add-input"]
+                          }
+                          id="languageInput"
+                          type="text"
+                          value={softSkill}
+                          onChange={(event) => setSoftSkill(event.target.value)}
+                        />
+                      </div>
+                      <div className={classes["to-right"]}>
+                        <a
+                          className={`${classes["icon-add"]}`}
+                          onClick={handleAddSoftSkill}
+                        >
+                          <i class="fa fa-plus"></i>
+                        </a>
+                      </div>
+                      <div className={classes.card}>
+                        {softSkillList.map((todo, index) => (
+                          <ul className={classes["card-list-elem"]} key={index}>
+                            <p>{todo.softSkill}</p>
+                            <a
+                              className={`${classes["icon-trash"]}`}
+                              onClick={() => handleRemoveSoftSkill(index)}
+                            >
+                              <i class="fa fa-trash"></i>
+                            </a>
+                          </ul>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  <div className={classes["tab-content-form"]}>
-                    <label>Company city</label>
-                    <input
-                      type="text"
-                      value={companyCity}
-                      onChange={(event) => setCompanyCity(event.target.value)}
-                    />
+                )}
+
+                {editorId !== "student2" && (
+                  <div>
+                    <h1>Now let's work on your experience</h1>.
+                    <p>
+                      Start with your most recent job. You can also add
+                      volunteer work, internships and extra-curricular
+                      activities.
+                    </p>
+                    <div className={`${classes["tab-content-forms"]}`}>
+                      <div className={classes["tab-content-form"]}>
+                        <label>Company name</label>
+                        <input
+                          type="text"
+                          value={companyName}
+                          onChange={(event) =>
+                            setCompanyName(event.target.value)
+                          }
+                        />
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <label>Company city</label>
+                        <input
+                          type="text"
+                          value={companyCity}
+                          onChange={(event) =>
+                            setCompanyCity(event.target.value)
+                          }
+                        />
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <label>Experience from</label>
+                        <input
+                          type="date"
+                          value={experienceFrom}
+                          onChange={(event) =>
+                            setExperienceFrom(event.target.value)
+                          }
+                        />
+                      </div>
+                      <div className={classes["tab-content-form"]}>
+                        <label>Experince to</label>
+                        <input
+                          type="date"
+                          value={experienceTo}
+                          onChange={(event) =>
+                            setExperienceTo(event.target.value)
+                          }
+                        />
+                      </div>
+                      {formType === "general" && (
+                        <>
+                          <label>
+                            Describe your job in one or two sentences
+                          </label>
+                          <textarea
+                            rows="3"
+                            type="text"
+                            value={jobDescription}
+                            onChange={(e) => setJobDescription(e.target.value)}
+                          ></textarea>
+                        </>
+                      )}
+                      <div className={classes["to-right"]}>
+                        <a
+                          className={`${classes["icon-add"]}`}
+                          onClick={handleAddExperience}
+                        >
+                          <i class="fa fa-plus"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div className={classes.card}>
+                      {experienceList.map((todo, index) => (
+                        <ul className={classes["card-list-elem"]} key={index}>
+                          <p>{todo.companyName}</p>
+                          <p>{todo.companyCity}</p>
+                          <p>{todo.experienceFrom}</p>
+                          <p>{todo.experienceTo}</p>
+                          <a
+                            className={`${classes["icon-trash"]}`}
+                            onClick={() => handleRemoveExperience(index)}
+                          >
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </ul>
+                      ))}
+                    </div>
                   </div>
-                  <div className={classes["tab-content-form"]}>
-                    <label>Experience from</label>
-                    <input
-                      type="date"
-                      value={experienceFrom}
-                      onChange={(event) =>
-                        setExperienceFrom(event.target.value)
-                      }
-                    />
-                  </div>
-                  <div className={classes["tab-content-form"]}>
-                    <label>Experince to</label>
-                    <input
-                      type="date"
-                      value={experienceTo}
-                      onChange={(event) => setExperienceTo(event.target.value)}
-                    />
-                  </div>
-                  {formType === "general" && (
-                    <>
-                      <label>Describe your job in one or two sentences</label>
-                      <textarea
-                        rows="3"
-                        type="text"
-                        value={jobDescription}
-                        onChange={(e) => setJobDescription(e.target.value)}
-                      ></textarea>
-                    </>
-                  )}
-                  <div className={classes["to-right"]}>
-                    <a
-                      className={`${classes["icon-add"]}`}
-                      onClick={handleAddExperience}
-                    >
-                      <i class="fa fa-plus"></i>
-                    </a>
-                  </div>
-                </div>
-                <div className={classes.card}>
-                  {experienceList.map((todo, index) => (
-                    <ul className={classes["card-list-elem"]} key={index}>
-                      <p>{todo.companyName}</p>
-                      <p>{todo.companyCity}</p>
-                      <p>{todo.experienceFrom}</p>
-                      <p>{todo.experienceTo}</p>
-                      <a
-                        className={`${classes["icon-trash"]}`}
-                        onClick={() => handleRemoveExperience(index)}
-                      >
-                        <i class="fa fa-trash"></i>
-                      </a>
-                    </ul>
-                  ))}
-                </div>
+                )}
               </TabContent>
               <TabContent id={5}>
                 <h1>Ok, let's go with projects</h1>.
@@ -539,6 +676,18 @@ const EditorForm = ({
                       }
                     />
                   </div>
+                  {formType === "student" && (
+                    <div className={classes["tab-content-form"]}>
+                      <label htmlFor="projectLinkInput">Tech Stack:</label>
+                      <input
+                        id="projectTechInput"
+                        type="text"
+                        value={tech}
+                        onChange={(event) => setTech(event.target.value)}
+                      />
+                    </div>
+                  )}
+
                   <div className={classes["to-right"]}>
                     <a
                       className={`${classes["icon-add"]}`}

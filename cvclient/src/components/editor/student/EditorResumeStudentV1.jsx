@@ -64,7 +64,9 @@ const EditorResumeStudentV1 = ({
               }
             >
               <img src={MailIcon} alt="MailIcon" className={classes.icon} />
-              <p className={classes["personal-data"]}>{email}</p>
+              <p className={classes["personal-data"]}>
+                <a href={`mailto:${email}`}>{email}</a>
+              </p>
             </li>
             <li
               className={
@@ -106,7 +108,7 @@ const EditorResumeStudentV1 = ({
 
           <div className={classes["personal-data-container"]}>
             <ul>
-            <li>
+              <li>
                 <p className={classes["personal-data-title"]}>ABOUT ME</p>
                 <hr className={classes["personal-data-hr"]} />
                 <span className={classes["personal-des"]}>{aboutme}</span>

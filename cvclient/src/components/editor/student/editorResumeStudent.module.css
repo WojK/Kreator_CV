@@ -9,8 +9,7 @@
 .header-div {
   color: white;
   display: inline-block;
-  padding: 12px 35px 12px 35px;
-  background: #329232d9;
+  padding: 10px 28px 10px 28px;
   position: relative;
   overflow: hidden;
 }
@@ -44,7 +43,7 @@
   margin-top: 20px;
   width: 94%;
   height: 200px;
-  background-color: #329232d9;
+  /* background-color: #329232d9; */
   border-radius: 15px;
   justify-content: flex-start;
 }
@@ -71,6 +70,7 @@
   font-size: 30px;
   font-weight: 100;
   padding-top: 108px;
+  text-shadow: -1px 2px 3px rgba(66, 68, 90, 1);
 }
 
 .image-container {
@@ -93,6 +93,7 @@
   height: 98px;
   background-color: white;
   position: absolute;
+  box-shadow: 0px 2px 4px 1px rgba(66, 68, 90, 1);
 }
 
 .display-none {
@@ -101,7 +102,7 @@
 
 .details {
   display: flex;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .left-details-div {
   /* background-color: aquamarine; */
@@ -120,6 +121,17 @@
   font-family: "Roboto";
 }
 
+.des p {
+  margin-bottom: 3px;
+}
+.des ul {
+  list-style: none;
+}
+
+/* .des p::before {
+  content: "\26AC";
+} */
+
 .personal-data-hr {
   margin-top: 14px;
   margin-bottom: 18px;
@@ -128,7 +140,7 @@
 }
 
 .ul-project {
-  margin-bottom: 16px;
+  margin-bottom: 6px;
 }
 
 .ul-project p {
@@ -141,25 +153,71 @@
   font-size: 12px;
   font-weight: 200;
 }
-.card-list-elem-pdf {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-bottom: 10px;
-}
 
-.width70 {
-  width: 70%;
+.education {
+  margin-left: 10px;
+  margin-bottom: 12px;
+}
+.education h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.education p {
+  margin-bottom: 2px;
+  margin-left: 6px;
+  color: rgba(0, 0, 0, 0.856);
 }
 
 .dates {
   background-color: rgba(230, 235, 240, 0.993);
   border-radius: 10%;
-  width: 80px;
+  width: 120px;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 .width30 {
   width: 30%;
+}
+
+.icon {
+  width: 16px;
+  margin-right: 10px;
+}
+
+.color1 {
+  background-color: #3c9b1f;
+}
+.color2 {
+  background-color: #1f62a3f7;
+}
+.project-description {
+  font-size: 14px;
+}
+
+.circle-icon {
+  width: 8px;
+  height: 8px;
+}
+
+.des li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tech-div {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 15px;
+}
+
+.tech-list {
+  margin-top: 5px;
+  display: flex;
+  column-gap: 12px;
+  flex-wrap: wrap;
 }

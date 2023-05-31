@@ -471,3 +471,24 @@ label {
   font-family: "Roboto";
   margin-bottom: 16px;
 }
+
+.colors {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.color1,
+.color2 {
+  width: 30px;
+  height: 30px;
+  border-radius: 20%;
+  cursor: pointer;
+}
+.color1 {
+  background-color: #3c9b1f;
+}
+.color2 {
+  background-color: #3972a9eb;
+}
