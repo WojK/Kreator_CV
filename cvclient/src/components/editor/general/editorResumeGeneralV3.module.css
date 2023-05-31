@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap");
+
+.cv {
+  width: 800px;
+  min-height: 800px;
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.2);
+  background-color: white;
+  font-size: 16px;
+  position: relative;
+}
+
+.cv-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.data-hr {
+  margin-bottom: 5px;
+  border: 1px solid #141963;
+}
+
+
+.section-title {
+  font-weight: 800;
+  font-family: "Noto Sans";
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  color: #141963;
+}
+
+.school-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.school-city{
+  margin-top: 2px;
+  margin-bottom: 5px;
+  color: #807676;
+  font-size: 14px;
+}
+
+.school-years {
+  font-size: 12px;
+  color: #807676;
+}
+
+.company {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.company-years {
+  font-size: 12px;
+  color: #807676;
+}
+
+.job-description {
+  font-size: 16px;
+  color: #1b1919;
+  margin-bottom: 10px;
+}
+
+.name-and-photo-div {
+  background-color: #141963;
+  display: flex;
+  justify-content: space-around;
+  color: #363535;
+}
+
+.name {
+  font-family: "Noto Sans";
+  font-size: 40px;
+  font-weight: 700;
+  color: #F7F7F7;
+}
+
+.display-none {
+  display: none;
+}
+
+.contact-data {
+  font-family: Roboto;
+  color: #F7F7F7;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.icon {
+  width: 1.1rem;
+}
+
+.descontent-ul {
+  list-style: none;
+}
+
+.descontent-ul-li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
+.image {
+  width: 120px;
+  margin-top: 10px;
+}
+
+
+.section-div{
+  margin-left: 5%;
+  margin-right: 5%;
+  /* margin-bottom: 1%; */
+}
+
+.profile-div{
+  color: #807676;
+  margin: 1% 5% 1% 5%;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.column-left{
+  width: 30%;
+}
+
+.column-right{
+  width: 70%;
+}
+
+.company-city{
+  margin-top: 2px;
+  margin-bottom: 5px;
+  color: #807676;
+  font-size: 14px;
+}

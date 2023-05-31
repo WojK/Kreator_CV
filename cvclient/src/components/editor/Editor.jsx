@@ -18,6 +18,8 @@ import EditorResumeStudent from "./student/EditorResumeStudent";
 
 import EditorResumeGeneralV1 from "./general/EditorResumeGeneralV1";
 import EditorResumeGeneralV2 from "./general/EditorResumeGeneralV2";
+import EditorResumeGeneralV3 from "./general/EditorResumeGeneralV3";
+
 
 const Editor = () => {
   const [color, setColor] = useState("color1"); // each resume will have classes like: color1, color2 etc.
@@ -408,6 +410,7 @@ const Editor = () => {
         {editorId === "technical2" && <EditorResumeTechV2 {...propsResume} />}
         {editorId === "general1" && <EditorResumeGeneralV1 {...propsResume} />}
         {editorId === "general2" && <EditorResumeGeneralV2 {...propsResume} />}
+        {editorId === "general3" && <EditorResumeGeneralV3 {...propsResume} />}
       </div>
     </>
   );
