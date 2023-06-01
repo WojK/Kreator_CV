@@ -6,6 +6,8 @@ import generalThumbnailV3 from "../assets/images/generalThumbnailV3.png";
 
 import technicalThumbnailV1 from "../assets/images/technicalThumbnailV1.png";
 import technicalThumbnailV2 from "../assets/images/technicalThumbnailV2.png";
+import technicalThumbnailV3 from "../assets/images/technicalThumbnailV3.png";
+
 import s1 from "../assets/images/examplecv.jpg";
 
 export const studentsTemplates = [
@@ -27,4 +29,5 @@ export const generalsTemplates = [
 export const technicalTemplates = [
   { img: technicalThumbnailV1, id: "technical1", des: "Opis", shortcut: "T1" },
   { img: technicalThumbnailV2, id: "technical2", des: "Opis", shortcut: "T2" },
+  { img: technicalThumbnailV3, id: "technical3", des: "Opis", shortcut: "T3" },
 ];

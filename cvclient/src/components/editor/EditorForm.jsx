@@ -187,7 +187,7 @@ const EditorForm = ({
                   <div className={classes["tab-p"]}>Experience</div>
                 )}
               </TabSwitcher>
-              {(formType === "student" || formType === "technical") && (
+              {(formType === "student") && (
                 <TabSwitcher tabId={5} icon={"fa fa-fighter-jet"}>
                   <div className={classes["tab-p"]}>Project</div>
                 </TabSwitcher>
@@ -601,7 +601,6 @@ const EditorForm = ({
                           }
                         />
                       </div>
-                      {formType === "general" && (
                         <>
                           <label>
                             Describe your job in one or two sentences
@@ -613,7 +612,6 @@ const EditorForm = ({
                             onChange={(e) => setJobDescription(e.target.value)}
                           ></textarea>
                         </>
-                      )}
                       <div className={classes["to-right"]}>
                         <a
                           className={`${classes["icon-add"]}`}

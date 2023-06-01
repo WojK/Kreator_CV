@@ -108,7 +108,7 @@ const EditorResumeTechV2 = ({
                                         <div className={classes.content}>
                                             <h1>{todo.companyName}</h1>
                                             <h2>{todo.companyCity}</h2>
-                                            <p>{todo.experienceDesc}</p>
+                                            <p>{todo.jobDescription}</p>
                                         </div>
                                     </div>
                                 )}
@@ -133,7 +133,7 @@ const EditorResumeTechV2 = ({
                         </>
                     }
 
-                    {projectList.length > 0 &&
+                    {/* {projectList.length > 0 &&
                         <>
                             <div class={classes.side_item}>
                                 <div className={classes.side_title}>Projects</div>
@@ -148,7 +148,7 @@ const EditorResumeTechV2 = ({
                                 )}
                             </div>
                         </>
-                    }
+                    } */}
 
                 </div>
             </div>

@@ -12,6 +12,7 @@ import EditorForm from "./EditorForm";
 
 import EditorResumeTech from "./tech/EditorResumeTech";
 import EditorResumeTechV2 from "./tech/EditorResumeTechV2";
+import EditorResumeTechV3 from "./tech/EditorResumeTechV3";
 
 import EditorResumeStudentV1 from "./student/EditorResumeStudentV1";
 import EditorResumeStudent from "./student/EditorResumeStudent";
@@ -246,6 +247,7 @@ const Editor = () => {
   const [isPhoneNumber, setIsPhoneNumber] = useState(false);
   const handlePhoneNumber = (event) => {
     setIsPhoneNumber((current) => !current);
+    console.log(isPhoneNumber);
   };
 
   const reportTemplateRef = useRef(null);
@@ -408,6 +410,7 @@ const Editor = () => {
         {editorId === "student2" && <EditorResumeStudent {...propsResume} />}
         {editorId === "technical1" && <EditorResumeTech {...propsResume} />}
         {editorId === "technical2" && <EditorResumeTechV2 {...propsResume} />}
+        {editorId === "technical3" && <EditorResumeTechV3 {...propsResume} />}
         {editorId === "general1" && <EditorResumeGeneralV1 {...propsResume} />}
         {editorId === "general2" && <EditorResumeGeneralV2 {...propsResume} />}
         {editorId === "general3" && <EditorResumeGeneralV3 {...propsResume} />}

@@ -1,16 +1,21 @@
 import React from "react";
-import classes from "./editorTech.module.css";
+import classes from "./editorResumeTechV3.module.css";
 import MailIcon from "../../../assets/images/mail.png";
 import TelephoneIcon from "../../../assets/images/telephone.png";
 import LocationIcon from "../../../assets/images/location.png";
 import "../../../assets/fonts/Roboto-normal";
 import "../../../assets/fonts/times-normal";
 import "../../../assets/fonts/times-bold";
-const EditorResumeTech = ({
+import Circle from "../../../assets/images/circle.png";
+
+const EditorResumeTechV3 = ({
   name,
   surname,
+  isPhoneNumber,
   phoneNumber,
+  isEmail,
   email,
+  isLocation,
   location,
   experienceList,
   skillList,
@@ -22,13 +27,17 @@ const EditorResumeTech = ({
   return (
     <div ref={reportTemplateRef} className={classes["cv"]}>
       <div className={classes["personal-details"]}>
+      <div className={classes["image-container"]}>
+          <img className={classes.image} src={image} alt="CV" />
+          <div className={classes["background-image-div"]}></div>
+        </div>
         <div className={classes.descontent}>
           <h2 className={classes.name}>
             {name} {surname}
           </h2>
           <ul className={classes["descontent-ul"]}>
 
-            <li
+            {isPhoneNumber && <li
               className={
                 classes["descontent-ul-li"]
               }
@@ -44,8 +53,8 @@ const EditorResumeTech = ({
 
               <p className={classes["personal-data"]}>{phoneNumber}</p>
 
-            </li>
-            <li
+            </li>}
+            {isEmail && <li
               className={
                 classes["descontent-ul-li"]
               }
@@ -57,8 +66,8 @@ const EditorResumeTech = ({
               </div>
 
               <p className={classes["personal-data"]}>{email}</p>
-            </li>
-            <li
+            </li>}
+            {isLocation && <li
               className={
                 classes["descontent-ul-li"]
 
@@ -75,67 +84,67 @@ const EditorResumeTech = ({
               </div>
 
               <p className={classes["personal-data"]}>{location}</p>
-            </li>
+            </li>}
           </ul>
         </div>
-        <div className={classes["image-container"]}>
-          <img className={classes.image} src={image} alt="CV" />
-          <div className={classes["background-image-div"]}></div>
-        </div>
+        
       </div>
 
 
       <div className={classes["skills-projects"]}>
         <hr />
-        <h2 >Education</h2>
+        <h2 className={classes["section-title"]}>Education</h2>
         <div>
           {educationList.map((todo, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
               <div className={classes["width30"]}>
-                <p className={classes["p-year"]}>{todo.schoolStartYear}</p>
-                <p className={classes["p-year"]} >-</p>
-                <p className={classes["p-year"]}>{todo.schoolFinishYear}</p>
+                <p className={classes["year"]}>{todo.schoolStartYear} - {todo.schoolFinishYear}</p>
               </div>
               <div className={classes["width70"]}>
-                <h4 >
-                  {todo.schoolName}, {todo.schoolCity}
-                </h4>
-                <br />
+                <p className={classes["section-main-info"]}>
+                   {todo.schoolName}
+                </p>
+                <p className={classes["section-sub-info"]}>
+                    {todo.schoolCity}
+                </p>
+                {/* <br />
                 <p>Short desc:</p>
-                <p>{todo.schoolDesc}</p>
+                <p>{todo.schoolDesc}</p> */}
               </div>
             </ul>
           ))}
         </div>
         <hr />
-        <h2 >Experience</h2>
+        <h2 className={classes["section-title"]}>Experience</h2>
         <div>
           {experienceList.map((todo, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
               <div className={classes["width30"]}>
-                <p className={classes["p-year"]}>{todo.experienceFrom}</p>
-                <p className={classes["p-year"]} >-</p>
-                <p className={classes["p-year"]}>{todo.experienceTo}</p>
+                <p className={classes["year"]}>{todo.experienceFrom} - {todo.experienceTo}</p>
               </div>
               <div className={classes["width70"]}>
-                <h4 >
-                  {todo.companyName}, {todo.companyCity}
-
-                </h4>
-                <br />
-                <p>Short description:</p>
-                <p>{todo.experienceDesc}</p>
+                <p className={classes["section-main-info"]}>
+                    {todo.companyName}
+                </p>
+                <p className={classes["section-sub-info"]}>
+                    {todo.companyCity}
+                </p>
+                <p className={classes["jobDescription"]}>{todo.jobDescription}</p>
               </div>
             </ul>
           ))}
         </div>
         <hr />
-        <h2 >Language skills</h2>
+        <h2 className={classes["section-title"]}>Languages</h2>
         <div>
           {languageList.map((language, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
               <div className={classes["width30"]}>
-                <h4 className={classes["p-year"]}>{language.language}</h4>
+                <p><img
+              src={Circle}
+              alt="CircleIcon"
+              className={classes["circle-icon"]}
+            /> {language.language}</p>
               </div>
               <div className={classes["width70"]}>
               </div>
@@ -143,12 +152,14 @@ const EditorResumeTech = ({
           ))}
         </div>
         <hr />
-        <h2 >Skills</h2>
+        <h2 className={classes["section-title"]}>Skills</h2>
         <div className={classes["skill-elem"]}>
           {skillList.map((skill, index) => (
-            <ul key={index}>
-              <p className={classes["p-year"]}>{skill.skill},</p>
-            </ul>
+              <p><img
+              src={Circle}
+              alt="CircleIcon"
+              className={classes["circle-icon"]}
+            /> {skill.skill}</p>
           ))}
         </div>
 
@@ -158,4 +169,4 @@ const EditorResumeTech = ({
   );
 };
 
-export default EditorResumeTech;
+export default EditorResumeTechV3;
