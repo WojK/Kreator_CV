@@ -13,17 +13,17 @@ const AboutUsPage = () => {
       <Paragraph
         img={aboutus}
         text={
-          <p>
+          <>
             <TextAny text="about_us_1" />
             <br />
             <ul className={classes.members}>
-              <li>Wojciech Kudełko</li>
-              <li>Michał Żdanuk</li>
-              <li>Miłosz Moroz</li>
-              <li>Kamil Smołecki</li>
-              <li>Jakub Szczygielski</li>
+              <li className={classes["member"]}>Wojciech Kudełko - <a className={classes["github-link"]} href="https://github.com/WojK">github.com/WojK</a></li>
+              <li className={classes["member"]}>Michał Żdanuk - <a className={classes["github-link"]} href="https://github.com/MichalZdanuk">github.com/MichalZdanuk</a></li>
+              <li className={classes["member"]}>Kamil Smołecki - <a className={classes["github-link"]} href="https://github.com/Smoleckk">github.com/Smoleckk</a></li>
+              <li className={classes["member"]}>Jakub Szczygielski - <a className={classes["github-link"]} href="https://github.com/Kuba072002">github.com/Kuba072002</a></li>
+              <li className={classes["member"]}>Miłosz Moroz - <a className={classes["github-link"]} href="https://github.com/morozm">github.com/morozm</a></li>
             </ul>
-          </p>
+          </>
         }
       />
       <Paragraph img={university} text={<TextAny text="about_us_2" />} />
@@ -39,16 +39,16 @@ const Paragraph = (props) => {
         <img src={props.img} className={classes["icon"]} alt="about_us-icon" />
       </div>
       <div className={classes["des"]}>
-        <p>
+        <div>
           {props.text}
           {props.img === github_aboutus ? (
-            <a href="https://github.com/WojK/Kreator_CV.git">
+            <a className={classes["github-link"]} href="https://github.com/WojK/Kreator_CV.git">
               https://github.com/WojK/Kreator_CV.git
             </a>
           ) : (
             ""
           )}
-        </p>
+        </div>
       </div>
     </div>
   );

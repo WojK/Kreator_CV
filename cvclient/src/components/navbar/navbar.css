@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   background: var(--color-navbar);
-
   padding: 0.7rem 2rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
 }
@@ -53,7 +52,6 @@
 
 .cv__navbar-account {
   display: flex;
-  /* justify-content: flex-end; */
   justify-content: space-between;
   gap: 1rem;
   align-items: center;
@@ -125,14 +123,8 @@
   gap: 0.7rem;
 }
 
-/* .cv__navbar_menu_container-account button {
-    padding: 0.4rem 1rem;
-} */
-
 @media screen and (max-width: 1200px) {
   .cv__navbar-links_container p {
-    /* font-size: 20px;
-        line-height: 24.2px; */
     margin: 0 1rem;
   }
 }

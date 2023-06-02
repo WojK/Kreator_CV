@@ -7,8 +7,9 @@
   min-height: 800px;
   box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.2);
   background-color: white;
-  font-size: 16px;
+  font-size: 15px;
   position: relative;
+  color: #252323;
 }
 
 .cv-content {
@@ -28,7 +29,6 @@
 .personal-details {
   min-height: 800px;
   width: 50%;
-  /* background-color: #f3f1ed; */
 }
 
 .personal-details-content {
@@ -48,37 +48,30 @@
   display: inline-block;
 }
 
-.personal-data-title {
+.section-title {
   font-weight: 800;
   font-family: "Noto Sans";
-  font-size: 20px;
-  margin-bottom: 15px;
-  margin-top: 30px;
-}
-
-.knowledge-title {
-  font-weight: 800;
-  font-family: "Noto Sans";
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: 22px;
+  color: #000000;
+  margin-bottom: 5px;
   margin-top: 30px;
 }
 
 .school {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .school-years {
-  font-size: 12px;
+  font-size: 10px;
   color: #807676;
 }
 
 .company {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .company-years {
-  font-size: 12px;
+  font-size: 10px;
   color: #807676;
 }
 
@@ -93,11 +86,12 @@
 
 .name {
   font-family: "Noto Sans";
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
+  color: #000000;
 }
 
-.profile-description{
+.profile-description {
   font-family: Roboto;
   font-size: 15px;
   color: #807676;
@@ -111,7 +105,6 @@
   font-family: Roboto;
   color: #4e4a4a;
   font-size: 15px;
-  font-weight: 300;
 }
 
 .icon {
@@ -141,22 +134,8 @@
   justify-content: center;
 }
 
-.bottom-semi-circle {
-  background: #be53ad;
-  width: 150px;
-  height: 75px;
-  border-radius: 50% / 100% 100% 0 0;
-  margin: auto;
-  align-items: flex-end;
-  justify-content: center;
-}
-
 .image {
   width: 120px;
   border-radius: 50%;
   margin-top: 10px;
-}
-
-.small-margin {
-  margin-bottom: 5px;
 }

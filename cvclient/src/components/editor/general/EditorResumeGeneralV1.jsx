@@ -26,7 +26,7 @@ const EditorResumeGeneralV1 = ({
     <div ref={reportTemplateRef} className={classes["cv"]}>
       <div className={classes["name-and-photo"]}>
         <div className={classes["semi-circle"]}>
-          <div className={classes["image-container"]}>
+          <div>
             <img className={classes.image} src={image} alt="CV" />
           </div>
         </div>
@@ -75,7 +75,7 @@ const EditorResumeGeneralV1 = ({
       <div className={classes["cv-content"]}>
         <div className={classes["skills-projects"]}>
           <div className={classes["skills-projects-content"]}>
-            <p className={classes["knowledge-title"]}>Job Experience</p>
+            <p className={classes["section-title"]}>Job Experience</p>
             <hr className={classes["data-hr"]} />
             <div>
               {experienceList.map((todo, index) => (
@@ -93,8 +93,7 @@ const EditorResumeGeneralV1 = ({
                 </ul>
               ))}
             </div>
-
-            <p className={classes["knowledge-title"]}>Education</p>
+            <p className={classes["section-title"]}>Education</p>
             <hr className={classes["data-hr"]} />
             <div>
               {educationList.map((todo, index) => (
@@ -114,36 +113,36 @@ const EditorResumeGeneralV1 = ({
 
         <div className={classes["personal-details"]}>
           <div className={classes["personal-details-content"]}>
-            <p className={classes["personal-data-title"]}>About me {name}</p>
+            <p className={classes["section-title"]}>About me</p>
             <hr className={classes["data-hr"]} />
             <span className={classes["personal-description"]}>{aboutme}</span>
 
-            <p className={classes["personal-data-title"]}>Languages</p>
+            <p className={classes["section-title"]}>Languages</p>
             <hr className={classes["data-hr"]} />
             <div>
               {languageList.map((language, index) => (
                 <ul key={index}>
-                  <p className={classes["small-margin"]}>{language.language}</p>
+                  <p>{language.language}</p>
                 </ul>
               ))}
             </div>
 
-            <p className={classes["personal-data-title"]}>Skills</p>
+            <p className={classes["section-title"]}>Skills</p>
             <hr className={classes["data-hr"]} />
             <div>
               {skillList.map((skill, index) => (
                 <ul key={index} className={classes["descontent-ul"]}>
-                  <li className={classes["small-margin"]}>{skill.skill}</li>
+                  <li>{skill.skill}</li>
                 </ul>
               ))}
             </div>
 
-            <p className={classes["personal-data-title"]}>Hobbies</p>
+            <p className={classes["section-title"]}>Hobbies</p>
             <hr className={classes["data-hr"]} />
             <div>
               {hobbyList.map((hobby, index) => (
                 <ul key={index}>
-                  <p className={classes["small-margin"]}>{hobby.hobby}</p>
+                  <p>{hobby.hobby}</p>
                 </ul>
               ))}
             </div>
