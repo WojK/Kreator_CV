@@ -166,11 +166,3 @@
 .navbar-icon {
   width: 4%;
 }
-
-.cv-creator-name {
-  transition: transform 0.2s;
-}
-
-.cv-creator-name:hover {
-  transform: scale(1.005);
-}

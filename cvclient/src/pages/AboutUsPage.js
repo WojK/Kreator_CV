@@ -2,16 +2,19 @@ import classes from "./AboutUsPage.module.css";
 import github_aboutus from "../assets/images/github_aboutus.png";
 import university from "../assets/images/university.png";
 import aboutus from "../assets/images/aboutus.png";
+import { TextAny } from "../language/langTexts";
 
 const AboutUsPage = () => {
   return (
     <>
-      <h1 className={classes.header}>About Us</h1>
+      <h1 className={classes.header}>
+        <TextAny text="about_us" />
+      </h1>
       <Paragraph
         img={aboutus}
         text={
           <p>
-            Created in small team managed with Scrum Method.
+            <TextAny text="about_us_1" />
             <br />
             <ul className={classes.members}>
               <li>Wojciech Kudełko</li>
@@ -23,14 +26,8 @@ const AboutUsPage = () => {
           </p>
         }
       />
-      <Paragraph
-        img={university}
-        text="Project created within course 'Team Project' on Warsaw University of Technology @2022/2023"
-      />
-      <Paragraph
-        img={github_aboutus}
-        text="Project Figma (UI) design, source code and documentation can be found on github: "
-      />
+      <Paragraph img={university} text={<TextAny text="about_us_2" />} />
+      <Paragraph img={github_aboutus} text={<TextAny text="about_us_3" />} />
     </>
   );
 };

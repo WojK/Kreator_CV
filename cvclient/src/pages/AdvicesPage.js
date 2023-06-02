@@ -7,7 +7,7 @@ const AdvicesPage = () => {
   const adviceArticlesList = adviceArticles.map((article) => (
     <AdviceThumbnail
       key={article.id}
-      photo={images[article.id-1]}
+      photo={images[article.id - 1]}
       articleId={article.id}
       title={article.title}
       author={article.author}

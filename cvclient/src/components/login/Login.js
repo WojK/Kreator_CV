@@ -5,6 +5,7 @@ import React, { useState, useContext } from "react";
 import AuthContext from "../../store/auth-context";
 import axios from "axios";
 import { MdErrorOutline } from "react-icons/md";
+import { TextAny } from "../../language/langTexts";
 
 const Login = () => {
   return (
@@ -54,9 +55,11 @@ const LoginForm = () => {
 
   return (
     <>
-      <p className={classes["login-title-form"]}>Nice to see you again!!!</p>
+      <p className={classes["login-title-form"]}>
+        <TextAny text="login_welcome_text" />
+      </p>
       <p className={classes["login-small-text"]}>
-        Sign in and continue your CV
+        <TextAny text="login_motivate" />
       </p>
 
       <div className={classes["form-container"]}>
@@ -73,7 +76,9 @@ const LoginForm = () => {
             ></input>
           </div>
           <div className={classes["input-container"]}>
-            <label className={classes["form-label"]}>Password: </label>
+            <label className={classes["form-label"]}>
+              <TextAny text="password" />
+            </label>
             <input
               className={classes["input-box"]}
               type="password"
@@ -95,6 +100,7 @@ const LoginForm = () => {
               type="submit"
               value="Login"
             />
+            {/* needs to be changed, maybe to <button> to have translation */}
           </div>
         </form>
         <p
@@ -103,7 +109,7 @@ const LoginForm = () => {
             navigate("/register");
           }}
         >
-          Do not have an account? Click here
+          <TextAny text="login_no_account" />
         </p>
       </div>
     </>

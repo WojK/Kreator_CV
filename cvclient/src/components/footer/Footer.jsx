@@ -1,12 +1,13 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import "./footer.css";
+import { TextAny } from "../../language/langTexts"
 
 const Footer = () => {
   return (
     <div className="cv__footer">
       <div className="cv__footer_title">
-        <p>CV_CREATOR - PROJEKT ZESPOŁOWY</p>
+        <p><TextAny text="footer" /></p>
       </div>
       <div className="cv__footer_authors">
         <AiFillStar color="#fff" size={14} />

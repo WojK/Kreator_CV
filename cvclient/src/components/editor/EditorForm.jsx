@@ -6,6 +6,7 @@ import "../../assets/fonts/times-bold";
 import { CardTab, TabSwitcher, TabContent } from "../card/Card";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { TextAny } from "../../language/langTexts";
 
 import {
   studentsTemplates,
@@ -160,7 +161,7 @@ const EditorForm = ({
   return (
     <div className={classes.form}>
       <h1 className={classes["choose-template-text"]}>
-        Feel free to switch your template any time
+        <TextAny text="editor_feel_free" />
       </h1>
       <div className={classes["template-choose-container"]}>{templates}</div>
 
@@ -169,52 +170,73 @@ const EditorForm = ({
           <div className={classes["tab-card"]}>
             <div className={classes["tab-switcher"]}>
               <TabSwitcher tabId={1} icon={"fas fa-user"}>
-                <div className={classes["tab-p"]}>Personal</div>
+                <div className={classes["tab-p"]}>
+                  <TextAny text="personal_tab" />
+                </div>
               </TabSwitcher>
               {(formType === "general" || formType === "student") && (
                 <TabSwitcher tabId={2} icon={"fas fa-book"}>
-                  <div className={classes["tab-p"]}>Profile</div>
+                  <div className={classes["tab-p"]}>
+                    <TextAny text="profile_tab" />
+                  </div>
                 </TabSwitcher>
               )}
               <TabSwitcher tabId={3} icon={"fas fa-school"}>
-                <div className={classes["tab-p"]}>Education</div>
+                <div className={classes["tab-p"]}>
+                  <TextAny text="education_tab" />
+                </div>
               </TabSwitcher>
               <TabSwitcher tabId={4} icon={"fas fa-briefcase"}>
                 {formType === "student" && (
-                  <div className={classes["tab-p"]}>Soft Skills</div>
+                  <div className={classes["tab-p"]}>
+                    <TextAny text="soft_skills_tab" />
+                  </div>
                 )}
                 {formType !== "student" && (
-                  <div className={classes["tab-p"]}>Experience</div>
+                  <div className={classes["tab-p"]}>
+                    <TextAny text="experience_tab" />
+                  </div>
                 )}
               </TabSwitcher>
-              {(formType === "student") && (
+              {formType === "student" && (
                 <TabSwitcher tabId={5} icon={"fa fa-fighter-jet"}>
-                  <div className={classes["tab-p"]}>Project</div>
+                  <div className={classes["tab-p"]}>
+                    <TextAny text="project_tab" />
+                  </div>
                 </TabSwitcher>
               )}
               <TabSwitcher tabId={6} icon={"fa fa-ambulance"}>
-                <div className={classes["tab-p"]}>Skills</div>
+                <div className={classes["tab-p"]}>
+                  <TextAny text="skills_tab" />
+                </div>
               </TabSwitcher>
               <TabSwitcher tabId={7} icon={"fa fa-language"}>
-                <div className={classes["tab-p"]}>Languages</div>
+                <div className={classes["tab-p"]}>
+                  <TextAny text="languages_tab" />
+                </div>
               </TabSwitcher>
               {formType === "general" && (
                 <TabSwitcher tabId={8} icon={"fas fa-laugh"}>
-                  <div className={classes["tab-p"]}>Hobby</div>
+                  <div className={classes["tab-p"]}>
+                    <TextAny text="hobby_tab" />
+                  </div>
                 </TabSwitcher>
               )}
               <TabSwitcher tabId={9} icon={"fas fa-globe"}>
-                <div className={classes["tab-p"]}>Sum</div>
+                <div className={classes["tab-p"]}>
+                  <TextAny text="sum_tab" />
+                </div>
               </TabSwitcher>
             </div>
             <div className={classes["tab-content"]}>
               <TabContent id={1}>
-                <h1>Start with your resume header</h1>.
+                <h1>
+                  <TextAny text="editor_personal_main_text" />
+                </h1>
+                <br />
                 <p>
-                  Enter your full name and contact information so a recruiter
-                  can write or call you.
+                  <TextAny text="editor_personal_submain_text" />
                 </p>
-                .
                 {editorId === "student2" && (
                   <div className={classes.colors}>
                     <div
@@ -240,12 +262,14 @@ const EditorForm = ({
                       className={classes["custom-file-upload"]}
                       for="file-upload"
                     >
-                      Choose Image
+                      <TextAny text="editor_personal_choose_image" />
                     </label>
                   </div>
 
                   <div className={classes["tab-content-form-33"]}>
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name">
+                      <TextAny text="editor_personal_name" />
+                    </label>
                     <input
                       type="text"
                       id="name"
@@ -254,7 +278,9 @@ const EditorForm = ({
                     ></input>
                   </div>
                   <div className={classes["tab-content-form-33"]}>
-                    <label htmlFor="surname">Surname</label>
+                    <label htmlFor="surname">
+                      <TextAny text="editor_personal_surname" />
+                    </label>
                     <input
                       type="text"
                       value={surname}
@@ -263,7 +289,9 @@ const EditorForm = ({
                   </div>
                   <div className={classes["tab-content-form"]}>
                     <div className={classes["is-active"]}>
-                      <label>Phone number</label>
+                      <label>
+                        <TextAny text="editor_personal_phone_number" />
+                      </label>
                       <input
                         className={classes["checkbox"]}
                         type="checkbox"
@@ -281,7 +309,9 @@ const EditorForm = ({
 
                   <div className={classes["tab-content-form"]}>
                     <div className={classes["is-active"]}>
-                      <label>Email</label>
+                      <label>
+                        <TextAny text="editor_personal_email" />
+                      </label>
                       <input
                         className={classes["checkbox"]}
                         type="checkbox"
@@ -299,7 +329,9 @@ const EditorForm = ({
                 </div>
                 <div className={classes["tab-content-form-100"]}>
                   <div className={classes["is-active"]}>
-                    <label>Location</label>
+                    <label>
+                      <TextAny text="editor_personal_location" />
+                    </label>
                     <input
                       className={classes["checkbox"]}
                       type="checkbox"
@@ -354,13 +386,18 @@ const EditorForm = ({
                 )}
               </TabContent>
               <TabContent id={2}>
-                <h1>Fill in your personal information</h1>.
+                <h1>
+                  <TextAny text="editor_profile_main_text" />
+                </h1>
+                <br />
                 <p>
-                  Describe your profile and post information about yourself!
+                  <TextAny text="editor_profile_submain_text" />
                 </p>
                 {formType === "general" && (
                   <>
-                    <label>Profile description</label>
+                    <label>
+                      <TextAny text="editor_profile_profile_description" />
+                    </label>
                     <textarea
                       rows="5"
                       type="text"
@@ -369,7 +406,9 @@ const EditorForm = ({
                     ></textarea>
                   </>
                 )}
-                <label>About me </label>
+                <label>
+                  <TextAny text="editor_profile_about_me" />
+                </label>
                 <textarea
                   rows="5"
                   type="text"
@@ -378,16 +417,19 @@ const EditorForm = ({
                 ></textarea>
               </TabContent>
               <TabContent id={3}>
-                <h1>Add your education</h1>.
+                <h1>
+                  <TextAny text="editor_education_main_text" />
+                </h1>
+                <br />
                 <p>
-                  Add your most recent level of education - if you have higher
-                  education - do not list secondary education, and if you have
-                  secondary education, do not write about primary education.
+                  <TextAny text="editor_education_submain_text" />
                 </p>
                 <div className={`${classes["tab-content-forms"]}`}>
                   <div className={classes["tab-content-form"]}>
                     <div>
-                      <label htmlFor="schoolNameInput">School Name:</label>
+                      <label htmlFor="schoolNameInput">
+                        <TextAny text="editor_education_school_name" />
+                      </label>
                       <input
                         id="schoolNameInput"
                         type="text"
@@ -398,7 +440,9 @@ const EditorForm = ({
                   </div>
                   <div className={classes["tab-content-form"]}>
                     <div>
-                      <label htmlFor="schoolCityInput">School City:</label>
+                      <label htmlFor="schoolCityInput">
+                        <TextAny text="editor_education_school_city" />
+                      </label>
                       <input
                         id="schoolCityInput"
                         type="text"
@@ -459,7 +503,9 @@ const EditorForm = ({
 
                   <div className={classes["tab-content-form"]}>
                     <div>
-                      <label htmlFor="schoolStartYearInput">Start Year:</label>
+                      <label htmlFor="schoolStartYearInput">
+                        <TextAny text="editor_education_start_year" />
+                      </label>
                       <input
                         id="schoolStartYearInput"
                         type="date"
@@ -473,7 +519,7 @@ const EditorForm = ({
                   <div className={classes["tab-content-form"]}>
                     <div>
                       <label htmlFor="schoolFinishYearInput">
-                        Finish Year:
+                        <TextAny text="editor_education_finish_year" />
                       </label>
                       <input
                         id="schoolFinishYearInput"
@@ -554,15 +600,18 @@ const EditorForm = ({
 
                 {editorId !== "student2" && (
                   <div>
-                    <h1>Now let's work on your experience</h1>.
+                    <h1>
+                      <TextAny text="editor_experience_main_text" />
+                    </h1>
+                    <br />
                     <p>
-                      Start with your most recent job. You can also add
-                      volunteer work, internships and extra-curricular
-                      activities.
+                      <TextAny text="editor_experience_submain_text" />
                     </p>
                     <div className={`${classes["tab-content-forms"]}`}>
                       <div className={classes["tab-content-form"]}>
-                        <label>Company name</label>
+                        <label>
+                          <TextAny text="editor_experience_company_name" />
+                        </label>
                         <input
                           type="text"
                           value={companyName}
@@ -572,7 +621,9 @@ const EditorForm = ({
                         />
                       </div>
                       <div className={classes["tab-content-form"]}>
-                        <label>Company city</label>
+                        <label>
+                          <TextAny text="editor_experience_company_city" />
+                        </label>
                         <input
                           type="text"
                           value={companyCity}
@@ -582,7 +633,9 @@ const EditorForm = ({
                         />
                       </div>
                       <div className={classes["tab-content-form"]}>
-                        <label>Experience from</label>
+                        <label>
+                          <TextAny text="editor_experience_experience_from" />
+                        </label>
                         <input
                           type="date"
                           value={experienceFrom}
@@ -592,7 +645,9 @@ const EditorForm = ({
                         />
                       </div>
                       <div className={classes["tab-content-form"]}>
-                        <label>Experince to</label>
+                        <label>
+                          <TextAny text="editor_experience_experience_to" />
+                        </label>
                         <input
                           type="date"
                           value={experienceTo}
@@ -601,17 +656,17 @@ const EditorForm = ({
                           }
                         />
                       </div>
-                        <>
-                          <label>
-                            Describe your job in one or two sentences
-                          </label>
-                          <textarea
-                            rows="3"
-                            type="text"
-                            value={jobDescription}
-                            onChange={(e) => setJobDescription(e.target.value)}
-                          ></textarea>
-                        </>
+                      <>
+                        <label>
+                          <TextAny text="editor_experience_job_desc" />
+                        </label>
+                        <textarea
+                          rows="3"
+                          type="text"
+                          value={jobDescription}
+                          onChange={(e) => setJobDescription(e.target.value)}
+                        ></textarea>
+                      </>
                       <div className={classes["to-right"]}>
                         <a
                           className={`${classes["icon-add"]}`}
@@ -641,10 +696,18 @@ const EditorForm = ({
                 )}
               </TabContent>
               <TabContent id={5}>
-                <h1>Ok, let's go with projects</h1>.
+                <h1>
+                  <TextAny text="editor_experience_job_desc" />
+                </h1>
+                <br />
+                <p>
+                  <TextAny text="editor_projects_submain_text" />
+                </p>
                 <div className={`${classes["tab-content-forms"]}`}>
                   <div className={classes["tab-content-form"]}>
-                    <label htmlFor="projectNameInput">Project Name:</label>
+                    <label htmlFor="projectNameInput">
+                      <TextAny text="editor_projects_project_name" />
+                    </label>
                     <input
                       id="projectNameInput"
                       type="text"
@@ -653,7 +716,9 @@ const EditorForm = ({
                     />
                   </div>
                   <div className={classes["tab-content-form"]}>
-                    <label htmlFor="projectLinkInput">Project Link:</label>
+                    <label htmlFor="projectLinkInput">
+                      <TextAny text="editor_projects_project_link" />
+                    </label>
                     <input
                       id="projectLinkInput"
                       type="text"
@@ -663,7 +728,7 @@ const EditorForm = ({
                   </div>
                   <div className={classes["tab-content-form-100"]}>
                     <label htmlFor="projectDescriptionInput">
-                      Project Description:
+                      <TextAny text="editor_projects_project_desc" />
                     </label>
                     <textarea
                       id="projectDescriptionInput"
@@ -676,7 +741,9 @@ const EditorForm = ({
                   </div>
                   {formType === "student" && (
                     <div className={classes["tab-content-form"]}>
-                      <label htmlFor="projectLinkInput">Tech Stack:</label>
+                      <label htmlFor="projectLinkInput">
+                        <TextAny text="editor_projects_project_tech_stack" />
+                      </label>
                       <input
                         id="projectTechInput"
                         type="text"
@@ -712,8 +779,17 @@ const EditorForm = ({
                 </div>
               </TabContent>
               <TabContent id={6}>
-                <h1>Let's pick your most important skills</h1>
+                <h1>
+                  <TextAny text="editor_skills_main_text" />
+                </h1>
+                <br />
+                <p>
+                  <TextAny text="editor_skills_submain_text" />
+                </p>
                 <div className={classes["tab-content-form-language"]}>
+                  <label htmlFor="skillInput">
+                    <TextAny text="editor_skills_skill" />
+                  </label>
                   <div className={classes["tab-content-form-language-add"]}>
                     <input
                       className={classes["tab-content-form-language-add-input"]}
@@ -748,12 +824,17 @@ const EditorForm = ({
                 </div>
               </TabContent>
               <TabContent id={7}>
-                <h1>Foreign languages</h1>
+                <h1>
+                  <TextAny text="editor_languages_main_text" />
+                </h1>
+                <br />
                 <p>
-                  Add the foreign languages you speak and specify your level of
-                  knowledge
+                  <TextAny text="editor_languages_submain_text" />
                 </p>
                 <div className={classes["tab-content-form-language"]}>
+                  <label htmlFor="languageInput">
+                    <TextAny text="editor_languages_language" />
+                  </label>
                   <div className={classes["tab-content-form-language-add"]}>
                     <input
                       className={classes["tab-content-form-language-add-input"]}
@@ -788,9 +869,17 @@ const EditorForm = ({
                 </div>
               </TabContent>
               <TabContent id={8}>
-                <h1>Hobby</h1>
-                <p>Share your interests, show what drives your life</p>
+                <h1>
+                  <TextAny text="editor_hobby_main_text" />
+                </h1>
+                <br />
+                <p>
+                  <TextAny text="editor_hobby_submain_text" />
+                </p>
                 <div className={classes["tab-content-form-language"]}>
+                  <label htmlFor="hobbyInput">
+                    <TextAny text="editor_hobby_hobby" />
+                  </label>
                   <div className={classes["tab-content-form-language-add"]}>
                     <input
                       className={classes["tab-content-form-language-add-input"]}
@@ -825,12 +914,13 @@ const EditorForm = ({
               </TabContent>
               <TabContent id={9}>
                 <h1>
-                  It's almost ready! Let's finish your resume with a strong
-                  summary
+                  <TextAny text="editor_sum_main_text" />
                 </h1>
-                .
+                <br />
                 <div>
-                  <label>Clause:</label>
+                  <label>
+                    <TextAny text="editor_sum_clause" />
+                  </label>
                   <textarea
                     cols="100"
                     rows="5"

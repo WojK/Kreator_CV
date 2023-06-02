@@ -45,8 +45,9 @@
 
 .input-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 50px;
   padding: 10px;
 }
 
@@ -67,7 +68,7 @@
 }
 
 .form-container {
-  padding-top: 22%;
+  padding-top: 12%;
   padding-left: 15%;
   padding-right: 15%;
 }
@@ -79,7 +80,7 @@
 
 .bottom-text {
   margin-top: 5%;
-  font-size: 1.5vh;
+  font-size: 2.2vh;
   font-family: "Alkatra";
   text-align: center;
   color: #0a2b3d;
@@ -87,17 +88,27 @@
   cursor: pointer;
 }
 
+.bottom-text:hover {
+  transition: transform 0.35s;
+  transform: scale(1.05);
+}
+
 .submit-button {
   margin-top: 10%;
-  width: 50%;
+  width: 45%;
   text-align: center;
-  padding: 1%;
+  padding: 0.5%;
   border-radius: 25px;
-  font-size: 3.5vh;
+  font-size: 3.3vh;
   font-family: "Alkatra";
   background-color: #0a2b3d;
   color: #f7f7f7;
   cursor: pointer;
+}
+
+.submit-button:hover {
+  transition: transform 0.35s;
+  transform: scale(1.1);
 }
 
 .submit-container {

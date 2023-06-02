@@ -5,14 +5,16 @@ import {
   generalsTemplates,
   technicalTemplates,
 } from "./cv-data-templates";
+import { TextAny } from "../language/langTexts";
 
 const ChooseTemplateStylesPage = () => {
   const { cvtemplate } = useParams();
   const navigate = useNavigate();
 
   let content, title;
+  let text;
   if (cvtemplate === "student") {
-    title = "Student";
+    title = "student";
     content = studentsTemplates.map(function (template) {
       return (
         <div
@@ -22,12 +24,12 @@ const ChooseTemplateStylesPage = () => {
           }}
         >
           <img src={template.img} className={classes.img}></img>
-          <p className={classes.des}>{template.des}</p>
+          {/* <p className={classes.des}>{template.des}</p> */}
         </div>
       );
     });
   } else if (cvtemplate === "general") {
-    title = "General";
+    title = "general";
     content = generalsTemplates.map(function (template) {
       return (
         <div
@@ -37,12 +39,12 @@ const ChooseTemplateStylesPage = () => {
           }}
         >
           <img src={template.img} className={classes.img}></img>
-          <p className={classes.des}>{template.des}</p>
+          {/* <p className={classes.des}>{template.des}</p> */}
         </div>
       );
     });
   } else if (cvtemplate === "technical") {
-    title = "Technical";
+    title = "technical";
     content = technicalTemplates.map(function (template) {
       return (
         <div
@@ -52,15 +54,18 @@ const ChooseTemplateStylesPage = () => {
           }}
         >
           <img src={template.img} className={classes.img}></img>
-          <p className={classes.des}>{template.des}</p>
+          {/* <p className={classes.des}>{template.des}</p> */}
         </div>
       );
     });
   }
-
+  text = title + "_template_choose";
+  console.log(text);
   return (
     <>
-      <h1 className={classes.header}>Choose Your {title} Template!</h1>
+      <h1 className={classes.header}>
+        <TextAny text={text} />
+      </h1>
       <div className={classes.container}>{content}</div>;
     </>
   );
