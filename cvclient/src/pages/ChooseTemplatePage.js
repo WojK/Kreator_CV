@@ -33,7 +33,14 @@ const ChooseTemplatePage = () => {
     />
   ));
 
-  return <div className={classes["templates-div"]}>{templates}</div>;
+  return (
+    <div>
+      <h1 className={classes["header"]}>
+        <TextAny text="creator_main_text" />
+      </h1>
+      <div className={classes["templates-div"]}>{templates}</div>
+    </div>
+  );
 };
 
 export default ChooseTemplatePage;

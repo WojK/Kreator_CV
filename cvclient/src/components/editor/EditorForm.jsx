@@ -75,6 +75,8 @@ const EditorForm = ({
   setSchoolStartYear,
   schoolFinishYear,
   setSchoolFinishYear,
+  schoolDesc,
+  setSchoolDesc,
   schoolFaculty,
   setSchoolFaculty,
   schoolSubject,
@@ -121,6 +123,7 @@ const EditorForm = ({
     templates = generalsTemplates.map(function (template) {
       return (
         <div
+          key={template.id}
           className={classes["template-choose"]}
           onClick={(e) => {
             navigate(`/editor/${template.id}`);
@@ -260,7 +263,7 @@ const EditorForm = ({
 
                     <label
                       className={classes["custom-file-upload"]}
-                      for="file-upload"
+                      htmlFor="file-upload"
                     >
                       <TextAny text="editor_personal_choose_image" />
                     </label>
@@ -295,7 +298,7 @@ const EditorForm = ({
                       <input
                         className={classes["checkbox"]}
                         type="checkbox"
-                        autocomplete="off"
+                        autoComplete="off"
                         value={isPhoneNumber}
                         onClick={handlePhoneNumber}
                       ></input>
@@ -315,7 +318,7 @@ const EditorForm = ({
                       <input
                         className={classes["checkbox"]}
                         type="checkbox"
-                        autocomplete="off"
+                        autoComplete="off"
                         value={isEmail}
                         onClick={handleEmail}
                       ></input>
@@ -335,7 +338,7 @@ const EditorForm = ({
                     <input
                       className={classes["checkbox"]}
                       type="checkbox"
-                      autocomplete="off"
+                      autoComplete="off"
                       value={isLocation}
                       onClick={handleLocation}
                     ></input>
@@ -353,7 +356,7 @@ const EditorForm = ({
                       <input
                         className={classes["checkbox"]}
                         type="checkbox"
-                        autocomplete="off"
+                        autoComplete="off"
                         value={isGitHub}
                         onClick={handleGitHub}
                       ></input>
@@ -365,14 +368,14 @@ const EditorForm = ({
                     ></input>
                   </div>
                 )}
-                {(formType === "student" || formType === "technical") && (
+                {(formType === "student") && (
                   <div className={classes["tab-content-form-100"]}>
                     <div className={classes["is-active"]}>
                       <label>Linkedin</label>
                       <input
                         className={classes["checkbox"]}
                         type="checkbox"
-                        autocomplete="off"
+                        autoComplete="off"
                         value={isLinkedin}
                         onClick={handleLinkedin}
                       ></input>
@@ -531,12 +534,23 @@ const EditorForm = ({
                       />
                     </div>
                   </div>
+                  <>
+                    <label>
+                      <TextAny text="editor_education_school_desc" />
+                    </label>
+                    <textarea
+                      rows="3"
+                      type="text"
+                      value={schoolDesc}
+                      onChange={(e) => setSchoolDesc(e.target.value)}
+                    />
+                      </>
                   <div className={classes["to-right"]}>
                     <a
                       className={`${classes["icon-add"]}`}
                       onClick={handleAddEducation}
                     >
-                      <i class="fa fa-plus"></i>
+                      <i className="fa fa-plus"></i>
                     </a>
                   </div>
                 </div>
@@ -551,7 +565,7 @@ const EditorForm = ({
                         className={`${classes["icon-trash"]}`}
                         onClick={() => handleRemoveEducation(index)}
                       >
-                        <i class="fa fa-trash"></i>
+                        <i className="fa fa-trash"></i>
                       </a>
                     </ul>
                   ))}
@@ -578,7 +592,7 @@ const EditorForm = ({
                           className={`${classes["icon-add"]}`}
                           onClick={handleAddSoftSkill}
                         >
-                          <i class="fa fa-plus"></i>
+                          <i className="fa fa-plus"></i>
                         </a>
                       </div>
                       <div className={classes.card}>
@@ -589,7 +603,7 @@ const EditorForm = ({
                               className={`${classes["icon-trash"]}`}
                               onClick={() => handleRemoveSoftSkill(index)}
                             >
-                              <i class="fa fa-trash"></i>
+                              <i className="fa fa-trash"></i>
                             </a>
                           </ul>
                         ))}
@@ -665,14 +679,14 @@ const EditorForm = ({
                           type="text"
                           value={jobDescription}
                           onChange={(e) => setJobDescription(e.target.value)}
-                        ></textarea>
+                        />
                       </>
                       <div className={classes["to-right"]}>
                         <a
                           className={`${classes["icon-add"]}`}
                           onClick={handleAddExperience}
                         >
-                          <i class="fa fa-plus"></i>
+                          <i className="fa fa-plus"></i>
                         </a>
                       </div>
                     </div>
@@ -687,7 +701,7 @@ const EditorForm = ({
                             className={`${classes["icon-trash"]}`}
                             onClick={() => handleRemoveExperience(index)}
                           >
-                            <i class="fa fa-trash"></i>
+                            <i className="fa fa-trash"></i>
                           </a>
                         </ul>
                       ))}
@@ -758,7 +772,7 @@ const EditorForm = ({
                       className={`${classes["icon-add"]}`}
                       onClick={handleAddProject}
                     >
-                      <i class="fa fa-plus"></i>
+                      <i className="fa fa-plus"></i>
                     </a>
                   </div>
                 </div>
@@ -772,7 +786,7 @@ const EditorForm = ({
                         className={`${classes["icon-trash"]}`}
                         onClick={() => handleRemoveProject(index)}
                       >
-                        <i class="fa fa-trash"></i>
+                        <i className="fa fa-trash"></i>
                       </a>
                     </ul>
                   ))}
@@ -804,11 +818,10 @@ const EditorForm = ({
                       className={`${classes["icon-add"]}`}
                       onClick={handleAddSkill}
                     >
-                      <i class="fa fa-plus"></i>
+                      <i className="fa fa-plus"></i>
                     </a>
                   </div>
                   <div className={classes.card}>
-                    {/* <h4>Language List</h4> */}
                     {skillList.map((todo, index) => (
                       <ul className={classes["card-list-elem"]} key={index}>
                         <p>{todo.skill}</p>
@@ -816,7 +829,7 @@ const EditorForm = ({
                           className={`${classes["icon-trash"]}`}
                           onClick={() => handleRemoveSkill(index)}
                         >
-                          <i class="fa fa-trash"></i>
+                          <i className="fa fa-trash"></i>
                         </a>
                       </ul>
                     ))}
@@ -849,11 +862,10 @@ const EditorForm = ({
                       className={`${classes["icon-add"]}`}
                       onClick={handleAddLanguage}
                     >
-                      <i class="fa fa-plus"></i>
+                      <i className="fa fa-plus"></i>
                     </a>
                   </div>
                   <div className={classes.card}>
-                    {/* <h4>Language List</h4> */}
                     {languageList.map((language, index) => (
                       <ul className={classes["card-list-elem"]} key={index}>
                         <p>{language.language}</p>
@@ -861,7 +873,7 @@ const EditorForm = ({
                           className={`${classes["icon-trash"]}`}
                           onClick={() => handleRemoveLanguage(index)}
                         >
-                          <i class="fa fa-trash"></i>
+                          <i className="fa fa-trash"></i>
                         </a>
                       </ul>
                     ))}
@@ -894,7 +906,7 @@ const EditorForm = ({
                       className={`${classes["icon-add"]}`}
                       onClick={handleAddHobby}
                     >
-                      <i class="fa fa-plus"></i>
+                      <i className="fa fa-plus"></i>
                     </a>
                   </div>
                   <div className={classes.card}>
@@ -905,7 +917,7 @@ const EditorForm = ({
                           className={`${classes["icon-trash"]}`}
                           onClick={() => handleRemoveHobby(index)}
                         >
-                          <i class="fa fa-trash"></i>
+                          <i className="fa fa-trash"></i>
                         </a>
                       </ul>
                     ))}

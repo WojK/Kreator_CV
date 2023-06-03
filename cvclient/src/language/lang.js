@@ -58,6 +58,7 @@ const pl = {
   editor_education_school_city: "Miasto szkoły",
   editor_education_start_year: "Data rozpoczęcia",
   editor_education_finish_year: "Data zakończenia",
+  editor_education_school_desc: "Opisz swoją szkołę jednym lub dwoma zdaniami",
   /*Editor-Experience Tab*/
   editor_experience_main_text: "Teraz pora na Twoje doświadczenie",
   editor_experience_submain_text: "Rozpocznij od swojej najnowszej pracy. Możesz również dodać pracę wolontariacką, staże i działalność pozalekcyjną.",
@@ -105,8 +106,15 @@ const pl = {
   main_page_section3_benefit3: "Sprawdź zakładkę z Poradami, aby uczyć się od najlepszych rekruterów w branży i zadbać o wszystkie istotne elementy swojego CV.",
   main_page_section3_benefit4_title: "Zdobądź swój wymarzony zawód",
   main_page_section3_benefit4: "Zaskocz swojego nowego pracodawcę wyróżniającym się CV. Bez względu na twoje doświadczenie. Zdobądź pracę, o której zawsze marzyłeś/aś.",  
+  main_page_section3_benefit5_title: "Rozwiązanie oszczędzające czas",
+  main_page_section3_benefit5: "Wygeneruj swoje CV w kilka minut dzięki naszemu efektywnemu Kreatorowi CV. Pożegnaj żmudny i czasochłonny proces ręcznego formatowania swojego życiorysu.",
+  main_page_section3_benefit6_title: "Nowoczesne i stylowe wzory",
+  main_page_section3_benefit6: "Wyróżnij się spośród konkurencji dzięki naszej kolekcji profesjonalnie zaprojektowanych szablonów CV. Każdy szablon jest starannie opracowany, aby pozostawić trwałe wrażenie i zaprezentować Twoje unikalne umiejętności i kwalifikacje.",
+  main_page_section3_benefit7_title: "Prosta personalizacja",
+  main_page_section3_benefit7: "Personalizuj swoje CV bez wysiłku dzięki naszemu przyjaznemu interfejsowi. Łatwo edytuj, aktualizuj i dostosowuj swoje CV, aby dopasować je do każdej aplikacji o pracę, oszczędzając czas i zapewniając, że Twoje CV idealnie odpowiada wymaganiom danej roli.",
   /*Creator_choose_template*/
   general_template: "Szablon Ogólny",
+  creator_main_text: "Odkryj szablony CV, które odpowiadają Twoim celom i robią wrażenie.",
   general_template_desc: "Ogólne szablony CV to predefiniowane formaty, które mogą być używane przez osoby z różnych branż i zawodów do stworzenia profesjonalnego CV, w którym przedstawiają swoje kwalifikacje, umiejętności, doświadczenie zawodowe i osiągnięcia.",
   student_template: "Szablon Studencki",
   student_template_desc: "Szablony CV dla studentów to predefiniowane formaty, które studenci mogą używać do stworzenia profesjonalnego CV, w którym przedstawiają swoje osiągnięcia akademickie, umiejętności, doświadczenie zawodowe i działalność pozaszkolną.",
@@ -120,7 +128,7 @@ const pl = {
   about_us_2: "Projekt zrealizowany w ramach przedmiotu 'Projekt Zespołowy' na Politechnice Warszawskiej @2022/2023",
   about_us_3: "Projekt Graficzny przygotowany w Figmie, kod źródłowy oraz dokumentację można znaleźć na github'ie: ",
   /*Footer */
-  footer: "CV_CREATOR - PROJEKT ZESPOŁOWY",
+  footer: "CV_CREATOR - PROJEKT ZESPOŁOWY @2022/2023",
 };
 
 const en = {
@@ -179,6 +187,7 @@ const en = {
   editor_education_school_city: "School City",
   editor_education_start_year: "Start Year",
   editor_education_finish_year: "Finish Year",
+  editor_education_school_desc: "Describe your school in one or two sentences",
   /*Editor-Experience Tab*/
   editor_experience_main_text: "Now let's work on your experience",
   editor_experience_submain_text: "Start with your most recent job. You can also add volunteer work, internships and extra-curricular activities.",
@@ -226,8 +235,15 @@ const en = {
   main_page_section3_benefit3: "Check out our Advices page to learn from the best recruiters in the industry and take care of all the essential elements of your resume.",
   main_page_section3_benefit4_title: "Get your Dream Job",
   main_page_section3_benefit4: "Surprise your new employer with an effective and distinctive CV. Regardless of your experience. Get that job you've always dreamed of.",
+  main_page_section3_benefit5_title: "Time-Saving Solution",
+  main_page_section3_benefit5: "Generate your CV in minutes with our efficient CV Creator. Say goodbye to the tedious and time-consuming process of manually formatting your resume.",
+  main_page_section3_benefit6_title: "Stylish and Modern Designs",
+  main_page_section3_benefit6: "Stand out from the competition with our collection of professionally designed resume templates. Each template is carefully crafted to make a lasting impression and showcase your unique skills and qualifications.",
+  main_page_section3_benefit7_title: "Effortless Customization",
+  main_page_section3_benefit7: "Personalize your CV effortlessly with our user-friendly interface. Easily edit, update, and customize your resume to tailor it to each job application, saving you time and ensuring your CV perfectly matches the requirements of the role.",
   /*Creator_choose_template*/
   general_template: "General Template",
+  creator_main_text: "Discover CV templates that match your goals and make an impact.",
   general_template_desc: "General CV templates are pre-designed formats that can be used by individuals from various industries and professions to create a professional-looking CV (curriculum vitae) to showcase their qualifications, skills, work experience, and achievements.",
   student_template: "Student Template",
   student_template_desc: "Student CV templates are pre-designed formats that students can use to create a professional-looking CV (curriculum vitae) to showcase their academic achievements, skills, work experience, and extracurricular activities.",
@@ -241,7 +257,7 @@ const en = {
   about_us_2: "Project created within course 'Team Project' on Warsaw University of Technology @2022/2023",
   about_us_3: "Project Figma (UI) design, source code and documentation can be found on github: ",
   /*Footer */
-  footer: "CV_CREATOR - TEAM PROJECT",
+  footer: "CV_CREATOR - TEAM PROJECT @2022/2023",
 };
 
 export const LangContext = React.createContext({

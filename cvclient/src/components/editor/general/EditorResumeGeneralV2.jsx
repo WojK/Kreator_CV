@@ -58,15 +58,15 @@ const EditorResume2 = ({
           {experienceList.length > 0 && (
             <div className={classes["cv_section"]}>
               <h1>Experience</h1>
-              {experienceList.map((todo, index) => (
+              {experienceList.map((experience, index) => (
                 <ul key={index}>
-                  <h2>{todo.companyName}</h2>
+                  <h2>{experience.companyName}</h2>
                   <h3>
-                    {todo.experienceFrom} - {todo.experienceTo}
+                    {experience.experienceFrom} - {experience.experienceTo}
                   </h3>
-                  <h4>{todo.companyCity}</h4>
+                  <h4>{experience.companyCity}</h4>
                   <div className={classes.cv_section_desc}>
-                    <p>{todo.jobDescription}</p>
+                    <p>{experience.jobDescription}</p>
                   </div>
                   <hr />
                 </ul>
@@ -76,13 +76,13 @@ const EditorResume2 = ({
           {educationList.length > 0 && (
             <div className={classes["cv_section"]}>
               <h1>Education</h1>
-              {educationList.map((todo, index) => (
+              {educationList.map((education, index) => (
                 <ul key={index}>
-                  <h2>{todo.schoolName}</h2>
+                  <h2>{education.schoolName}</h2>
                   <h3>
-                    {todo.schoolStartYear} - {todo.schoolFinishYear}
+                    {education.schoolStartYear} - {education.schoolFinishYear}
                   </h3>
-                  <h4>{todo.schoolCity}</h4>
+                  <h4>{education.schoolCity}</h4>
                   <div className={classes.cv_section_desc}>
                   </div>
                   <hr />

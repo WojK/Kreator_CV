@@ -18,13 +18,13 @@ const ChooseTemplateStylesPage = () => {
     content = studentsTemplates.map(function (template) {
       return (
         <div
+          key={template.id}
           className={classes.template}
           onClick={(e) => {
             navigate(`/editor/${template.id}`);
           }}
         >
           <img src={template.img} className={classes.img}></img>
-          {/* <p className={classes.des}>{template.des}</p> */}
         </div>
       );
     });
@@ -33,13 +33,13 @@ const ChooseTemplateStylesPage = () => {
     content = generalsTemplates.map(function (template) {
       return (
         <div
+          key={template.id}
           className={classes.template}
           onClick={(e) => {
             navigate(`/editor/${template.id}`);
           }}
         >
           <img src={template.img} className={classes.img}></img>
-          {/* <p className={classes.des}>{template.des}</p> */}
         </div>
       );
     });
@@ -48,19 +48,18 @@ const ChooseTemplateStylesPage = () => {
     content = technicalTemplates.map(function (template) {
       return (
         <div
+          key={template.id}
           className={classes.template}
           onClick={(e) => {
             navigate(`/editor/${template.id}`);
           }}
         >
           <img src={template.img} className={classes.img}></img>
-          {/* <p className={classes.des}>{template.des}</p> */}
         </div>
       );
     });
   }
   text = title + "_template_choose";
-  console.log(text);
   return (
     <>
       <h1 className={classes.header}>

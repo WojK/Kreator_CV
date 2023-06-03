@@ -132,6 +132,24 @@ const BenefitsList = () => {
       <p className={classes["advices-text"]}>
         <TextAny text="main_page_section3_benefit4" />
       </p>
+      <h3 className={classes["advice-header"]}>
+        <TextAny text="main_page_section3_benefit5_title" />
+      </h3>
+      <p className={classes["advices-text"]}>
+        <TextAny text="main_page_section3_benefit5" />
+      </p>
+      <h3 className={classes["advice-header"]}>
+        <TextAny text="main_page_section3_benefit6_title" />
+      </h3>
+      <p className={classes["advices-text"]}>
+        <TextAny text="main_page_section3_benefit6" />
+      </p>
+      <h3 className={classes["advice-header"]}>
+        <TextAny text="main_page_section3_benefit7_title" />
+      </h3>
+      <p className={classes["advices-text"]}>
+        <TextAny text="main_page_section3_benefit7" />
+      </p>
     </div>
   );
 };

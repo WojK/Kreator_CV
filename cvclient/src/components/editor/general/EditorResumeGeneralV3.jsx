@@ -75,18 +75,18 @@ const EditorResumeGeneralV1 = ({
         <div className={classes["section-div"]}>
           <p className={classes["section-title"]}>Job Experience</p>
           <hr className={classes["data-hr"]} />
-          {experienceList.map((todo, index) => (
+          {experienceList.map((experience, index) => (
             <div className={classes["flex-container"]}>
               <div className={classes["column-left"]}>
                 <p className={classes["company-years"]}>
-                  {todo.experienceFrom} - {todo.experienceTo}
+                  {experience.experienceFrom} - {experience.experienceTo}
                 </p>
               </div>
               <div className={classes["column-right"]}>
-                <p className={classes["company"]}>{todo.companyName}</p>
-                <p className={classes["company-city"]}>{todo.companyCity}</p>
+                <p className={classes["company"]}>{experience.companyName}</p>
+                <p className={classes["company-city"]}>{experience.companyCity}</p>
                 <p className={classes["job-description"]}>
-                  {todo.jobDescription}
+                  {experience.jobDescription}
                 </p>
               </div>
             </div>
@@ -95,19 +95,19 @@ const EditorResumeGeneralV1 = ({
         <div className={classes["section-div"]}>
           <p className={classes["section-title"]}>Education</p>
           <hr className={classes["data-hr"]} />
-          {educationList.map((todo, index) => (
+          {educationList.map((education, index) => (
             <div className={classes["flex-container"]}>
               <div className={classes["column-left"]}>
                 <p className={classes["school-years"]}>
-                  {todo.schoolStartYear} - {todo.schoolFinishYear}
+                  {education.schoolStartYear} - {education.schoolFinishYear}
                 </p>
               </div>
               <div className={classes["column-right"]}>
                 <p className={classes["school-name"]}>
-                  {todo.schoolName}
+                  {education.schoolName}
                 </p>
                 <p className={classes["school-city"]}>
-                  {todo.schoolCity}
+                  {education.schoolCity}
                 </p>
               </div>
             </div>
@@ -163,44 +163,6 @@ const EditorResumeGeneralV1 = ({
             </div>
           </div>
         </div>
-
-        {/* <div className={classes["personal-details"]}>
-          <div className={classes["personal-details-content"]}>
-            <p className={classes["personal-data-title"]}>About me {name}</p>
-            <hr className={classes["data-hr"]} />
-            <span className={classes["personal-description"]}>{aboutme}</span>
-
-            <p className={classes["personal-data-title"]}>Languages</p>
-            <hr className={classes["data-hr"]} />
-            <div>
-              {languageList.map((language, index) => (
-                <ul key={index}>
-                  <p className={classes["small-margin"]}>{language.language}</p>
-                </ul>
-              ))}
-            </div>
-
-            <p className={classes["personal-data-title"]}>Skills</p>
-            <hr className={classes["data-hr"]} />
-            <div>
-              {skillList.map((skill, index) => (
-                <ul key={index} className={classes["descontent-ul"]}>
-                  <li className={classes["small-margin"]}>{skill.skill}</li>
-                </ul>
-              ))}
-            </div>
-
-            <p className={classes["personal-data-title"]}>Hobbies</p>
-            <hr className={classes["data-hr"]} />
-            <div>
-              {hobbyList.map((hobby, index) => (
-                <ul key={index}>
-                  <p className={classes["small-margin"]}>{hobby.hobby}</p>
-                </ul>
-              ))}
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );

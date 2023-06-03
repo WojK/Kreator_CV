@@ -3,7 +3,7 @@ import classes from "./editor.module.css";
 import jsPDF from "jspdf";
 import { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import photo from "../../assets/images/photo.jpg";
+import photo from "../../assets/images/photo.png";
 import "../../assets/fonts/Roboto-normal";
 import "../../assets/fonts/times-normal";
 import "../../assets/fonts/times-bold";
@@ -39,7 +39,7 @@ const Editor = () => {
     "Profile description"
   );
   const [aboutme, setAboutme] = useState(
-    " A place where you can mark your interests"
+    "A place where you can mark your interests"
   );
   const [image, setImage] = useState(photo);
 
@@ -50,9 +50,9 @@ const Editor = () => {
   // education
   const [educationList, setEducationList] = useState([]);
   const [schoolName, setSchoolName] = useState(
-    "Liceum Ogólnokształcące Im. Jana Pawła 2"
+    "Warsaw University of Technology"
   );
-  const [schoolCity, setSchoolCity] = useState("Warszawa");
+  const [schoolCity, setSchoolCity] = useState("Warsaw");
   const [schoolStartYear, setSchoolStartYear] = useState("2022-03-20");
   const [schoolFinishYear, setSchoolFinishYear] = useState("2022-03-20");
   const [schoolDesc, setSchoolDesc] = useState(
@@ -64,13 +64,13 @@ const Editor = () => {
 
   // experience
   const [experienceList, setExperienceList] = useState([]);
-  const [companyName, setCompanyName] = useState("Politechnika Warszawska");
-  const [companyCity, setCompanyCity] = useState("Warszawa");
+  const [companyName, setCompanyName] = useState("Warsaw University of Technology");
+  const [companyCity, setCompanyCity] = useState("Warsaw");
   const [experienceFrom, setExperienceFrom] = useState("2013-03-20");
   const [experienceTo, setExperienceTo] = useState("2021-03-20");
   const [experienceDesc, setExperienceDesc] = useState("");
   const [jobDescription, setJobDescription] = useState(
-    "Miejsce na opis czym zajmowałeś się w firmie"
+    "Place for a description of what you did at the company."
   );
   // skill
   const [skillList, setSkillList] = useState([]);
@@ -94,7 +94,7 @@ const Editor = () => {
   const [projectName, setProjectName] = useState("Kreator CV");
   const [projectLink, setProjectLink] = useState("https://github.com/creator");
   const [projectDescription, setProjectDescription] = useState(
-    "Kreator Cv to 5 osobowy projekt zespołowy majacy na celu..."
+    "Kreator CV is a 5-person team project aimed at..."
   );
 
   const [tech, setTech] = useState("Tchnology");

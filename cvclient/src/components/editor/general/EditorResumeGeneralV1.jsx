@@ -78,16 +78,16 @@ const EditorResumeGeneralV1 = ({
             <p className={classes["section-title"]}>Job Experience</p>
             <hr className={classes["data-hr"]} />
             <div>
-              {experienceList.map((todo, index) => (
+              {experienceList.map((exp, index) => (
                 <ul key={index}>
-                  <p className={classes["company"]}>{todo.companyName}</p>
+                  <p className={classes["company"]}>{exp.companyName}</p>
                   <p className={classes["company-years"]}>
-                    {todo.experienceFrom} - {todo.experienceTo}
+                    {exp.experienceFrom} - {exp.experienceTo}
                     <br />
-                    {todo.companyCity}{" "}
+                    {exp.companyCity}{" "}
                   </p>
                   <p className={classes["job-description"]}>
-                    {todo.jobDescription}
+                    {exp.jobDescription}
                   </p>
                   <br />
                 </ul>
@@ -96,13 +96,13 @@ const EditorResumeGeneralV1 = ({
             <p className={classes["section-title"]}>Education</p>
             <hr className={classes["data-hr"]} />
             <div>
-              {educationList.map((todo, index) => (
+              {educationList.map((education, index) => (
                 <ul key={index}>
                   <p className={classes["school"]}>
-                    {todo.schoolName}, {todo.schoolCity}
+                    {education.schoolName}, {education.schoolCity}
                   </p>
                   <p className={classes["school-years"]}>
-                    {todo.schoolStartYear} - {todo.schoolFinishYear}
+                    {education.schoolStartYear} - {education.schoolFinishYear}
                   </p>
                   <br />
                 </ul>

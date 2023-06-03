@@ -5,9 +5,9 @@
 .cv {
   width: 800px;
   min-height: 800px;
-  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 0.4rem rgba(0, 0, 0, 0.2);
   background-color: white;
-  font-size: 16px;
+  font-size: 15px;
   position: relative;
 }
 

@@ -95,21 +95,19 @@ const EditorResumeTechV3 = ({
         <hr />
         <h2 className={classes["section-title"]}>Education</h2>
         <div>
-          {educationList.map((todo, index) => (
+          {educationList.map((education, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
               <div className={classes["width30"]}>
-                <p className={classes["year"]}>{todo.schoolStartYear} - {todo.schoolFinishYear}</p>
+                <p className={classes["year"]}>{education.schoolStartYear} - {education.schoolFinishYear}</p>
               </div>
               <div className={classes["width70"]}>
                 <p className={classes["section-main-info"]}>
-                   {todo.schoolName}
+                   {education.schoolName}
                 </p>
                 <p className={classes["section-sub-info"]}>
-                    {todo.schoolCity}
+                    {education.schoolCity}
                 </p>
-                {/* <br />
-                <p>Short desc:</p>
-                <p>{todo.schoolDesc}</p> */}
+                <p className={classes["jobDescription"]}>{education.schoolDesc}</p>
               </div>
             </ul>
           ))}
@@ -117,19 +115,19 @@ const EditorResumeTechV3 = ({
         <hr />
         <h2 className={classes["section-title"]}>Experience</h2>
         <div>
-          {experienceList.map((todo, index) => (
+          {experienceList.map((exp, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
               <div className={classes["width30"]}>
-                <p className={classes["year"]}>{todo.experienceFrom} - {todo.experienceTo}</p>
+                <p className={classes["year"]}>{exp.experienceFrom} - {exp.experienceTo}</p>
               </div>
               <div className={classes["width70"]}>
                 <p className={classes["section-main-info"]}>
-                    {todo.companyName}
+                    {exp.companyName}
                 </p>
                 <p className={classes["section-sub-info"]}>
-                    {todo.companyCity}
+                    {exp.companyCity}
                 </p>
-                <p className={classes["jobDescription"]}>{todo.jobDescription}</p>
+                <p className={classes["jobDescription"]}>{exp.jobDescription}</p>
               </div>
             </ul>
           ))}

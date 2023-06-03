@@ -9,8 +9,11 @@ import "../../../assets/fonts/times-bold";
 const EditorResumeTech = ({
   name,
   surname,
+  isPhoneNumber,
   phoneNumber,
+  isEmail,
   email,
+  isLocation,
   location,
   experienceList,
   skillList,
@@ -28,7 +31,7 @@ const EditorResumeTech = ({
           </h2>
           <ul className={classes["descontent-ul"]}>
 
-            <li
+          {isPhoneNumber &&<li
               className={
                 classes["descontent-ul-li"]
               }
@@ -44,8 +47,8 @@ const EditorResumeTech = ({
 
               <p className={classes["personal-data"]}>{phoneNumber}</p>
 
-            </li>
-            <li
+            </li>}
+            {isEmail &&<li
               className={
                 classes["descontent-ul-li"]
               }
@@ -57,8 +60,8 @@ const EditorResumeTech = ({
               </div>
 
               <p className={classes["personal-data"]}>{email}</p>
-            </li>
-            <li
+            </li>}
+            {isLocation &&<li
               className={
                 classes["descontent-ul-li"]
 
@@ -75,7 +78,7 @@ const EditorResumeTech = ({
               </div>
 
               <p className={classes["personal-data"]}>{location}</p>
-            </li>
+            </li>}
           </ul>
         </div>
         <div className={classes["image-container"]}>
@@ -89,20 +92,18 @@ const EditorResumeTech = ({
         <hr />
         <h2 >Education</h2>
         <div>
-          {educationList.map((todo, index) => (
+          {educationList.map((education, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
               <div className={classes["width30"]}>
-                <p className={classes["p-year"]}>{todo.schoolStartYear}</p>
+                <p className={classes["p-year"]}>{education.schoolStartYear}</p>
                 <p className={classes["p-year"]} >-</p>
-                <p className={classes["p-year"]}>{todo.schoolFinishYear}</p>
+                <p className={classes["p-year"]}>{education.schoolFinishYear}</p>
               </div>
               <div className={classes["width70"]}>
                 <h4 >
-                  {todo.schoolName}, {todo.schoolCity}
+                  {education.schoolName}, <span className={classes["city"]}>{education.schoolCity}</span>
                 </h4>
-                <br />
-                <p>Short desc:</p>
-                <p>{todo.schoolDesc}</p>
+                <p className={classes["schoolDescription"]}>{education.schoolDesc}</p>
               </div>
             </ul>
           ))}
@@ -110,21 +111,19 @@ const EditorResumeTech = ({
         <hr />
         <h2 >Experience</h2>
         <div>
-          {experienceList.map((todo, index) => (
+          {experienceList.map((exp, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
               <div className={classes["width30"]}>
-                <p className={classes["p-year"]}>{todo.experienceFrom}</p>
+                <p className={classes["p-year"]}>{exp.experienceFrom}</p>
                 <p className={classes["p-year"]} >-</p>
-                <p className={classes["p-year"]}>{todo.experienceTo}</p>
+                <p className={classes["p-year"]}>{exp.experienceTo}</p>
               </div>
               <div className={classes["width70"]}>
                 <h4 >
-                  {todo.companyName}, {todo.companyCity}
+                  {exp.companyName}, <span className={classes["city"]}>{exp.companyCity}</span>
 
                 </h4>
-                <br />
-                <p>Short description:</p>
-                <p>{todo.experienceDesc}</p>
+                <p className={classes["jobDescription"]}>{exp.jobDescription}</p>
               </div>
             </ul>
           ))}
