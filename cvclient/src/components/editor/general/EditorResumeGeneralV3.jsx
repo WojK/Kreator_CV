@@ -2,6 +2,7 @@ import classes from "./editorResumeGeneralV3.module.css";
 import TelephoneIcon from "../../../assets/images/telephone_white.png";
 import MailIcon from "../../../assets/images/mail_white.png";
 import LocationIcon from "../../../assets/images/location_white.png";
+import { TextAny } from "../../../language/langTexts";
 
 const EditorResumeGeneralV1 = ({
   name,
@@ -73,7 +74,7 @@ const EditorResumeGeneralV1 = ({
       <div className={classes["cv-content"]}>
         <div className={classes["profile-div"]}>{profileDescription}</div>
         <div className={classes["section-div"]}>
-          <p className={classes["section-title"]}>Job Experience</p>
+          <p className={classes["section-title"]}><TextAny text="section_experience"/></p>
           <hr className={classes["data-hr"]} />
           {experienceList.map((experience, index) => (
             <div className={classes["flex-container"]}>
@@ -93,7 +94,7 @@ const EditorResumeGeneralV1 = ({
           ))}
         </div>
         <div className={classes["section-div"]}>
-          <p className={classes["section-title"]}>Education</p>
+          <p className={classes["section-title"]}><TextAny text="section_education"/></p>
           <hr className={classes["data-hr"]} />
           {educationList.map((education, index) => (
             <div className={classes["flex-container"]}>
@@ -114,7 +115,7 @@ const EditorResumeGeneralV1 = ({
           ))}
         </div>
         <div className={classes["section-div"]}>
-          <p className={classes["section-title"]}>Languages</p>
+          <p className={classes["section-title"]}><TextAny text="section_languages"/></p>
           <hr className={classes["data-hr"]} />
           <div className={classes["flex-container"]}>
             <div className={classes["column-left"]}></div>
@@ -132,7 +133,7 @@ const EditorResumeGeneralV1 = ({
           </div>
         </div>
         <div className={classes["section-div"]}>
-          <p className={classes["section-title"]}>Skills</p>
+          <p className={classes["section-title"]}><TextAny text="section_skills"/></p>
           <hr className={classes["data-hr"]} />
           <div className={classes["flex-container"]}>
             <div className={classes["column-left"]}></div>
@@ -148,7 +149,7 @@ const EditorResumeGeneralV1 = ({
           </div>
         </div>
         <div className={classes["section-div"]}>
-          <p className={classes["section-title"]}>Hobbies</p>
+          <p className={classes["section-title"]}><TextAny text="section_hobbies"/></p>
           <hr className={classes["data-hr"]} />
           <div className={classes["flex-container"]}>
             <div className={classes["column-left"]}></div>

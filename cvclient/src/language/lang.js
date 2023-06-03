@@ -129,6 +129,15 @@ const pl = {
   about_us_3: "Projekt Graficzny przygotowany w Figmie, kod źródłowy oraz dokumentację można znaleźć na github'ie: ",
   /*Footer */
   footer: "CV_CREATOR - PROJEKT ZESPOŁOWY @2022/2023",
+  /*CV Preview - right side */
+  section_profile_desc: "Opis profilu",
+  section_experience: "Doświadczenie zawodowe",
+  section_education: "Wykształcenie",
+  section_about_me: "O mnie",
+  section_languages: "Języki obce",
+  section_skills: "Umiejętności",
+  section_hobbies: "Zainteresowania",
+  section_contact: "Kontakt",
 };
 
 const en = {
@@ -258,6 +267,15 @@ const en = {
   about_us_3: "Project Figma (UI) design, source code and documentation can be found on github: ",
   /*Footer */
   footer: "CV_CREATOR - TEAM PROJECT @2022/2023",
+  /*CV Preview - right side */
+  section_profile_desc: "Profile description",
+  section_experience: "Job Experience",
+  section_education: "Education",
+  section_about_me: "About me",
+  section_languages: "Languages",
+  section_skills: "Skills",
+  section_hobbies: "Hobbies",
+  section_contact: "Contact",
 };
 
 export const LangContext = React.createContext({

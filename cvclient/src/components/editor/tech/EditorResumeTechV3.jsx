@@ -7,6 +7,7 @@ import "../../../assets/fonts/Roboto-normal";
 import "../../../assets/fonts/times-normal";
 import "../../../assets/fonts/times-bold";
 import Circle from "../../../assets/images/circle.png";
+import { TextAny } from "../../../language/langTexts";
 
 const EditorResumeTechV3 = ({
   name,
@@ -48,7 +49,7 @@ const EditorResumeTechV3 = ({
                   alt="TelephoneIcon"
                   className={classes.icon}
                 />
-                <p> Phone number:</p>
+                <p><TextAny text="editor_personal_phone_number"/></p>
               </div>
 
               <p className={classes["personal-data"]}>{phoneNumber}</p>
@@ -62,7 +63,7 @@ const EditorResumeTechV3 = ({
               <div className={classes["descontent-ul-li-left"]} >
 
                 <img src={MailIcon} alt="MailIcon" className={classes.icon} />
-                <p> Email:</p>
+                <p><TextAny text="editor_personal_email"/></p>
               </div>
 
               <p className={classes["personal-data"]}>{email}</p>
@@ -80,7 +81,7 @@ const EditorResumeTechV3 = ({
                   alt="LocationIcon"
                   className={classes.icon}
                 />
-                <p> Location: </p>
+                <p><TextAny text="editor_personal_location"/></p>
               </div>
 
               <p className={classes["personal-data"]}>{location}</p>
@@ -93,7 +94,7 @@ const EditorResumeTechV3 = ({
 
       <div className={classes["skills-projects"]}>
         <hr />
-        <h2 className={classes["section-title"]}>Education</h2>
+        <h2 className={classes["section-title"]}><TextAny text="section_education"/></h2>
         <div>
           {educationList.map((education, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
@@ -113,7 +114,7 @@ const EditorResumeTechV3 = ({
           ))}
         </div>
         <hr />
-        <h2 className={classes["section-title"]}>Experience</h2>
+        <h2 className={classes["section-title"]}><TextAny text="section_experience"/></h2>
         <div>
           {experienceList.map((exp, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
@@ -133,7 +134,7 @@ const EditorResumeTechV3 = ({
           ))}
         </div>
         <hr />
-        <h2 className={classes["section-title"]}>Languages</h2>
+        <h2 className={classes["section-title"]}><TextAny text="section_languages"/></h2>
         <div>
           {languageList.map((language, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
@@ -150,7 +151,7 @@ const EditorResumeTechV3 = ({
           ))}
         </div>
         <hr />
-        <h2 className={classes["section-title"]}>Skills</h2>
+        <h2 className={classes["section-title"]}><TextAny text="section_skills"/></h2>
         <div className={classes["skill-elem"]}>
           {skillList.map((skill, index) => (
               <p><img

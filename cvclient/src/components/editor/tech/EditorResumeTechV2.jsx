@@ -3,6 +3,8 @@ import classes from "./editorResumeTechV2.module.css";
 import "../../../assets/fonts/Roboto-normal";
 import "../../../assets/fonts/times-normal";
 import "../../../assets/fonts/times-bold";
+import { TextAny } from "../../../language/langTexts";
+
 const EditorResumeTechV2 = ({
     name,
     surname,
@@ -28,29 +30,29 @@ const EditorResumeTechV2 = ({
                             <img src={image} alt="zdj cv" />
                         </div>
                         <div className={classes.side_item}>
-                            <div className={classes.side_title}>Contact</div>
+                            <div className={classes.side_title}><TextAny text="section_contact"/></div>
                             {isPhoneNumber &&
                                 <div className={classes.side_info}>
-                                    <div className={classes.sub_title}>Phone</div>
+                                    <div className={classes.sub_title}><TextAny text="editor_personal_phone_number"/></div>
                                     <div className={classes.sub_content}>{phoneNumber}</div>
                                 </div>
                             }
                             {isEmail &&
                                 <div className={classes.side_info}>
-                                    <div className={classes.sub_title}>E-mail</div>
+                                    <div className={classes.sub_title}><TextAny text="editor_personal_email"/></div>
                                     <div className={classes.sub_content}>{email}</div>
                                 </div>
                             }
                             {isLocation &&
                                 <div className={classes.side_info}>
-                                    <div className={classes.sub_title}>Location</div>
+                                    <div className={classes.sub_title}><TextAny text="editor_personal_location"/></div>
                                     <div>{location}</div>
                                 </div>
                             }
                         </div>
                         {skillList.length > 0 &&
                             <div className={classes.side_item}>
-                                <div className={classes.side_title}>Skills</div>
+                                <div className={classes.side_title}><TextAny text="section_skills"/></div>
                                 <div className={classes.side_info}>
                                     {skillList.map((skill, index) => (
                                         <li key={index}>{skill.skill}</li>
@@ -60,7 +62,7 @@ const EditorResumeTechV2 = ({
                         }
                         {languageList.length > 0 &&
                             <div className={classes.side_item}>
-                                <div className={classes.side_title}>Languages</div>
+                                <div className={classes.side_title}><TextAny text="section_languages"/></div>
                                 <div className={classes.side_info}>
                                     {languageList.map((language, index) => (
                                         <li key={index}>{language.language}</li>
@@ -77,7 +79,7 @@ const EditorResumeTechV2 = ({
                     {experienceList.length > 0 &&
                         <>
                             <div class={classes.side_item}>
-                                <div className={classes.side_title}>Experience</div>
+                                <div className={classes.side_title}><TextAny text="section_experience"/></div>
                                 {experienceList.map((exp, index) =>
                                     <div className={classes.side_data}>
                                         <div>{exp.experienceFrom.split("-")[0]} - {exp.experienceTo.split("-")[0]}</div>
@@ -94,7 +96,7 @@ const EditorResumeTechV2 = ({
                     {educationList.length > 0 &&
                         <>
                             <div class={classes.side_item}>
-                                <div className={classes.side_title}>Education</div>
+                                <div className={classes.side_title}><TextAny text="section_education"/></div>
                                 {educationList.map((education, index) =>
                                     <div className={classes.side_data}>
                                         <div>{education.schoolStartYear.split("-")[0]} - {education.schoolFinishYear.split("-")[0]}</div>

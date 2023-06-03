@@ -2,6 +2,7 @@ import classes from "./editorResumeGeneralV1.module.css";
 import TelephoneIcon from "../../../assets/images/telephone.png";
 import MailIcon from "../../../assets/images/mail.png";
 import LocationIcon from "../../../assets/images/location.png";
+import { TextAny } from "../../../language/langTexts";
 
 const EditorResumeGeneralV1 = ({
   name,
@@ -75,7 +76,7 @@ const EditorResumeGeneralV1 = ({
       <div className={classes["cv-content"]}>
         <div className={classes["skills-projects"]}>
           <div className={classes["skills-projects-content"]}>
-            <p className={classes["section-title"]}>Job Experience</p>
+            <p className={classes["section-title"]}><TextAny text="section_experience"/></p>
             <hr className={classes["data-hr"]} />
             <div>
               {experienceList.map((exp, index) => (
@@ -93,7 +94,7 @@ const EditorResumeGeneralV1 = ({
                 </ul>
               ))}
             </div>
-            <p className={classes["section-title"]}>Education</p>
+            <p className={classes["section-title"]}><TextAny text="section_education"/></p>
             <hr className={classes["data-hr"]} />
             <div>
               {educationList.map((education, index) => (
@@ -113,11 +114,11 @@ const EditorResumeGeneralV1 = ({
 
         <div className={classes["personal-details"]}>
           <div className={classes["personal-details-content"]}>
-            <p className={classes["section-title"]}>About me</p>
+            <p className={classes["section-title"]}><TextAny text="section_about_me"/></p>
             <hr className={classes["data-hr"]} />
             <span className={classes["personal-description"]}>{aboutme}</span>
 
-            <p className={classes["section-title"]}>Languages</p>
+            <p className={classes["section-title"]}><TextAny text="section_languages"/></p>
             <hr className={classes["data-hr"]} />
             <div>
               {languageList.map((language, index) => (
@@ -127,7 +128,7 @@ const EditorResumeGeneralV1 = ({
               ))}
             </div>
 
-            <p className={classes["section-title"]}>Skills</p>
+            <p className={classes["section-title"]}><TextAny text="section_skills"/></p>
             <hr className={classes["data-hr"]} />
             <div>
               {skillList.map((skill, index) => (
@@ -137,7 +138,7 @@ const EditorResumeGeneralV1 = ({
               ))}
             </div>
 
-            <p className={classes["section-title"]}>Hobbies</p>
+            <p className={classes["section-title"]}><TextAny text="section_hobbies"/></p>
             <hr className={classes["data-hr"]} />
             <div>
               {hobbyList.map((hobby, index) => (
