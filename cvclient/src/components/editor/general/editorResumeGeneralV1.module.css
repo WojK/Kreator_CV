@@ -139,3 +139,11 @@
   border-radius: 50%;
   margin-top: 10px;
 }
+.color1 {
+  background: #3c9b1f;
+  border: 1px solid #3c9b1f;
+}
+.color2 {
+  background: #3972a9eb;
+  border: 1px solid #3972a9eb;
+}

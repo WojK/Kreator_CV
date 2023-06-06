@@ -5,6 +5,7 @@ import LocationIcon from "../../../assets/images/location.png";
 import { TextAny } from "../../../language/langTexts";
 
 const EditorResumeGeneralV1 = ({
+  color,
   name,
   surname,
   isPhoneNumber,
@@ -26,7 +27,11 @@ const EditorResumeGeneralV1 = ({
   return (
     <div ref={reportTemplateRef} className={classes["cv"]}>
       <div className={classes["name-and-photo"]}>
-        <div className={classes["semi-circle"]}>
+        {/* <div className={classes["semi-circle"]}> */}
+        <div
+        className={`${classes["semi-circle"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}>
           <div>
             <img className={classes.image} src={image} alt="CV" />
           </div>
@@ -77,7 +82,10 @@ const EditorResumeGeneralV1 = ({
         <div className={classes["skills-projects"]}>
           <div className={classes["skills-projects-content"]}>
             <p className={classes["section-title"]}><TextAny text="section_experience"/></p>
-            <hr className={classes["data-hr"]} />
+                    <div
+        className={`${classes["data-hr"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}></div>
             <div>
               {experienceList.map((exp, index) => (
                 <ul key={index}>
@@ -95,7 +103,10 @@ const EditorResumeGeneralV1 = ({
               ))}
             </div>
             <p className={classes["section-title"]}><TextAny text="section_education"/></p>
-            <hr className={classes["data-hr"]} />
+                    <div
+        className={`${classes["data-hr"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}></div>
             <div>
               {educationList.map((education, index) => (
                 <ul key={index}>
@@ -115,11 +126,17 @@ const EditorResumeGeneralV1 = ({
         <div className={classes["personal-details"]}>
           <div className={classes["personal-details-content"]}>
             <p className={classes["section-title"]}><TextAny text="section_about_me"/></p>
-            <hr className={classes["data-hr"]} />
+                    <div
+        className={`${classes["data-hr"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}></div>
             <span className={classes["personal-description"]}>{aboutme}</span>
 
             <p className={classes["section-title"]}><TextAny text="section_languages"/></p>
-            <hr className={classes["data-hr"]} />
+                    <div
+        className={`${classes["data-hr"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}></div>
             <div>
               {languageList.map((language, index) => (
                 <ul key={index}>
@@ -129,7 +146,10 @@ const EditorResumeGeneralV1 = ({
             </div>
 
             <p className={classes["section-title"]}><TextAny text="section_skills"/></p>
-            <hr className={classes["data-hr"]} />
+                    <div
+        className={`${classes["data-hr"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}></div>
             <div>
               {skillList.map((skill, index) => (
                 <ul key={index} className={classes["descontent-ul"]}>
@@ -139,7 +159,10 @@ const EditorResumeGeneralV1 = ({
             </div>
 
             <p className={classes["section-title"]}><TextAny text="section_hobbies"/></p>
-            <hr className={classes["data-hr"]} />
+                    <div
+        className={`${classes["data-hr"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}></div>
             <div>
               {hobbyList.map((hobby, index) => (
                 <ul key={index}>
