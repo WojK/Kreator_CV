@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import { MdCheckCircleOutline, MdErrorOutline } from "react-icons/md";
+import { TextAny } from "../../language/langTexts";
 
 const Register = () => {
   return (
@@ -48,11 +49,11 @@ const RegisterForm = () => {
 
   const validateInputs = () => {
     if (registerInput.password.length < 6) {
-      setRegisterError("Password's minimum length is 6.");
+      setRegisterError(<TextAny text="password_min_length" />);
       return false;
     }
     if (registerInput.confirmPassword !== registerInput.password) {
-      setRegisterError("Password and Confirm Password does not match.");
+      setRegisterError(<TextAny text="password_match" />);
       return false;
     }
     return true;
@@ -82,16 +83,18 @@ const RegisterForm = () => {
   return (
     <>
       <p className={classes["register-title-form"]}>
-        Create perfect CV in 5 minutes
+        <TextAny text="register_welcome_text" />
       </p>
       <p className={classes["register-small-text"]}>
-        Sign up and learn from our experience
+        <TextAny text="register_motivate" />
       </p>
 
       <div className={classes["form-container"]}>
         <form onSubmit={handleRegister}>
           <div className={classes["input-container"]}>
-            <label className={classes["form-label"]}>Name: </label>
+            <label className={classes["form-label"]}>
+              <TextAny text="register_name" />
+            </label>
             <input
               className={classes["input-box"]}
               //type="text"
@@ -103,7 +106,9 @@ const RegisterForm = () => {
             ></input>
           </div>
           <div className={classes["input-container"]}>
-            <label className={classes["form-label"]}>Surname: </label>
+            <label className={classes["form-label"]}>
+              <TextAny text="register_surname" />
+            </label>
             <input
               className={classes["input-box"]}
               //type="text"
@@ -115,7 +120,7 @@ const RegisterForm = () => {
             ></input>
           </div>
           <div className={classes["input-container"]}>
-            <label className={classes["form-label"]}>E-mail: </label>
+            <label className={classes["form-label"]}>E-mail:</label>
             <input
               className={classes["input-box"]}
               //type="text"
@@ -127,7 +132,9 @@ const RegisterForm = () => {
             ></input>
           </div>
           <div className={classes["input-container"]}>
-            <label className={classes["form-label"]}>Password: </label>
+            <label className={classes["form-label"]}>
+              <TextAny text="password" />
+            </label>
             <input
               className={classes["input-box"]}
               type="password"
@@ -139,7 +146,9 @@ const RegisterForm = () => {
             ></input>
           </div>
           <div className={classes["input-container"]}>
-            <label className={classes["form-label"]}>Confirm password: </label>
+            <label className={classes["form-label"]}>
+              <TextAny text="confirm_password" />
+            </label>
             <input
               className={classes["input-box"]}
               type="password"
@@ -170,7 +179,7 @@ const RegisterForm = () => {
             navigate("/login");
           }}
         >
-          Already have an account? Click here
+          <TextAny text="register_already_account" />
         </p>
         {registerSuccess && (
           <div className={classes["modal"]}>

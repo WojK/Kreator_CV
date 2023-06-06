@@ -1,37 +1,46 @@
 import TemplateCategory from "../components/chooseTemplate/TemplateCategory";
 import classes from "./ChooseTemplatePage.module.css";
+import { TextAny } from "../language/langTexts";
 
 const ChooseTemplatePage = () => {
   const data_templates = [
     {
-      title: "General Template",
-      description:
-        "General CV templates are pre-designed formats that can be used by individuals from various industries and professions to create a professional-looking CV (curriculum vitae) to showcase their qualifications, skills, work experience, and achievements.",
+      id: 1,
+      title: <TextAny text="general_template" />,
+      description: <TextAny text="general_template_desc" />,
       type: "general",
     },
     {
-      title: "Student Template",
-      description:
-        "Student CV templates are pre-designed formats that students can use to create a professional-looking CV (curriculum vitae) to showcase their academic achievements, skills, work experience, and extracurricular activities.",
+      id: 2,
+      title: <TextAny text="student_template" />,
+      description: <TextAny text="student_template_desc" />,
       type: "student",
     },
     {
-      title: "Technical Template",
-      description:
-        "Technical CV templates are pre-designed formats that are specifically tailored for individuals working in technical fields, such as engineering, IT, or science. These templates are designed to showcase technical skills, expertise, and achievements in a clear and concise manner.",
+      id: 3,
+      title: <TextAny text="technical_template" />,
+      description: <TextAny text="technical_template_desc" />,
       type: "technical",
     },
   ];
 
   const templates = data_templates.map((data) => (
     <TemplateCategory
+      key={data.id}
       title={data.title}
       description={data.description}
       type={data.type}
     />
   ));
 
-  return <div className={classes["templates-div"]}>{templates}</div>;
+  return (
+    <div>
+      <h1 className={classes["header"]}>
+        <TextAny text="creator_main_text" />
+      </h1>
+      <div className={classes["templates-div"]}>{templates}</div>
+    </div>
+  );
 };
 
 export default ChooseTemplatePage;

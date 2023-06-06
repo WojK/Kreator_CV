@@ -8,8 +8,11 @@ const AdviceArticle = () =>{
     const articleData = adviceArticlesList.find(a => { return a.id === parseInt(adviceId)});
     return(
         <div className={classes["article-div"]}>
-            <p><span className={classes["article-title"]}>{articleData.title}</span> <div className={classes["article-category"]}>{articleData.category}</div></p>
-            <p className={classes["article-date"]}>{articleData.date} {articleData.author} </p>
+            <div className={classes["container"]}>
+                <p className={classes["article-title"]}>{articleData.title}</p>
+                <p className={classes["article-category"]}>{articleData.category}</p>
+            </div>
+            <p className={classes["article-date-author"]}>{articleData.date} {articleData.author} </p>
             <br/>
             <p className={classes["article-text"]}>{articleData.text}</p>
 

@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+.cv {
+  width: 800px;
+  min-height: 1120px;
+  align-self: flex-end;
+  box-shadow: 0 0 0 0.4rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: white;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.personal-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container {
+  position: relative;
+  width: 30%;
+  height: 210px;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 180px;
+  border-radius: 3%;
+  border: solid 5px #141963;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  margin-top: 10px;
+  z-index: 2;
+}
+
+.background-image-div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+}
+
+.descontent {
+  width: 60%;
+  margin-top: 0.4rem;
+}
+
+.descontent-ul {
+  list-style: none;
+  margin-top: 24px;
+  width: 70%;
+}
+
+.descontent-ul-li {
+  margin-left: 1rem;
+  display: flex;
+  /* align-items: center; */
+  /* text-align: start; */
+  margin-top: 8px;
+  /* justify-content: space-between; */
+}
+.descontent-ul-li-left {
+  width: 130px;
+  display: flex;
+}
+.personal-data {
+  display: inline-block;
+  font-size: 14px;
+  padding-left: 0.5rem;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 30px;
+  font-family: "Roboto";
+}
+
+.icon {
+  width: 0.8rem;
+  margin-right: 10px;
+}
+
+.personal-data-container {
+  margin-top: 35px;
+}
+
+.personal-data-title {
+  font-weight: 500;
+  font-family: "Roboto";
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.personal-data-hr {
+  margin-bottom: 5px;
+}
+
+.personal-des {
+  font-size: 15px;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.personal-data-container ul {
+  list-style: none;
+}
+
+.personal-data-container ul li {
+  margin-bottom: 20px;
+}
+
+.display-none {
+  display: none;
+}
+
+/* Syntax to hide some element e.g. :
+className={
+ classes["some-class"] + " " + classes["display-none"]
+} */
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/* Right side */
+.skills-projects {
+  min-height: 1120px;
+  font-family: "Roboto";
+}
+
+.skills-projects h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.skills-projects hr {
+  margin-bottom: 5px;
+}
+
+.skills-projects ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.skills-projects ul li:first-child {
+  margin-top: 12px;
+}
+
+/* .skill-elem{
+  display: flex;
+  align-items: flex-start;
+  text-align: start;
+} */
+
+/* /////////////////////////////////////////////////////////////////////////// */
+/* FORM */
+
+/* //////////////////////// */
+
+.card {
+  margin-top: 20px;
+}
+
+.card-list-elem {
+  margin-top: 15px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ecf1f3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card-list-elem:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-list-elem-pdf {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.year {
+  font-size: 12px;
+  color: #807676;
+}
+
+.width30 {
+  width: 30%;
+  display: flex;
+}
+
+.width70 {
+  width: 70%;
+}
+
+.display-none {
+  display: none;
+}
+
+.section-title {
+  padding: 2px 5px 2px 5px;
+  display: inline-block;
+  background-color: #141963;
+  color: #f7f7f7;
+}
+
+.section-main-info {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.section-sub-info {
+  font-size: 12px;
+  color: #524f4f;
+  font-style: italic;
+}
+
+.jobDescription {
+  color: #313030;
+  font-size: 14px;
+}
+
+.circle-icon {
+    width: 8px;
+    height: 8px;
+  }
+
+  .flex-container{
+    display: flex;
+  }
+
+.column-left{
+    width: 20%;
+  }
+  
+  .column-right{
+    width: 80%;
+  }
+
+  .cv-content {
+    display: flex;
+    flex-direction: column;
+  }

@@ -17,6 +17,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import { LangContextProvider } from "./language/lang";
+
 const router = createBrowserRouter(
   createRoutesFromElements([
     <Route path="/" element={<MainLayoutPage />}>
@@ -39,9 +41,11 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
+    <LangContextProvider>
       <RouterProvider router={router}>
         <div className="App"></div>
       </RouterProvider>
+    </LangContextProvider>
     </>
   );
 }

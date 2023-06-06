@@ -5,6 +5,7 @@ import experience from "../assets/images/experience.png";
 import task from "../assets/images/task.png";
 import examplecv from "../assets/images/student-template-example.png";
 import { useNavigate } from "react-router-dom";
+import { TextAny } from "../language/langTexts";
 
 const MainPageContent = () => {
   const navigate = useNavigate();
@@ -14,8 +15,7 @@ const MainPageContent = () => {
       <div className={classes["main-layout-div"]}>
         <div className={classes["main-header-div"]}>
           <h1 className={classes["main-header"]}>
-            Showcase your skills and experience in a way that makes you stand
-            out from the crowd.
+            <TextAny text="main_page_section1_main_text" />
           </h1>
           <Button />
         </div>
@@ -27,7 +27,7 @@ const MainPageContent = () => {
         <hr className={classes["hr-main"]} />
 
         <h1 className={classes["advice-motto-header"]}>
-          Your career success starts with well-designed CV
+          <TextAny text="main_page_section2_main_text" />
         </h1>
 
         <div className={classes["row"]}>
@@ -35,19 +35,19 @@ const MainPageContent = () => {
             <Benefit
               className={classes["margin-left"]}
               img={cv}
-              content="Create a professional resume quickly and easily. All in a few quick steps in your browser."
+              content={<TextAny text="main_page_section2_benefit1" />}
             />
           </div>
           <div className={classes["column"]}>
             <Benefit
               img={experience}
-              content="Boost your chance to get employed with sharp, clean and well-organised resume."
+              content={<TextAny text="main_page_section2_benefit2" />}
             />
           </div>
           <div className={classes["column"]}>
             <Benefit
               img={task}
-              content="Organize your CV with commonly known standards to do not forget all crucial details."
+              content={<TextAny text="main_page_section2_benefit3" />}
             />
           </div>
         </div>
@@ -84,7 +84,7 @@ const Button = () => {
       }}
       className={classes["button-create-cv"]}
     >
-      Create CV Right Now!
+      <TextAny text="main_page_section1_button" />
     </button>
   );
 };
@@ -105,27 +105,50 @@ const Benefit = (props) => {
 const BenefitsList = () => {
   return (
     <div>
-      <h1 className={classes["advice-main-header"]}>Create your dream CV</h1>
-      <h3 className={classes["advice-header"]}>Highest Quality</h3>
+      <h1 className={classes["advice-main-header"]}>
+        <TextAny text="main_page_section3_main_text" />
+      </h1>
+      <h3 className={classes["advice-header"]}>
+        <TextAny text="main_page_section3_benefit1_title" />
+      </h3>
       <p className={classes["advices-text"]}>
-        With our advanced and intuitive CV Creator, creating a resume is a
-        breeze. It takes less than 2 minutes to generate one template. Just
-        complete form.
+        <TextAny text="main_page_section3_benefit1" />
       </p>
-      <h3 className={classes["advice-header"]}>Professional Templates</h3>
+      <h3 className={classes["advice-header"]}>
+        <TextAny text="main_page_section3_benefit2_title" />
+      </h3>
       <p className={classes["advices-text"]}>
-        Choose from over 10 professional resume templates. Designed by experts
-        and adopted by successful experts.
+        <TextAny text="main_page_section3_benefit2" />
       </p>
-      <h3 className={classes["advice-header"]}>Advices</h3>
+      <h3 className={classes["advice-header"]}>
+        <TextAny text="main_page_section3_benefit3_title" />
+      </h3>
       <p className={classes["advices-text"]}>
-        Check out our Advices page to learn from the best recruiters in the
-        industry and take care of all the essential elements of your resume
+        <TextAny text="main_page_section3_benefit3" />
       </p>
-      <h3 className={classes["advice-header"]}>Get your Dream Job</h3>
+      <h3 className={classes["advice-header"]}>
+        <TextAny text="main_page_section3_benefit4_title" />
+      </h3>
       <p className={classes["advices-text"]}>
-        Surprise your new employer with an effective and distinctive CV.
-        Regardless of your experience. Get that job you've always dreamed of.
+        <TextAny text="main_page_section3_benefit4" />
+      </p>
+      <h3 className={classes["advice-header"]}>
+        <TextAny text="main_page_section3_benefit5_title" />
+      </h3>
+      <p className={classes["advices-text"]}>
+        <TextAny text="main_page_section3_benefit5" />
+      </p>
+      <h3 className={classes["advice-header"]}>
+        <TextAny text="main_page_section3_benefit6_title" />
+      </h3>
+      <p className={classes["advices-text"]}>
+        <TextAny text="main_page_section3_benefit6" />
+      </p>
+      <h3 className={classes["advice-header"]}>
+        <TextAny text="main_page_section3_benefit7_title" />
+      </h3>
+      <p className={classes["advices-text"]}>
+        <TextAny text="main_page_section3_benefit7" />
       </p>
     </div>
   );

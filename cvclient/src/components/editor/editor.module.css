@@ -271,7 +271,6 @@ input:focus {
 .tab-card {
   margin: 10px;
   display: flex;
-  /* background-color: red; */
 }
 
 .tab-switcher {
@@ -283,7 +282,6 @@ input:focus {
   margin-right: 20px;
   border-right: 1px solid black;
   padding: 5px;
-  /* background-color: red; */
 }
 
 .tab-content {
@@ -301,13 +299,6 @@ input:focus {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
-/* .tab-content-form {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-
-} */
 
 .tab-content-form {
   display: flex;

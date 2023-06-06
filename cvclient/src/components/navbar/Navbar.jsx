@@ -5,6 +5,8 @@ import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import cvnavbar from "../../assets/images/cv-navbar.png";
+import { TextAny } from "../../language/langTexts";
+import { LangSwitcher } from "../../language/langSwitcher";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -16,13 +18,16 @@ const Menu = () => {
             className="navbar-icon"
             alt="cv-navbar"
           /> */}
+      <p>
+        <LangSwitcher />
+      </p>
       <p
         onClick={(e) => {
           navigate("/creator");
         }}
       >
         <AiFillCaretDown color="#fff" size={20} />
-        Creator
+        <TextAny text="creator" />
       </p>
       <p
         onClick={(e) => {
@@ -30,7 +35,7 @@ const Menu = () => {
         }}
       >
         <AiFillCaretDown color="#fff" size={20} />
-        Advices
+        <TextAny text="advices" />
       </p>
       <p
         onClick={(e) => {
@@ -38,7 +43,7 @@ const Menu = () => {
         }}
       >
         <AiFillCaretDown color="#fff" size={20} />
-        About us
+        <TextAny text="about_us" />
       </p>
     </>
   );
@@ -95,7 +100,7 @@ const Navbar = () => {
                 navigate("/login"); // DODAĆ PÓŹNIEJ
               }}
             >
-              Sign In
+              <TextAny text="sign_in" />
             </button>
             <button
               type="button"
@@ -103,7 +108,7 @@ const Navbar = () => {
                 navigate("/register"); // DODAĆ PÓŹNIEJ
               }}
             >
-              Sign Up
+              <TextAny text="sign_up" />
             </button>
           </div>
         )}

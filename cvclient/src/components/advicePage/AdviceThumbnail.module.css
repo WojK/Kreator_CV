@@ -25,7 +25,7 @@
   transition: transform 0.2s;
 }
 
-.advice-div:hover{
+.advice-div:hover {
   transform: scale(1.1);
 }
 

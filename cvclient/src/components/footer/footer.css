@@ -3,11 +3,8 @@
   justify-content: space-between;
   align-items: center;
   background: var(--color-footer);
-
   margin-top: 2rem;
   padding: 1.5rem 4rem;
-
-  /* margin-top: 50px; */
 }
 
 .cv__footer_title {
@@ -31,11 +28,11 @@
   align-items: center;
 }
 
-.cv__footer_authors p {
+.cv__footer_authors a {
   color: #fff;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 20px;
 
   margin-right: 1rem;
@@ -79,7 +76,7 @@
     line-height: 20px;
   }
 
-  .cv__footer_authors p {
+  .cv__footer_authors a {
     font-size: 12px;
     line-height: 18px;
   }

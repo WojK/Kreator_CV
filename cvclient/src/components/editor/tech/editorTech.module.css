@@ -435,3 +435,21 @@ label {
   margin-top: 10px;
   margin-left: 10px;
 }
+
+.jobDescription {
+  margin-top: 5px;
+  color: #313030;
+  font-size: 14px;
+}
+
+.schoolDescription{
+  margin-top: 5px;
+  color: #313030;
+  font-size: 14px; 
+}
+
+.city{
+  color: #313030;
+  font-size: 16px;
+  font-style: italic;
+}

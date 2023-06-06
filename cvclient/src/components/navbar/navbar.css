@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   background: var(--color-navbar);
-
   padding: 0.7rem 2rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
 }
@@ -30,6 +29,7 @@
 
 .cv__navbar-links_container p:hover {
   transform: scale(1.1);
+  transition: transform 0.2s;
 }
 
 .cv__navbar-links_container {
@@ -53,7 +53,6 @@
 
 .cv__navbar-account {
   display: flex;
-  /* justify-content: flex-end; */
   justify-content: space-between;
   gap: 1rem;
   align-items: center;
@@ -80,6 +79,7 @@
 .cv__navbar-account button:hover,
 .cv__navbar_menu_container-account button:hover {
   transform: scale(1.1);
+  transition: transform 0.3s;
   background: #1e354d;
   color: white;
 }
@@ -125,14 +125,8 @@
   gap: 0.7rem;
 }
 
-/* .cv__navbar_menu_container-account button {
-    padding: 0.4rem 1rem;
-} */
-
 @media screen and (max-width: 1200px) {
   .cv__navbar-links_container p {
-    /* font-size: 20px;
-        line-height: 24.2px; */
     margin: 0 1rem;
   }
 }
@@ -165,12 +159,4 @@
 
 .navbar-icon {
   width: 4%;
-}
-
-.cv-creator-name {
-  transition: transform 0.2s;
-}
-
-.cv-creator-name:hover {
-  transform: scale(1.005);
 }
