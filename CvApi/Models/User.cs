@@ -8,6 +8,7 @@
         public string Email { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
         public string PasswordSalt { get; set; } = string.Empty;
-
+        public int UserCvDataId { get; set; }
+        public UserCvData UserCvData { get; set; }
     }
 }
