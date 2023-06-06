@@ -9,6 +9,7 @@ import "../../../assets/fonts/Roboto-normal";
 import "../../../assets/fonts/times-normal";
 import "../../../assets/fonts/times-bold";
 const EditorResumeStudentV1 = ({
+  color,
   name,
   surname,
   isPhoneNumber,
@@ -33,7 +34,11 @@ const EditorResumeStudentV1 = ({
 }) => {
   return (
     <div ref={reportTemplateRef} className={classes["cv"]}>
-      <div className={classes["personal-details"]}>
+      {/* <div className={classes["personal-details"]}> */}
+      <div
+        className={`${classes["personal-details"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}>
         <div className={classes["image-container"]}>
           <img className={classes.image} src={image} alt="CV" />
           <div className={classes["background-image-div"]}></div>

@@ -21,11 +21,14 @@
 
 .centerside .column_left {
 	width: 35%;
-	background: #26252d;
 	padding-left: 20px;
 	padding-right: 20px;
 	min-height: 1120px;
 	height: 100%;
+}
+.column_left{
+	background: #26252d;
+
 }
 
 .image {
@@ -148,3 +151,10 @@
 .sub_content {
 	margin-bottom: 0.3rem;
 }
+
+.color1 {
+	background: #3c9b1f;
+  }
+  .color2 {
+	background: #3972a9eb;
+  }

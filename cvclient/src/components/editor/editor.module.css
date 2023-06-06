@@ -39,6 +39,7 @@
   background-color: #f3f1ed;
 }
 
+
 .image-container {
   position: relative;
   width: 100%;
@@ -470,12 +471,18 @@ label {
   margin-top: 20px;
 }
 
-.color1,
-.color2 {
+.colorbutton1,
+.colorbutton2 {
   width: 30px;
   height: 30px;
   border-radius: 20%;
   cursor: pointer;
+}
+.colorbutton1 {
+  background-color: #3c9b1f;
+}
+.colorbutton2 {
+  background-color: #3972a9eb;
 }
 .color1 {
   background-color: #3c9b1f;

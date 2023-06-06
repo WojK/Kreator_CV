@@ -10,6 +10,7 @@ import Circle from "../../../assets/images/circle.png";
 import { TextAny } from "../../../language/langTexts";
 
 const EditorResumeTechV3 = ({
+  color,
   name,
   surname,
   isPhoneNumber,
@@ -29,7 +30,9 @@ const EditorResumeTechV3 = ({
     <div ref={reportTemplateRef} className={classes["cv"]}>
       <div className={classes["personal-details"]}>
       <div className={classes["image-container"]}>
-          <img className={classes.image} src={image} alt="CV" />
+          <img  className={`${classes["image"]} ${
+          color === "color1" ? classes.color_border1 : classes.color_border2
+        }`} src={image} alt="CV" />
           <div className={classes["background-image-div"]}></div>
         </div>
         <div className={classes.descontent}>
@@ -94,7 +97,9 @@ const EditorResumeTechV3 = ({
 
       <div className={classes["skills-projects"]}>
         <hr />
-        <h2 className={classes["section-title"]}><TextAny text="section_education"/></h2>
+        <h2 className={`${classes["section-title"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}><TextAny text="section_education"/></h2>
         <div>
           {educationList.map((education, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
@@ -114,7 +119,9 @@ const EditorResumeTechV3 = ({
           ))}
         </div>
         <hr />
-        <h2 className={classes["section-title"]}><TextAny text="section_experience"/></h2>
+        <h2 className={`${classes["section-title"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}><TextAny text="section_experience"/></h2>
         <div>
           {experienceList.map((exp, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
@@ -134,7 +141,9 @@ const EditorResumeTechV3 = ({
           ))}
         </div>
         <hr />
-        <h2 className={classes["section-title"]}><TextAny text="section_languages"/></h2>
+        <h2 className={`${classes["section-title"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}><TextAny text="section_languages"/></h2>
         <div>
           {languageList.map((language, index) => (
             <ul className={classes["card-list-elem-pdf"]} key={index}>
@@ -151,7 +160,9 @@ const EditorResumeTechV3 = ({
           ))}
         </div>
         <hr />
-        <h2 className={classes["section-title"]}><TextAny text="section_skills"/></h2>
+        <h2 className={`${classes["section-title"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}><TextAny text="section_skills"/></h2>
         <div className={classes["skill-elem"]}>
           {skillList.map((skill, index) => (
               <p><img

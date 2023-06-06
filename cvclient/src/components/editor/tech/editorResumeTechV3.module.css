@@ -249,3 +249,15 @@ className={
     display: flex;
     flex-direction: column;
   }
+  .color1 {
+    background: #3c9b1f;
+  }
+  .color2 {
+    background: #3972a9eb;
+  }  
+  .color_border1 {
+    border: 5px solid #3c9b1f;
+  }
+  .color_border2 {
+    border: 5px solid #3972a9eb;
+  }

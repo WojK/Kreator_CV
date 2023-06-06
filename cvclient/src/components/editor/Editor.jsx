@@ -400,6 +400,8 @@ const Editor = () => {
     educationList,
   };
 
+
+
   return (
     <>
       <div className={classes.main}>

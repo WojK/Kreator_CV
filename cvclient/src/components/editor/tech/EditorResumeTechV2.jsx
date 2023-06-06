@@ -6,6 +6,7 @@ import "../../../assets/fonts/times-bold";
 import { TextAny } from "../../../language/langTexts";
 
 const EditorResumeTechV2 = ({
+    color,
     name,
     surname,
     isPhoneNumber,
@@ -24,7 +25,9 @@ const EditorResumeTechV2 = ({
     return (
         <div ref={reportTemplateRef} className={classes["cv"]}>
             <div className={classes.centerside}>
-                <div className={classes.column_left}>
+                <div  className={`${classes["column_left"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}>
                     <div style={{ textAlign: "left" }}>
                         <div className={classes.image}>
                             <img src={image} alt="zdj cv" />
@@ -78,7 +81,7 @@ const EditorResumeTechV2 = ({
                     </div>
                     {experienceList.length > 0 &&
                         <>
-                            <div class={classes.side_item}>
+                            <div className={classes.side_item}>
                                 <div className={classes.side_title}><TextAny text="section_experience"/></div>
                                 {experienceList.map((exp, index) =>
                                     <div className={classes.side_data}>
@@ -92,10 +95,10 @@ const EditorResumeTechV2 = ({
                                 )}
                             </div>
                         </>
-                    }
+                    } 
                     {educationList.length > 0 &&
                         <>
-                            <div class={classes.side_item}>
+                            <div className={classes.side_item}>
                                 <div className={classes.side_title}><TextAny text="section_education"/></div>
                                 {educationList.map((education, index) =>
                                     <div className={classes.side_data}>

@@ -6,6 +6,7 @@ import "../../../assets/fonts/times-bold";
 import { TextAny } from "../../../language/langTexts";
 
 const EditorResume2 = ({
+  color,
   name,
   surname,
   isPhoneNumber,
@@ -27,7 +28,10 @@ const EditorResume2 = ({
   return (
     <div ref={reportTemplateRef} className={classes["cv"]}>
       <div className={classes["cv-head"]}>
-        <div className={classes["cv-namebox"]}>
+        <div
+        className={`${classes["cv-namebox"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}>
           <img src={image} alt="CV" />
           <h1>
             {name} {surname}

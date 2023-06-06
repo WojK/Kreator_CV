@@ -5,6 +5,7 @@ import LocationIcon from "../../../assets/images/location_white.png";
 import { TextAny } from "../../../language/langTexts";
 
 const EditorResumeGeneralV1 = ({
+  color,
   name,
   surname,
   isPhoneNumber,
@@ -25,7 +26,10 @@ const EditorResumeGeneralV1 = ({
 }) => {
   return (
     <div ref={reportTemplateRef} className={classes["cv"]}>
-      <div className={classes["name-and-photo-div"]}>
+      <div
+        className={`${classes["name-and-photo-div"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}>
         <div>
           <p className={classes["name"]}>
             {name} {surname}
@@ -75,7 +79,10 @@ const EditorResumeGeneralV1 = ({
         <div className={classes["profile-div"]}>{profileDescription}</div>
         <div className={classes["section-div"]}>
           <p className={classes["section-title"]}><TextAny text="section_experience"/></p>
-          <hr className={classes["data-hr"]} />
+                <hr
+        className={`${classes["data-hr"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}/>
           {experienceList.map((experience, index) => (
             <div className={classes["flex-container"]}>
               <div className={classes["column-left"]}>
@@ -95,7 +102,10 @@ const EditorResumeGeneralV1 = ({
         </div>
         <div className={classes["section-div"]}>
           <p className={classes["section-title"]}><TextAny text="section_education"/></p>
-          <hr className={classes["data-hr"]} />
+                <hr
+        className={`${classes["name-and-photo-div"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}/>
           {educationList.map((education, index) => (
             <div className={classes["flex-container"]}>
               <div className={classes["column-left"]}>
@@ -116,7 +126,10 @@ const EditorResumeGeneralV1 = ({
         </div>
         <div className={classes["section-div"]}>
           <p className={classes["section-title"]}><TextAny text="section_languages"/></p>
-          <hr className={classes["data-hr"]} />
+                <hr
+        className={`${classes["name-and-photo-div"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}/>
           <div className={classes["flex-container"]}>
             <div className={classes["column-left"]}></div>
             <div className={classes["column-right"]}>
@@ -134,7 +147,10 @@ const EditorResumeGeneralV1 = ({
         </div>
         <div className={classes["section-div"]}>
           <p className={classes["section-title"]}><TextAny text="section_skills"/></p>
-          <hr className={classes["data-hr"]} />
+                <hr
+        className={`${classes["name-and-photo-div"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}/>
           <div className={classes["flex-container"]}>
             <div className={classes["column-left"]}></div>
             <div className={classes["column-right"]}>
@@ -150,7 +166,10 @@ const EditorResumeGeneralV1 = ({
         </div>
         <div className={classes["section-div"]}>
           <p className={classes["section-title"]}><TextAny text="section_hobbies"/></p>
-          <hr className={classes["data-hr"]} />
+                <hr
+        className={`${classes["name-and-photo-div"]} ${
+          color === "color1" ? classes.color1 : classes.color2
+        }`}/>
           <div className={classes["flex-container"]}>
             <div className={classes["column-left"]}></div>
             <div className={classes["column-right"]}>

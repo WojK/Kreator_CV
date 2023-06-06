@@ -28,7 +28,7 @@
   font-size: 20px;
   margin-bottom: 5px;
   margin-top: 10px;
-  color: #141963;
+  /* color: #141963; */
 }
 
 .school-name {
@@ -140,4 +140,12 @@
   margin-bottom: 5px;
   color: #807676;
   font-size: 14px;
+}
+.color1 {
+  background: #3c9b1f;
+  border: 1px solid #3c9b1f;
+}
+.color2 {
+  background: #3972a9eb;
+  border: 1px solid #3972a9eb;
 }
