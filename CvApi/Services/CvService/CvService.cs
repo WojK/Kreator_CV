@@ -111,37 +111,39 @@ namespace CvApi.Services.CvService
                 .ThenInclude(x => x.HobbyList)
             .FirstOrDefaultAsync(x => x.Email == email);
 
-            var educations = user.UserCvData.EducationList.Select(e => _mapper.Map<EducationDTO>(e)).ToList();
-
-            var result = new UserCvDataDTO
+            //var educations = user.UserCvData.EducationList.Select(e => _mapper.Map<EducationDTO>(e)).ToList();
+            if(user.UserCvData != null)
             {
-                Color = user.UserCvData.Color,
-                Name = user.UserCvData.Name,
-                Surname = user.UserCvData.Surname,
-                IsPhoneNumber = user.UserCvData.IsPhoneNumber,
-                PhoneNumber = user.UserCvData.PhoneNumber,
-                IsEmail = user.UserCvData.IsEmail,
-                Email = user.UserCvData.Email,
-                IsLocation = user.UserCvData.IsLocation,
-                Location = user.UserCvData.Location,
-                IsGithub = user.UserCvData.IsGithub,
-                Github = user.UserCvData.Github,
-                IsLinkedin = user.UserCvData.IsLinkedin,
-                Linkedin = user.UserCvData.Linkedin,
-                ProfileDescription = user.UserCvData.ProfileDescription,
-                Aboutme = user.UserCvData.Aboutme,
-                ExperienceList = user.UserCvData.ExperienceList.Select(e => _mapper.Map<ExpierienceDTO>(e)).ToList(),
-                ProjectList = user.UserCvData.ProjectList.Select(e => _mapper.Map<ProjectDTO>(e)).ToList(),
-                SkillList = user.UserCvData.SkillList.Select(e => _mapper.Map<SkillDTO>(e)).ToList(),
-                SoftSkillList = user.UserCvData.SoftSkillList.Select(e => _mapper.Map<SoftSkillDTO>(e)).ToList(),
-                Tech = user.UserCvData.Tech,
-                LanguageList = user.UserCvData.LanguageList.Select(e => _mapper.Map<LanguageDTO>(e)).ToList(),
-                HobbyList = user.UserCvData.HobbyList.Select(e => _mapper.Map<HobbyDTO>(e)).ToList(),
-                EducationList = user.UserCvData.EducationList.Select(e => _mapper.Map<EducationDTO>(e)).ToList(),
-            };
+                var result = new UserCvDataDTO
+                {
+                    Color = user.UserCvData.Color,
+                    Name = user.UserCvData.Name,
+                    Surname = user.UserCvData.Surname,
+                    IsPhoneNumber = user.UserCvData.IsPhoneNumber,
+                    PhoneNumber = user.UserCvData.PhoneNumber,
+                    IsEmail = user.UserCvData.IsEmail,
+                    Email = user.UserCvData.Email,
+                    IsLocation = user.UserCvData.IsLocation,
+                    Location = user.UserCvData.Location,
+                    IsGithub = user.UserCvData.IsGithub,
+                    Github = user.UserCvData.Github,
+                    IsLinkedin = user.UserCvData.IsLinkedin,
+                    Linkedin = user.UserCvData.Linkedin,
+                    ProfileDescription = user.UserCvData.ProfileDescription,
+                    Aboutme = user.UserCvData.Aboutme,
+                    ExperienceList = user.UserCvData.ExperienceList.Select(e => _mapper.Map<ExpierienceDTO>(e)).ToList(),
+                    ProjectList = user.UserCvData.ProjectList.Select(e => _mapper.Map<ProjectDTO>(e)).ToList(),
+                    SkillList = user.UserCvData.SkillList.Select(e => _mapper.Map<SkillDTO>(e)).ToList(),
+                    SoftSkillList = user.UserCvData.SoftSkillList.Select(e => _mapper.Map<SoftSkillDTO>(e)).ToList(),
+                    Tech = user.UserCvData.Tech,
+                    LanguageList = user.UserCvData.LanguageList.Select(e => _mapper.Map<LanguageDTO>(e)).ToList(),
+                    HobbyList = user.UserCvData.HobbyList.Select(e => _mapper.Map<HobbyDTO>(e)).ToList(),
+                    EducationList = user.UserCvData.EducationList.Select(e => _mapper.Map<EducationDTO>(e)).ToList(),
+                };
+                return result;
+            }
 
-
-            return result;
+            return new UserCvDataDTO();
         }
         }
 }

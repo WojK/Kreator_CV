@@ -186,15 +186,16 @@ const EditorForm = ({
     educationList: educationList
   });
   const handleSaveInfo = async (e) => {
-    // console.log(saveInfo);
+    console.log(saveInfo);
 
     e.preventDefault();
     await axios
-      .post("https://localhost:5710/saveInfo", {
+      .post("https://localhost:5710/api/Cv",
         saveInfo
-      },{
+      ,{
         headers: {
-          'Authorization': `Basic ${localStorage.getItem('token')}` 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('tokenCreatorCV')}` 
         }
       })
       .then((response) => {
@@ -210,19 +211,23 @@ const EditorForm = ({
   useEffect(() => {
     // fetch data
     const dataFetch = async () => {
-      axios.get('https://localhost:5710/saveInfo')
+      axios.get('https://localhost:5710/api/cv',{headers: {
+        'Authorization': `Bearer ${localStorage.getItem('tokenCreatorCV')}` 
+      }})
         .then(response => {
-          setColor(response.color);
-          setName(response.name);
-          setSurname(response.surname);
-          setPhoneNumber(response.phoneNumber);
-          setEmail(response.email);
-          setLocation(response.location);
-          setGithub(response.Github);
-          setLinkedin(response.Linkedin);
-          setProfileDescription(response.profileDescription);
-          setAboutme(response.aboutMe);
-          for (let element of response.experienceList) {
+          console.log(response.data)
+          console.log(response.data.color)
+          setColor(response.data.color);
+          setName(response.data.name);
+          setSurname(response.data.surname);
+          setPhoneNumber(response.data.phoneNumber);
+          setEmail(response.data.email);
+          setLocation(response.data.location);
+          setGithub(response.data.Github);
+          setLinkedin(response.data.Linkedin);
+          setProfileDescription(response.data.profileDescription);
+          setAboutme(response.data.aboutMe);
+          for (let element of response.data.experienceList) {
 
             setJobDescription(element.jobDescription);
             setCompanyName(element.companyName);
@@ -231,13 +236,13 @@ const EditorForm = ({
             setExperienceTo(element.experienceTo);
             handleAddExperience()
           }
-          for (let element of response.projectList) {
+          for (let element of response.data.projectList) {
             setProjectName(element.projectName);
             setProjectLink(element.projectLink);
             setProjectDescription(element.projectDescription);
             handleAddProject()
           }
-          for (let element of response.educationList) {
+          for (let element of response.data.educationList) {
 
             setSchoolName(element.schoolName);
             setSchoolCity(element.schoolCity);
@@ -249,24 +254,24 @@ const EditorForm = ({
             setSchoolSpecialization(element.schoolSpecialization);
             handleAddEducation();
           }
-          for (let element of response.skillList) {
+          for (let element of response.data.skillList) {
             setSkill(element.skill);
             handleAddSkill()
 
           }
-          for (let element of response.softSkillList) {
+          for (let element of response.data.softSkillList) {
             setSoftSkill(element.softSkill);
             handleAddSoftSkill()
           }
-          for (let element of response.languageList) {
+          for (let element of response.data.languageList) {
             setLanguage(element.language);
             handleAddLanguage()
           }
-          for (let element of response.hobbyList) {
+          for (let element of response.data.hobbyList) {
             setHobby(element.hobby);
             handleAddHobby()
           }
-          setTech(response.tech);
+          setTech(response.data.tech);
         });
     };
 
