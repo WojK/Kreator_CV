@@ -39,7 +39,6 @@
   background-color: #f3f1ed;
 }
 
-
 .image-container {
   position: relative;
   width: 100%;
@@ -159,7 +158,7 @@ className={
 /* /////////////////////////////////////////////////////////////////////////// */
 /* Right side */
 .skills-projects {
-  width: 55%;
+  width: 50%;
   min-height: 1120px;
   font-family: "Roboto";
 }
@@ -479,14 +478,14 @@ label {
   cursor: pointer;
 }
 .colorbutton1 {
-  background-color: #3c9b1f;
+  background-color: #e6e0ce52;
 }
 .colorbutton2 {
-  background-color: #3972a9eb;
+  background-color: #56574f23;
 }
 .color1 {
-  background-color: #3c9b1f;
+  background-color: #e6e0ce6c;
 }
 .color2 {
-  background-color: #3972a9eb;
+  background-color: #56574f23;
 }

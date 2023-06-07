@@ -7,6 +7,7 @@ import LinkedinIcon from "../../../assets/images/linkedin_white.png";
 import GithubIcon from "../../../assets/images/github_white.png";
 import Circle from "../../../assets/images/circle.png";
 import CircleBlue from "../../../assets/images/circle_blue.png";
+import { TextAny } from "../../../language/langTexts";
 
 const EditorResumeStudent = ({
   color,
@@ -141,7 +142,7 @@ const EditorResumeStudent = ({
               color === "color1" ? classes.color1 : classes.color2
             }`}
           >
-            About me
+            <TextAny text="section_about_me" />
           </div>
           <div className={classes["des"]}>{aboutme}</div>
           <hr className={classes["personal-data-hr"]} />
@@ -151,7 +152,7 @@ const EditorResumeStudent = ({
               color === "color1" ? classes.color1 : classes.color2
             }`}
           >
-            Tech Skills
+            <TextAny text="section_tech_skills" />
           </div>
           <div className={classes["des"]}>
             <ul>
@@ -174,7 +175,7 @@ const EditorResumeStudent = ({
               color === "color1" ? classes.color1 : classes.color2
             }`}
           >
-            Soft Skills
+            <TextAny text="section_soft_skills" />
           </div>
           <div className={classes["des"]}>
             <ul>
@@ -197,7 +198,7 @@ const EditorResumeStudent = ({
               color === "color1" ? classes.color1 : classes.color2
             }`}
           >
-            Languages
+            <TextAny text="section_languages" />
           </div>
           <div className={classes["des"]}>
             <ul>
@@ -220,7 +221,7 @@ const EditorResumeStudent = ({
               color === "color1" ? classes.color1 : classes.color2
             }`}
           >
-            Education
+            <TextAny text="section_education" />
           </div>
           <div className={classes["des"]}>
             {educationList.map((todo, index) => (
@@ -248,7 +249,7 @@ const EditorResumeStudent = ({
               color === "color1" ? classes.color1 : classes.color2
             }`}
           >
-            Projects
+            <TextAny text="section_projects" />
           </div>
           <div className={classes["des"]}>
             {projectList.map((project, index) => (
@@ -269,9 +270,11 @@ const EditorResumeStudent = ({
               color === "color1" ? classes.color1 : classes.color2
             }`}
           >
-            Clause
+            <TextAny text="section_clause" />
           </div>
-          <div className={classes["des"]}>{clause}</div>
+          <div className={classes["des"]}>
+            <TextAny text="clause" />
+          </div>
         </div>
       </div>
     </div>

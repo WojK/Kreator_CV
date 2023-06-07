@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import classes from "./editor.module.css";
 import "../../assets/fonts/Roboto-normal";
 import "../../assets/fonts/times-normal";
@@ -183,7 +183,7 @@ const EditorForm = ({
     tech: tech,
     languageList: languageList,
     hobbyList: hobbyList,
-    educationList: educationList
+    educationList: educationList,
   });
   const handleSaveInfo = async (e) => {
     console.log(saveInfo);
@@ -197,10 +197,9 @@ const EditorForm = ({
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${localStorage.getItem('tokenCreatorCV')}` 
         }
-      })
+      )
       .then((response) => {
         if (response.data) {
-
         }
       })
       .catch((error) => {
@@ -277,7 +276,6 @@ const EditorForm = ({
 
     dataFetch();
   }, []);
-
 
   return (
     <div className={classes.form}>
@@ -359,21 +357,24 @@ const EditorForm = ({
                 <p>
                   <TextAny text="editor_personal_submain_text" />
                 </p>
-                {(editorId === "student2" || editorId === "student1"
-                  || editorId === "general1" || editorId === "general2" || editorId === "general3"
-                  || editorId === "technical2" || editorId === "technical3"
-                ) && (
-                    <div className={classes.colors}>
-                      <div
-                        className={classes.colorbutton1}
-                        onClick={() => setColor("color1")}
-                      ></div>
-                      <div
-                        className={classes.colorbutton2}
-                        onClick={() => setColor("color2")}
-                      ></div>
-                    </div>
-                  )}
+                {(editorId === "student2" ||
+                  editorId === "student1" ||
+                  editorId === "general1" ||
+                  editorId === "general2" ||
+                  editorId === "general3" ||
+                  editorId === "technical2" ||
+                  editorId === "technical3") && (
+                  <div className={classes.colors}>
+                    <div
+                      className={classes.colorbutton1}
+                      onClick={() => setColor("color1")}
+                    ></div>
+                    <div
+                      className={classes.colorbutton2}
+                      onClick={() => setColor("color2")}
+                    ></div>
+                  </div>
+                )}
                 <div className={classes["tab-content-forms"]}>
                   <div className={classes["tab-content-form-image"]}>
                     <input
@@ -490,7 +491,7 @@ const EditorForm = ({
                     ></input>
                   </div>
                 )}
-                {(formType === "student") && (
+                {formType === "student" && (
                   <div className={classes["tab-content-form-100"]}>
                     <div className={classes["is-active"]}>
                       <label>Linkedin</label>
@@ -694,7 +695,7 @@ const EditorForm = ({
                 </div>
               </TabContent>
               <TabContent id={4}>
-                {editorId === "student2" && (
+                {formType === "student" && (
                   <div>
                     <h1>Let's pick your most important soft skills</h1>
                     <div className={classes["tab-content-form-language"]}>
@@ -734,7 +735,7 @@ const EditorForm = ({
                   </div>
                 )}
 
-                {editorId !== "student2" && (
+                {formType !== "student" && (
                   <div>
                     <h1>
                       <TextAny text="editor_experience_main_text" />
