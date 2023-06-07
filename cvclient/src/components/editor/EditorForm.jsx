@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { TextAny } from "../../language/langTexts";
 import axios from "axios";
+import "./templateColors.css";
+
 import {
   studentsTemplates,
   generalsTemplates,
@@ -190,32 +192,35 @@ const EditorForm = ({
 
     e.preventDefault();
     await axios
-      .post("https://localhost:5710/api/Cv",
-        saveInfo
-      ,{
+      .post("https://localhost:5710/api/Cv", saveInfo, {
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('tokenCreatorCV')}` 
-        }
-      )
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("tokenCreatorCV")}`,
+        },
+      })
       .then((response) => {
         if (response.data) {
+          // Wykonaj działania na odpowiedzi
         }
       })
       .catch((error) => {
-        if (error.response && error.response.status === 400)
+        if (error.response && error.response.status === 400) {
           console.log(error.response.data);
+        }
       });
   };
   useEffect(() => {
     // fetch data
     const dataFetch = async () => {
-      axios.get('https://localhost:5710/api/cv',{headers: {
-        'Authorization': `Bearer ${localStorage.getItem('tokenCreatorCV')}` 
-      }})
-        .then(response => {
-          console.log(response.data)
-          console.log(response.data.color)
+      axios
+        .get("https://localhost:5710/api/cv", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("tokenCreatorCV")}`,
+          },
+        })
+        .then((response) => {
+          console.log(response.data);
+          console.log(response.data.color);
           setColor(response.data.color);
           setName(response.data.name);
           setSurname(response.data.surname);
@@ -227,22 +232,20 @@ const EditorForm = ({
           setProfileDescription(response.data.profileDescription);
           setAboutme(response.data.aboutMe);
           for (let element of response.data.experienceList) {
-
             setJobDescription(element.jobDescription);
             setCompanyName(element.companyName);
             setCompanyCity(element.companyCity);
             setExperienceFrom(element.experienceFrom);
             setExperienceTo(element.experienceTo);
-            handleAddExperience()
+            handleAddExperience();
           }
           for (let element of response.data.projectList) {
             setProjectName(element.projectName);
             setProjectLink(element.projectLink);
             setProjectDescription(element.projectDescription);
-            handleAddProject()
+            handleAddProject();
           }
           for (let element of response.data.educationList) {
-
             setSchoolName(element.schoolName);
             setSchoolCity(element.schoolCity);
             setSchoolStartYear(element.schoolStartYear);
@@ -255,20 +258,19 @@ const EditorForm = ({
           }
           for (let element of response.data.skillList) {
             setSkill(element.skill);
-            handleAddSkill()
-
+            handleAddSkill();
           }
           for (let element of response.data.softSkillList) {
             setSoftSkill(element.softSkill);
-            handleAddSoftSkill()
+            handleAddSoftSkill();
           }
           for (let element of response.data.languageList) {
             setLanguage(element.language);
-            handleAddLanguage()
+            handleAddLanguage();
           }
           for (let element of response.data.hobbyList) {
             setHobby(element.hobby);
-            handleAddHobby()
+            handleAddHobby();
           }
           setTech(response.data.tech);
         });
@@ -366,11 +368,11 @@ const EditorForm = ({
                   editorId === "technical3") && (
                   <div className={classes.colors}>
                     <div
-                      className={classes.colorbutton1}
+                      className={`colorbutton1_${editorId} colorbutton`}
                       onClick={() => setColor("color1")}
                     ></div>
                     <div
-                      className={classes.colorbutton2}
+                      className={`colorbutton2_${editorId} colorbutton`}
                       onClick={() => setColor("color2")}
                     ></div>
                   </div>

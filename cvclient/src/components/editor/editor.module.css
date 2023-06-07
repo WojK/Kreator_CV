@@ -477,12 +477,8 @@ label {
   border-radius: 20%;
   cursor: pointer;
 }
-.colorbutton1 {
-  background-color: #e6e0ce52;
-}
-.colorbutton2 {
-  background-color: #56574f23;
-}
+
+/* Colors for student1 template */
 .color1 {
   background-color: #e6e0ce6c;
 }

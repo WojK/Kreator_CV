@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
 
 .cv {
   width: 800px;
@@ -9,7 +9,7 @@
   display: flex;
   /* gap: 25px; */
   background-color: white;
-  flex-direction: column;  
+  flex-direction: column;
   font-size: 16px;
 }
 
@@ -41,17 +41,17 @@
   border-radius: 50%;
 }
 
-.cv-namebox h1{
+.cv-namebox h1 {
   margin-top: 1rem;
-  color: #FFFFFF;
+  color: #ffffff;
   justify-content: flex-start;
   font-weight: 600;
   font-size: 40px;
   line-height: 50px;
   font-family: "Inter";
 }
-.cv-namebox p{
-  color: #FFFFFF;
+.cv-namebox p {
+  color: #ffffff;
   justify-content: flex-start;
   font-weight: 400;
   font-size: 16px;
@@ -59,7 +59,7 @@
   font-family: "Inter";
 }
 
-.cv-contact { 
+.cv-contact {
   display: flex;
   flex: 0.5;
   flex-direction: column;
@@ -69,7 +69,7 @@
   padding-right: 3rem;
 }
 
-.cv-contact h1{
+.cv-contact h1 {
   margin-top: 1rem;
   font-weight: 800;
   font-size: 14px;
@@ -77,7 +77,7 @@
   font-family: "Inter";
 }
 
-.cv-contact p{
+.cv-contact p {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
@@ -99,12 +99,12 @@
 }
 
 .cv-rightside {
-  display: flex; 
+  display: flex;
   flex: 0.5;
   flex-direction: column;
 }
 
-.cv_section { 
+.cv_section {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
@@ -156,10 +156,10 @@
   margin-left: 1.5rem;
 }
 
-.cv_section_list_r{
+.cv_section_list_r {
   margin-top: 0.5rem;
 }
-.cv_section_list_r li{
+.cv_section_list_r li {
   list-style-type: none;
   font-weight: 500;
   font-size: 12px;
@@ -167,7 +167,7 @@
   font-family: "Inter";
 }
 .color1 {
-  background-color: #3c9b1f;
+  background-color: rgba(221, 161, 94, 1);
 }
 .color2 {
   background-color: #3972a9eb;

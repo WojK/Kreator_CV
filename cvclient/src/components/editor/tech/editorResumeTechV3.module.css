@@ -229,35 +229,35 @@ className={
 }
 
 .circle-icon {
-    width: 8px;
-    height: 8px;
-  }
+  width: 8px;
+  height: 8px;
+}
 
-  .flex-container{
-    display: flex;
-  }
+.flex-container {
+  display: flex;
+}
 
-.column-left{
-    width: 20%;
-  }
-  
-  .column-right{
-    width: 80%;
-  }
+.column-left {
+  width: 20%;
+}
 
-  .cv-content {
-    display: flex;
-    flex-direction: column;
-  }
-  .color1 {
-    background: #3c9b1f;
-  }
-  .color2 {
-    background: #3972a9eb;
-  }  
-  .color_border1 {
-    border: 5px solid #3c9b1f;
-  }
-  .color_border2 {
-    border: 5px solid #3972a9eb;
-  }
+.column-right {
+  width: 80%;
+}
+
+.cv-content {
+  display: flex;
+  flex-direction: column;
+}
+.color1 {
+  background: #141963;
+}
+.color2 {
+  background: #0a4b39;
+}
+.color_border1 {
+  border: 5px solid #141963;
+}
+.color_border2 {
+  border: 5px solid #0a4b39;
+}

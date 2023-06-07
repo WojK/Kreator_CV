@@ -1,0 +1,65 @@
+.colorbutton {
+  width: 30px;
+  height: 30px;
+  border-radius: 20%;
+  cursor: pointer;
+}
+
+.colorbutton1_student2 {
+  background-color: #3c9b1f;
+}
+.colorbutton2_student2 {
+  background-color: #1f62a3f7;
+}
+
+.colorbutton1_student1 {
+  background-color: #e6e0ce52;
+}
+.colorbutton2_student1 {
+  background-color: #56574f23;
+}
+
+.colorbutton1_general1 {
+  background-color: #c12bc1;
+}
+.colorbutton2_general1 {
+  background-color: #23507aeb;
+}
+
+.colorbutton1_general2 {
+  background-color: rgba(221, 161, 94, 1);
+}
+.colorbutton2_general2 {
+  background-color: #23507aeb;
+}
+
+.colorbutton1_general3 {
+  background-color: #141963;
+}
+.colorbutton2_general3 {
+  background-color: #0a4b39;
+}
+
+.colorbutton1_technical1 {
+  background-color: #e6e0ce52;
+}
+
+.colorbutton2_technical1 {
+  background-color: #56574f23;
+}
+
+.colorbutton1_technical2 {
+  background-color: #26252d;
+}
+
+.colorbutton2_technical2 {
+  background-color: #063225e9;
+}
+
+.colorbutton1_technical3 {
+  background-color: #141963;
+}
+
+.colorbutton2_technical3 {
+  background-color: #0a4b39;
+}

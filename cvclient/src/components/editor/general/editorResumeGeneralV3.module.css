@@ -21,7 +21,6 @@
   border: 1px solid #141963;
 }
 
-
 .section-title {
   font-weight: 800;
   font-family: "Noto Sans";
@@ -36,7 +35,7 @@
   font-weight: 700;
 }
 
-.school-city{
+.school-city {
   margin-top: 2px;
   margin-bottom: 5px;
   color: #807676;
@@ -75,7 +74,7 @@
   font-family: "Noto Sans";
   font-size: 40px;
   font-weight: 700;
-  color: #F7F7F7;
+  color: #f7f7f7;
 }
 
 .display-none {
@@ -84,7 +83,7 @@
 
 .contact-data {
   font-family: Roboto;
-  color: #F7F7F7;
+  color: #f7f7f7;
   font-size: 15px;
   font-weight: 300;
 }
@@ -105,47 +104,45 @@
   margin-top: 10px;
 }
 
-
 .image {
   width: 120px;
   margin-top: 10px;
 }
 
-
-.section-div{
+.section-div {
   margin-left: 5%;
   margin-right: 5%;
   /* margin-bottom: 1%; */
 }
 
-.profile-div{
+.profile-div {
   color: #807676;
   margin: 1% 5% 1% 5%;
 }
 
-.flex-container{
+.flex-container {
   display: flex;
 }
 
-.column-left{
+.column-left {
   width: 30%;
 }
 
-.column-right{
+.column-right {
   width: 70%;
 }
 
-.company-city{
+.company-city {
   margin-top: 2px;
   margin-bottom: 5px;
   color: #807676;
   font-size: 14px;
 }
 .color1 {
-  background: #3c9b1f;
-  border: 1px solid #3c9b1f;
+  background: #141963;
+  border: 1px solid #141963;
 }
 .color2 {
-  background: #3972a9eb;
-  border: 1px solid #3972a9eb;
+  background: #0a4b39;
+  border: 1px solid #0a4b39;
 }
