@@ -8,6 +8,8 @@ import GithubIcon from "../../../assets/images/github.png";
 import "../../../assets/fonts/Roboto-normal";
 import "../../../assets/fonts/times-normal";
 import "../../../assets/fonts/times-bold";
+import { TextAny } from "../../../language/langTexts";
+
 const EditorResumeStudentV1 = ({
   color,
   name,
@@ -31,14 +33,15 @@ const EditorResumeStudentV1 = ({
   image,
   reportTemplateRef,
   educationList,
+  softSkillList,
 }) => {
   return (
     <div ref={reportTemplateRef} className={classes["cv"]}>
-      {/* <div className={classes["personal-details"]}> */}
       <div
         className={`${classes["personal-details"]} ${
           color === "color1" ? classes.color1 : classes.color2
-        }`}>
+        }`}
+      >
         <div className={classes["image-container"]}>
           <img className={classes.image} src={image} alt="CV" />
           <div className={classes["background-image-div"]}></div>
@@ -114,12 +117,16 @@ const EditorResumeStudentV1 = ({
           <div className={classes["personal-data-container"]}>
             <ul>
               <li>
-                <p className={classes["personal-data-title"]}>ABOUT ME</p>
+                <p className={classes["personal-data-title"]}>
+                  <TextAny text="section_about_me" />
+                </p>
                 <hr className={classes["personal-data-hr"]} />
                 <span className={classes["personal-des"]}>{aboutme}</span>
               </li>
               <li>
-                <p className={classes["personal-data-title"]}>LANGUAGES</p>
+                <p className={classes["personal-data-title"]}>
+                  <TextAny text="section_languages" />
+                </p>
                 <hr className={classes["personal-data-hr"]} />
                 <div>
                   {languageList.map((language, index) => (
@@ -129,12 +136,26 @@ const EditorResumeStudentV1 = ({
                   ))}
                 </div>
               </li>
+
+              <li>
+                <p className={classes["personal-data-title"]}>
+                  <TextAny text="section_soft_skills" />
+                </p>
+                <hr className={classes["personal-data-hr"]} />
+                <div>
+                  {softSkillList.map((skill, index) => (
+                    <p>{skill.softSkill}</p>
+                  ))}
+                </div>
+              </li>
             </ul>
           </div>
         </div>
       </div>
       <div className={classes["skills-projects"]}>
-        <h2 className={classes["knowledge-title"]}>Educations: </h2>
+        <h2 className={classes["knowledge-title"]}>
+          <TextAny text="section_education" />
+        </h2>
         <hr />
         <div>
           {educationList.map((todo, index) => (
@@ -149,22 +170,22 @@ const EditorResumeStudentV1 = ({
             </ul>
           ))}
         </div>
-        <h2 className={classes["knowledge-title"]}>Experience: </h2>
+
+        <h2 className={classes["knowledge-title"]}>
+          <TextAny text="section_tech_skills" />
+        </h2>
         <hr />
         <div>
-          {experienceList.map((todo, index) => (
-            <ul className={classes["card-list-elem-pdf"]} key={index}>
-              <div className={classes["width30"]}>
-                <p className={classes["p-year"]}>{todo.experienceFrom}</p>
-                <p className={classes["p-year"]}>{todo.experienceTo}</p>
-              </div>
-              <p className={classes["width70"]}>
-                {todo.companyName}, {todo.companyCity}
-              </p>
+          {skillList.map((skill, index) => (
+            <ul key={index}>
+              <li>{skill.skill}</li>
             </ul>
           ))}
         </div>
-        <h2 className={classes["knowledge-title"]}>Projects: </h2>
+
+        <h2 className={classes["knowledge-title"]}>
+          <TextAny text="section_projects" />
+        </h2>
         <hr />
         <div>
           {projectList.map((project, index) => (
@@ -175,16 +196,14 @@ const EditorResumeStudentV1 = ({
             </ul>
           ))}
         </div>
-        <h2 className={classes["knowledge-title"]}>Skills:</h2>
+
+        <h2 className={classes["knowledge-title"]}>
+          <TextAny text="section_clause" />
+        </h2>
         <hr />
         <div>
-          {skillList.map((skill, index) => (
-            <ul key={index}>
-              <li>{skill.skill}</li>
-            </ul>
-          ))}
+          <TextAny text="clause" />
         </div>
-        {/* <p>{clause}</p> */}
       </div>
     </div>
   );

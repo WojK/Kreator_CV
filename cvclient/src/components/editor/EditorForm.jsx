@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import classes from "./editor.module.css";
 import "../../assets/fonts/Roboto-normal";
 import "../../assets/fonts/times-normal";
@@ -183,23 +183,26 @@ const EditorForm = ({
     tech: tech,
     languageList: languageList,
     hobbyList: hobbyList,
-    educationList: educationList
+    educationList: educationList,
   });
   const handleSaveInfo = async (e) => {
     // console.log(saveInfo);
 
     e.preventDefault();
     await axios
-      .post("https://localhost:5710/saveInfo", {
-        saveInfo
-      },{
-        headers: {
-          'Authorization': `Basic ${localStorage.getItem('token')}` 
+      .post(
+        "https://localhost:5710/saveInfo",
+        {
+          saveInfo,
+        },
+        {
+          headers: {
+            Authorization: `Basic ${localStorage.getItem("token")}`,
+          },
         }
-      })
+      )
       .then((response) => {
         if (response.data) {
-
         }
       })
       .catch((error) => {
@@ -210,69 +213,64 @@ const EditorForm = ({
   useEffect(() => {
     // fetch data
     const dataFetch = async () => {
-      axios.get('https://localhost:5710/saveInfo')
-        .then(response => {
-          setColor(response.color);
-          setName(response.name);
-          setSurname(response.surname);
-          setPhoneNumber(response.phoneNumber);
-          setEmail(response.email);
-          setLocation(response.location);
-          setGithub(response.Github);
-          setLinkedin(response.Linkedin);
-          setProfileDescription(response.profileDescription);
-          setAboutme(response.aboutMe);
-          for (let element of response.experienceList) {
-
-            setJobDescription(element.jobDescription);
-            setCompanyName(element.companyName);
-            setCompanyCity(element.companyCity);
-            setExperienceFrom(element.experienceFrom);
-            setExperienceTo(element.experienceTo);
-            handleAddExperience()
-          }
-          for (let element of response.projectList) {
-            setProjectName(element.projectName);
-            setProjectLink(element.projectLink);
-            setProjectDescription(element.projectDescription);
-            handleAddProject()
-          }
-          for (let element of response.educationList) {
-
-            setSchoolName(element.schoolName);
-            setSchoolCity(element.schoolCity);
-            setSchoolStartYear(element.schoolStartYear);
-            setSchoolFinishYear(element.schoolFinishYear);
-            setSchoolDesc(element.schoolDesc);
-            setSchoolFaculty(element.schoolFaculty);
-            setSchoolSubject(element.schoolSubject);
-            setSchoolSpecialization(element.schoolSpecialization);
-            handleAddEducation();
-          }
-          for (let element of response.skillList) {
-            setSkill(element.skill);
-            handleAddSkill()
-
-          }
-          for (let element of response.softSkillList) {
-            setSoftSkill(element.softSkill);
-            handleAddSoftSkill()
-          }
-          for (let element of response.languageList) {
-            setLanguage(element.language);
-            handleAddLanguage()
-          }
-          for (let element of response.hobbyList) {
-            setHobby(element.hobby);
-            handleAddHobby()
-          }
-          setTech(response.tech);
-        });
+      axios.get("https://localhost:5710/saveInfo").then((response) => {
+        setColor(response.color);
+        setName(response.name);
+        setSurname(response.surname);
+        setPhoneNumber(response.phoneNumber);
+        setEmail(response.email);
+        setLocation(response.location);
+        setGithub(response.Github);
+        setLinkedin(response.Linkedin);
+        setProfileDescription(response.profileDescription);
+        setAboutme(response.aboutMe);
+        for (let element of response.experienceList) {
+          setJobDescription(element.jobDescription);
+          setCompanyName(element.companyName);
+          setCompanyCity(element.companyCity);
+          setExperienceFrom(element.experienceFrom);
+          setExperienceTo(element.experienceTo);
+          handleAddExperience();
+        }
+        for (let element of response.projectList) {
+          setProjectName(element.projectName);
+          setProjectLink(element.projectLink);
+          setProjectDescription(element.projectDescription);
+          handleAddProject();
+        }
+        for (let element of response.educationList) {
+          setSchoolName(element.schoolName);
+          setSchoolCity(element.schoolCity);
+          setSchoolStartYear(element.schoolStartYear);
+          setSchoolFinishYear(element.schoolFinishYear);
+          setSchoolDesc(element.schoolDesc);
+          setSchoolFaculty(element.schoolFaculty);
+          setSchoolSubject(element.schoolSubject);
+          setSchoolSpecialization(element.schoolSpecialization);
+          handleAddEducation();
+        }
+        for (let element of response.skillList) {
+          setSkill(element.skill);
+          handleAddSkill();
+        }
+        for (let element of response.softSkillList) {
+          setSoftSkill(element.softSkill);
+          handleAddSoftSkill();
+        }
+        for (let element of response.languageList) {
+          setLanguage(element.language);
+          handleAddLanguage();
+        }
+        for (let element of response.hobbyList) {
+          setHobby(element.hobby);
+          handleAddHobby();
+        }
+        setTech(response.tech);
+      });
     };
 
     dataFetch();
   }, []);
-
 
   return (
     <div className={classes.form}>
@@ -354,21 +352,24 @@ const EditorForm = ({
                 <p>
                   <TextAny text="editor_personal_submain_text" />
                 </p>
-                {(editorId === "student2" || editorId === "student1"
-                  || editorId === "general1" || editorId === "general2" || editorId === "general3"
-                  || editorId === "technical2" || editorId === "technical3"
-                ) && (
-                    <div className={classes.colors}>
-                      <div
-                        className={classes.colorbutton1}
-                        onClick={() => setColor("color1")}
-                      ></div>
-                      <div
-                        className={classes.colorbutton2}
-                        onClick={() => setColor("color2")}
-                      ></div>
-                    </div>
-                  )}
+                {(editorId === "student2" ||
+                  editorId === "student1" ||
+                  editorId === "general1" ||
+                  editorId === "general2" ||
+                  editorId === "general3" ||
+                  editorId === "technical2" ||
+                  editorId === "technical3") && (
+                  <div className={classes.colors}>
+                    <div
+                      className={classes.colorbutton1}
+                      onClick={() => setColor("color1")}
+                    ></div>
+                    <div
+                      className={classes.colorbutton2}
+                      onClick={() => setColor("color2")}
+                    ></div>
+                  </div>
+                )}
                 <div className={classes["tab-content-forms"]}>
                   <div className={classes["tab-content-form-image"]}>
                     <input
@@ -485,7 +486,7 @@ const EditorForm = ({
                     ></input>
                   </div>
                 )}
-                {(formType === "student") && (
+                {formType === "student" && (
                   <div className={classes["tab-content-form-100"]}>
                     <div className={classes["is-active"]}>
                       <label>Linkedin</label>
@@ -689,7 +690,7 @@ const EditorForm = ({
                 </div>
               </TabContent>
               <TabContent id={4}>
-                {editorId === "student2" && (
+                {formType === "student" && (
                   <div>
                     <h1>Let's pick your most important soft skills</h1>
                     <div className={classes["tab-content-form-language"]}>
@@ -729,7 +730,7 @@ const EditorForm = ({
                   </div>
                 )}
 
-                {editorId !== "student2" && (
+                {formType !== "student" && (
                   <div>
                     <h1>
                       <TextAny text="editor_experience_main_text" />
