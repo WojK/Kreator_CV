@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import classes from "./editor.module.css";
 import "../../assets/fonts/Roboto-normal";
 import "../../assets/fonts/times-normal";
@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { TextAny } from "../../language/langTexts";
 import axios from "axios";
 import "./templateColors.css";
+import AuthContext from "../../store/auth-context";
 
 import {
   studentsTemplates,
@@ -188,7 +189,7 @@ const EditorForm = ({
     educationList: educationList,
   });
   const handleSaveInfo = async (e) => {
-    console.log(saveInfo);
+    // console.log(saveInfo);
 
     e.preventDefault();
     await axios
@@ -209,9 +210,9 @@ const EditorForm = ({
         }
       });
   };
-  useEffect(() => {
+  // useEffect(() => {
     // fetch data
-    const dataFetch = async () => {
+    const handleGetInfo = async () => {
       axios
         .get("https://localhost:5710/api/cv", {
           headers: {
@@ -219,8 +220,8 @@ const EditorForm = ({
           },
         })
         .then((response) => {
-          console.log(response.data);
-          console.log(response.data.color);
+          // console.log(response.data);
+          // console.log(response.data.color);
           setColor(response.data.color);
           setName(response.data.name);
           setSurname(response.data.surname);
@@ -276,8 +277,10 @@ const EditorForm = ({
         });
     };
 
-    dataFetch();
-  }, []);
+  //   dataFetch();
+  // }, []);
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
 
   return (
     <div className={classes.form}>
@@ -285,8 +288,12 @@ const EditorForm = ({
         <TextAny text="editor_feel_free" />
       </h1>
       <div className={classes["template-choose-container"]}>{templates}</div>
+      {isLoggedIn && (
+      <div className="">
       <button onClick={handleSaveInfo}>Save Info</button>
-
+      <button onClick={handleGetInfo}>Upload Info</button>
+      </div>
+      )}
       <div>
         <CardTab>
           <div className={classes["tab-card"]}>
