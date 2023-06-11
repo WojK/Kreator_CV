@@ -1,6 +1,6 @@
 import classes from "./MyAccount.module.css";
 import profilepic from "../assets/images/profile-pic.png";
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../store/auth-context";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ const MyAccount = () => {
     const fetchUserInfo = async () => {
       try {
         const response = await axios.get(
-          "https://localhost:5710/api/profile-info",
+          "https://localhost:5710/api/Cv/profile-info",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -30,6 +30,9 @@ const MyAccount = () => {
     fetchUserInfo();
   }, []);
 
+  if (!data) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <div className={classes["container"]}>
@@ -44,17 +47,15 @@ const MyAccount = () => {
 
 const PersonalInfo = (props) => {
   const navigate = useNavigate();
-  const name = props.name;
-  const surname = props.surname;
+  const [name, setName] = useState(props.data.name);
+  const [surname, setSurname] = useState(props.data.surname);
   const [editMode, setEditMode] = useState(false);
 
-    const nameRef = useRef();  
-    const surenameRef = useRef();
-  
+    
     const updateUserInfo = async () => {
       try {
         const response = await axios.post(
-          "https://localhost:5710/api/profile-update-info",
+          "https://localhost:5710/api/Cv/profile-update-info",
           {
             name: name,
             surname: surname,
@@ -74,10 +75,6 @@ const PersonalInfo = (props) => {
 
   
     const saveChanges = (e) => {
-        const name = nameRef.current.value;
-        const surname = surenameRef.current.value;
-        console.log("name: ", name);
-
         updateUserInfo();
   };
 
@@ -98,8 +95,8 @@ const PersonalInfo = (props) => {
             <p>Name: </p>
             {!editMode ? (
               <p>{name}</p>
-                      ) : (
-                          <input type="text" className={classes["input-class"]} ref={nameRef}></input>
+            ) : (
+                <input type="text" className={classes["input-class"]} value={name} onChange={(e) => setName(e.target.value)}></input>
             )}
           </div>
           <div className={classes["label-value-div"]}>
@@ -107,7 +104,7 @@ const PersonalInfo = (props) => {
             {!editMode ? (
               <p>{surname}</p>
             ) : (
-                              <input type="text" className={classes["input-class"]} ref={surenameRef }></input>
+                <input type="text" className={classes["input-class"]} value={surname} onChange={(e) => setSurname(e.target.value)}></input>
             )}
           </div>
         </div>
