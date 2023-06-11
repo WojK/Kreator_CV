@@ -8,7 +8,7 @@ namespace CvApi.Services.CvService
         public Task<bool> SaveCvUserData(string email, UserCvDataDTO request);
         public Task<UserCvDataDTO> GetCvUserData(string email);
         public Task<UserProfileInfoDTO> GetUserInfo(string email);
-        public Task<User> UpdateUserInfo(string email, UserProfileInfoDTO userProfileInfoDTO);
+        public Task<UserUpdateProfileInfoDTO> UpdateUserInfo(string email, UserUpdateProfileInfoDTO userProfileInfoDTO);
 
     }
 }

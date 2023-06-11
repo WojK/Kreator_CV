@@ -161,19 +161,18 @@ namespace CvApi.Services.CvService
             }
             return new UserProfileInfoDTO();
         }
-        public async Task<User> UpdateUserInfo(string email, UserProfileInfoDTO userProfileInfoDTO)
+        public async Task<UserUpdateProfileInfoDTO> UpdateUserInfo(string email, UserUpdateProfileInfoDTO userProfileInfoDTO)
         {
             var user = await _dataContext.Users.FirstOrDefaultAsync(x => x.Email == email);
             if (user != null)
             {
                 user.Name = userProfileInfoDTO.Name;
                 user.Surname = userProfileInfoDTO.Surname;
-                user.Email = userProfileInfoDTO.Email;
 
                 await _dataContext.SaveChangesAsync();
 
             }
-            return user;
+            return userProfileInfoDTO;
         }
     }
 }

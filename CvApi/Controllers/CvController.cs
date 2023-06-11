@@ -51,7 +51,7 @@ namespace CvApi.Controllers
 
         [HttpPost("profile-update-info")]
         [Authorize]
-        public async Task<ActionResult<bool>> UpdatetUserInfo(UserProfileInfoDTO userProfileInfoDTO)
+        public async Task<ActionResult<bool>> UpdatetUserInfo(UserUpdateProfileInfoDTO userProfileInfoDTO)
         {
             var email = _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Email);
             var result = await _cvService.UpdateUserInfo(email, userProfileInfoDTO);
