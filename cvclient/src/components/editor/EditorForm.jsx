@@ -289,7 +289,7 @@ const EditorForm = ({
       </h1>
       <div className={classes["template-choose-container"]}>{templates}</div>
       {isLoggedIn && (
-      <div className="">
+      <div className={classes["info-buttons-div"]}>
       <button onClick={handleSaveInfo}>Save Info</button>
       <button onClick={handleGetInfo}>Upload Info</button>
       </div>

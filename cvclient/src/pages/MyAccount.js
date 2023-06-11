@@ -1,69 +1,84 @@
 import classes from "./MyAccount.module.css";
 import profilepic from "../assets/images/profile-pic.png";
-import download from "../assets/images/download-icon.png";
-import { mockedListOfCV } from "../mocks/mockedData";
-
-import { useState } from "react";
-
-const listOfCV = mockedListOfCV;
+import { useContext, useEffect, useState, useRef } from "react";
+import AuthContext from "../store/auth-context";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const MyAccount = () => {
+  const authCtx = useContext(AuthContext);
+  const token = authCtx.token;
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const response = await axios.get(
+          "https://localhost:5710/api/profile-info",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchUserInfo();
+  }, []);
+
   return (
     <>
       <div className={classes["container"]}>
-        <div className={classes.left}>
-          <PersonalInfo />
-        </div>
-        <div className={classes.right}>
-          <CvList />
+        <div className={classes["user-info-div"]}>
+          <PersonalInfo data={data} token={token}/>
         </div>
       </div>
     </>
   );
 };
 
-const CvList = () => {
-  const cvList = listOfCV.map((cv) => (
-    <CvListItem
-      key={cv.id}
-      cvId={cv.id}
-      cvType={cv.type}
-      date={cv.date}
-      linkToDownload={cv.linkToDownload}
-    />
-  ));
-  return (
-    <div className={classes["list-of-cv-div"]}>
-      <h1 className={classes["cv-list-header"]}>List of your CV's</h1>
-      {cvList}
-    </div>
-  );
-};
 
-const CvListItem = (props) => {
-  return (
-    <>
-      <p className={classes["cv-list-item"]}>
-        {props.cvType} {props.date}{" "}
-        <img
-          src={download}
-          className={classes["download-pic"]}
-          alt="download"
-        />
-      </p>
-    </>
-  );
-};
-
-const PersonalInfo = () => {
-  const name = "NAMETMP";
-  const email = "EMAILTMP";
-  const password = "****";
-
+const PersonalInfo = (props) => {
+  const navigate = useNavigate();
+  const name = props.name;
+  const surname = props.surname;
   const [editMode, setEditMode] = useState(false);
-  const saveChanges = (e) => {
-    //save changes in db
-    //tbd.
+
+    const nameRef = useRef();  
+    const surenameRef = useRef();
+  
+    const updateUserInfo = async () => {
+      try {
+        const response = await axios.post(
+          "https://localhost:5710/api/profile-update-info",
+          {
+            name: name,
+            surname: surname,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${props.token}`,
+            },
+          }
+        );
+        navigate("/my_account");
+        setEditMode(!editMode);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+  
+    const saveChanges = (e) => {
+        const name = nameRef.current.value;
+        const surname = surenameRef.current.value;
+        console.log("name: ", name);
+
+        updateUserInfo();
   };
 
   return (
@@ -83,24 +98,16 @@ const PersonalInfo = () => {
             <p>Name: </p>
             {!editMode ? (
               <p>{name}</p>
-            ) : (
-              <input type="text" className={classes["input-class"]}></input>
+                      ) : (
+                          <input type="text" className={classes["input-class"]} ref={nameRef}></input>
             )}
           </div>
           <div className={classes["label-value-div"]}>
-            <p>Email: </p>
+            <p>Surname: </p>
             {!editMode ? (
-              <p>{email}</p>
+              <p>{surname}</p>
             ) : (
-              <input type="text" className={classes["input-class"]}></input>
-            )}
-          </div>
-          <div className={classes["label-value-div"]}>
-            <p>Password: </p>
-            {!editMode ? (
-              <p>{password}</p>
-            ) : (
-              <input type="password" className={classes["input-class"]}></input>
+                              <input type="text" className={classes["input-class"]} ref={surenameRef }></input>
             )}
           </div>
         </div>
@@ -119,7 +126,6 @@ const PersonalInfo = () => {
               <button
                 className={classes["save-changes-button"]}
                 onClick={(e) => {
-                  setEditMode(!editMode);
                   saveChanges();
                 }}
               >

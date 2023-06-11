@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const AuthContext = React.createContext({
   token: "",
-  isLoggedIn: false,
+  isLoggedIn: true,
   login: (token) => {},
   logout: () => {},
 });

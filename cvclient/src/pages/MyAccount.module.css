@@ -3,21 +3,11 @@
 .container {
   display: flex;
   flex-direction: row;
-  gap: 1%;
+  justify-content: center;
 }
 
-.right {
-  margin-top: 5%;
-  border-radius: 8%;
-
-  width: 40%;
-  background-color: #b1d8f5;
-  box-shadow: -1px 11px 28px -8px rgba(66, 68, 90, 1);
-}
-
-.left {
-  margin-left: 10%;
-  margin-top: 5%;
+.user-info-div {
+  margin-top: 2%;
   width: 40%;
   box-shadow: -1px 11px 28px -8px rgba(66, 68, 90, 1);
   border-radius: 8%;
@@ -34,7 +24,10 @@
 }
 
 .input-content {
-  margin-left: 32%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 18%;
 }
 
 .personal-info-div h1 {
@@ -52,6 +45,7 @@
 
 .label-value-div {
   margin-bottom: 20px;
+  width: 80%;
 }
 
 .update-profile-button {
