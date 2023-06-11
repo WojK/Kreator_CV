@@ -38,5 +38,28 @@ namespace CvApi.Controllers
             var result = await _cvService.SaveCvUserData(email, request);
             return Ok(result);
         }
+
+
+        [HttpGet("profile-info")]
+        [Authorize]
+        public async Task<ActionResult<bool>> GetUserInfo()
+        {
+            var email = _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Email);
+            var result = await _cvService.GetUserInfo(email);
+            return Ok(result);
+        }
+
+        [HttpPost("profile-update-info")]
+        [Authorize]
+        public async Task<ActionResult<bool>> UpdatetUserInfo(UserProfileInfoDTO userProfileInfoDTO)
+        {
+            var email = _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Email);
+            var result = await _cvService.UpdateUserInfo(email, userProfileInfoDTO);
+            if(result == null)
+            {
+                return NotFound("Something went wrong!");
+            }
+            return Ok(result);
+        }
     }
 }
