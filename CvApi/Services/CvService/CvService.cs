@@ -145,5 +145,34 @@ namespace CvApi.Services.CvService
 
             return new UserCvDataDTO();
         }
+        public async Task<UserProfileInfoDTO> GetUserInfo(string email)
+        {
+            var user = await _dataContext.Users.FirstOrDefaultAsync(x => x.Email == email);
+            if(user != null)
+            {
+                UserProfileInfoDTO userProfileInfoDTO = new UserProfileInfoDTO
+                {
+                    Name = user.Name,
+                    Surname = user.Surname,
+                    Email = user.Email,
+                };
+                return userProfileInfoDTO;
+
+            }
+            return new UserProfileInfoDTO();
         }
+        public async Task<UserUpdateProfileInfoDTO> UpdateUserInfo(string email, UserUpdateProfileInfoDTO userProfileInfoDTO)
+        {
+            var user = await _dataContext.Users.FirstOrDefaultAsync(x => x.Email == email);
+            if (user != null)
+            {
+                user.Name = userProfileInfoDTO.Name;
+                user.Surname = userProfileInfoDTO.Surname;
+
+                await _dataContext.SaveChangesAsync();
+
+            }
+            return userProfileInfoDTO;
+        }
+    }
 }
