@@ -7,8 +7,6 @@ Sednem aplikacji jest możliwość kreowanie dokumentów w formacie pdf na podst
 
 ![demo_2](https://github.com/WojK/Kreator_CV/assets/106305960/ea6b75ca-45d5-417d-bdd2-0ffd71d61367)
 
-![demo_3](https://github.com/WojK/Kreator_CV/assets/106305960/688e5898-059c-4fb5-a1e9-026be53f1347)
-
 ![demo_4](https://github.com/WojK/Kreator_CV/assets/106305960/c5c1cb24-38cf-4c09-8b83-68bfbf47aadc)
 
 ![demo_5](https://github.com/WojK/Kreator_CV/assets/106305960/5806f460-b712-48a8-8af1-c99d2c26a501)
