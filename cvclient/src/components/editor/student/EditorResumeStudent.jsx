@@ -36,9 +36,10 @@ const EditorResumeStudent = ({
   educationList,
 }) => {
   const changeDates = (date) => {
-    if (date !== undefined) {
+    if (date !== undefined && date !== "") {
       return date.slice(0, 7).replace("-", ".");
     }
+    return <TextAny text="currently" />;
   };
 
   const modifyTechStack = (tech) => {
@@ -56,8 +57,6 @@ const EditorResumeStudent = ({
     return <div className={classes["tech-list"]}>{techJSX}</div>;
   };
 
-  const clause =
-    "I consent to the processing of my personal data for the purpose and scope necessary for the recruitment process.";
   return (
     <div ref={reportTemplateRef} className={classes["cv"]}>
       <div
@@ -159,7 +158,7 @@ const EditorResumeStudent = ({
               {skillList.map((skill, index) => (
                 <li>
                   <img
-                    src={Circle}
+                    src={CircleBlue}
                     alt="CircleIcon"
                     className={classes["circle-icon"]}
                   />
@@ -235,9 +234,9 @@ const EditorResumeStudent = ({
                 <div className={classes["education"]}>
                   <h2>{todo.schoolName}</h2>
                   <p>{todo.schoolCity}</p>
-                  <p>{todo.schoolFaculty}</p>
                   <p>{todo.schoolSubject}</p>
                   <p>{todo.schoolSpecialization}</p>
+                  <p className={classes.p13}>{todo.schoolFaculty}</p>
                 </div>
               </ul>
             ))}
@@ -253,14 +252,17 @@ const EditorResumeStudent = ({
           </div>
           <div className={classes["des"]}>
             {projectList.map((project, index) => (
-              <ul className={classes["ul-project"]} key={index}>
+              <div className={classes["div-project"]} key={index}>
                 <h4>{project.projectName}</h4>
-                <a href={project.projectLink}>{project.projectLink}</a>
+
+                <a href={project.projectLink}>
+                  <p>{project.projectLink}</p>
+                </a>
                 <p className={classes["project-description"]}>
                   {project.projectDescription}
                 </p>
                 {modifyTechStack(project.tech)}
-              </ul>
+              </div>
             ))}
           </div>
           <hr className={classes["personal-data-hr"]} />
@@ -272,7 +274,7 @@ const EditorResumeStudent = ({
           >
             <TextAny text="section_clause" />
           </div>
-          <div className={classes["des"]}>
+          <div className={`${classes.p10} ${classes["des"]}`}>
             <TextAny text="clause" />
           </div>
         </div>

@@ -21,7 +21,6 @@ import EditorResumeGeneralV1 from "./general/EditorResumeGeneralV1";
 import EditorResumeGeneralV2 from "./general/EditorResumeGeneralV2";
 import EditorResumeGeneralV3 from "./general/EditorResumeGeneralV3";
 
-
 const Editor = () => {
   const [color, setColor] = useState("color1"); // each resume will have classes like: color1, color2 etc.
 
@@ -64,7 +63,9 @@ const Editor = () => {
 
   // experience
   const [experienceList, setExperienceList] = useState([]);
-  const [companyName, setCompanyName] = useState("Warsaw University of Technology");
+  const [companyName, setCompanyName] = useState(
+    "Warsaw University of Technology"
+  );
   const [companyCity, setCompanyCity] = useState("Warsaw");
   const [experienceFrom, setExperienceFrom] = useState("2013-03-20");
   const [experienceTo, setExperienceTo] = useState("2021-03-20");
@@ -74,7 +75,7 @@ const Editor = () => {
   );
   // skill
   const [skillList, setSkillList] = useState([]);
-  const [skill, setSkill] = useState("Communication");
+  const [skill, setSkill] = useState("C#");
 
   // soft skill
   const [softSkillList, setSoftSkillList] = useState([]);
@@ -261,7 +262,7 @@ const Editor = () => {
 
     doc.html(reportTemplateRef.current, {
       async callback(doc) {
-        await doc.save("document");
+        await doc.save("resume");
       },
     });
   };
@@ -399,8 +400,6 @@ const Editor = () => {
     reportTemplateRef,
     educationList,
   };
-
-
 
   return (
     <>

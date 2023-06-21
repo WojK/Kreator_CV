@@ -175,6 +175,7 @@ const pl = {
     "Wyrażam zgodę na przetwarzanie danych osobowych w celu i zakresie niezbędnym dla procesu rekrutacji.",
   section_tech_skills: "Technologie",
   section_soft_skills: "Umiejętności miękkie",
+  currently: "obecnie",
 };
 
 const en = {
@@ -346,6 +347,7 @@ const en = {
     "I consent to the processing of my personal data for the purpose and scope necessary for the recruitment process.",
   section_tech_skills: "Tech skills",
   section_soft_skills: "Soft skills",
+  currently: "currently",
 };
 
 export const LangContext = React.createContext({
